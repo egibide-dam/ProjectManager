@@ -4,8 +4,18 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url"/>
-    <property name="connection.driver_class"/>
+    <property name="connection.url">jdbc:mysql://localhost:3306/gestionpedidos</property>
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">MySQL1234</property>
+    <mapping class="Modelo.PedidosEntity"/>
+      <mapping resource="PedidosEntity.hbm.xml"/>
+      <mapping resource="PiezasEntity.hbm.xml"/>
+      <mapping class="Modelo.PiezasEntity"/>
+    <mapping resource="ProveedoresEntity.hbm.xml"/>
+    <mapping class="Modelo.ProveedoresEntity"/>
+    <mapping resource="ProyectosEntity.hbm.xml"/>
+    <mapping class="Modelo.ProyectosEntity"/>
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
