@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Modelo.ProveedoresEntity" table="proveedores" schema="gestionpedidos">
+        <id name="cod">
+            <column name="cod" sql-type="varchar(6)" length="6"/>
+        </id>
+        <property name="nombre">
+            <column name="nombre" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="apellidos">
+            <column name="apellidos" sql-type="varchar(30)" length="30"/>
+        </property>
+        <property name="direccion">
+            <column name="direccion" sql-type="varchar(40)" length="40"/>
+        </property>
+        <property name="alta">
+            <column name="alta" sql-type="tinyint(1)"/>
+        </property>
+        <set name="pedidosByCod" inverse="true">
+            <key>
+                <column name="proveedor"/>
+            </key>
+            <one-to-many not-found="ignore" class="Modelo.PedidosEntity"/>
+        </set>
+        <set name="piezasByCod" inverse="true">
+            <key>
+                <column name="proveedor"/>
+            </key>
+            <one-to-many not-found="ignore" class="Modelo.PiezasEntity"/>
+        </set>
+    </class>
+</hibernate-mapping>
