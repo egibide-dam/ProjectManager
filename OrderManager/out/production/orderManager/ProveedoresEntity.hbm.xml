@@ -5,8 +5,8 @@
 <hibernate-mapping>
 
     <class name="Modelo.ProveedoresEntity" table="proveedores" schema="gestionpedidos">
-        <id name="cod">
-            <column name="cod" sql-type="varchar(6)" length="6"/>
+        <id name="codprov">
+            <column name="codprov" sql-type="int"/>
         </id>
         <property name="nombre">
             <column name="nombre" sql-type="varchar(20)" length="20"/>
@@ -20,13 +20,13 @@
         <property name="alta">
             <column name="alta" sql-type="tinyint(1)"/>
         </property>
-        <set name="pedidosByCod" inverse="true">
+        <set name="pedidosByCodprov" inverse="true">
             <key>
                 <column name="proveedor"/>
             </key>
             <one-to-many not-found="ignore" class="Modelo.PedidosEntity"/>
         </set>
-        <set name="piezasByCod" inverse="true">
+        <set name="piezasByCodprov" inverse="true">
             <key>
                 <column name="proveedor"/>
             </key>

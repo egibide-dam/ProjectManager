@@ -3,21 +3,21 @@ package Modelo;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "pedidos", schema = "gestionpedidos", catalog = "")
+@Table(name = "pedidos", schema = "gestionpedidos")
 public class PedidosEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "cod", nullable = false, length = 6)
-    private String cod;
+    @Column(name = "codped", nullable = false)
+    private int codped;
     @Basic
-    @Column(name = "proveedor", nullable = false, length = 6)
-    private String proveedor;
+    @Column(name = "proveedor", nullable = false)
+    private int proveedor;
     @Basic
-    @Column(name = "pieza", nullable = false, length = 6)
-    private String pieza;
+    @Column(name = "pieza", nullable = false)
+    private int pieza;
     @Basic
-    @Column(name = "proyecto", nullable = false, length = 6)
-    private String proyecto;
+    @Column(name = "proyecto", nullable = false)
+    private int proyecto;
     @Basic
     @Column(name = "cantidad", nullable = false, precision = 0)
     private double cantidad;
@@ -25,44 +25,44 @@ public class PedidosEntity {
     @Column(name = "alta", nullable = false)
     private byte alta;
     @ManyToOne
-    @JoinColumn(name = "proveedor", referencedColumnName = "cod", nullable = false)
+    @JoinColumn(name = "proveedor", referencedColumnName = "codprov", nullable = false)
     private ProveedoresEntity proveedoresByProveedor;
     @ManyToOne
-    @JoinColumn(name = "pieza", referencedColumnName = "cod", nullable = false)
+    @JoinColumn(name = "pieza", referencedColumnName = "codpiez", nullable = false)
     private PiezasEntity piezasByPieza;
     @ManyToOne
-    @JoinColumn(name = "proyecto", referencedColumnName = "cod", nullable = false)
+    @JoinColumn(name = "proyecto", referencedColumnName = "codproy", nullable = false)
     private ProyectosEntity proyectosByProyecto;
 
-    public String getCod() {
-        return cod;
+    public int getCodped() {
+        return codped;
     }
 
-    public void setCod(String cod) {
-        this.cod = cod;
+    public void setCodped(int codped) {
+        this.codped = codped;
     }
 
-    public String getProveedor() {
+    public int getProveedor() {
         return proveedor;
     }
 
-    public void setProveedor(String proveedor) {
+    public void setProveedor(int proveedor) {
         this.proveedor = proveedor;
     }
 
-    public String getPieza() {
+    public int getPieza() {
         return pieza;
     }
 
-    public void setPieza(String pieza) {
+    public void setPieza(int pieza) {
         this.pieza = pieza;
     }
 
-    public String getProyecto() {
+    public int getProyecto() {
         return proyecto;
     }
 
-    public void setProyecto(String proyecto) {
+    public void setProyecto(int proyecto) {
         this.proyecto = proyecto;
     }
 

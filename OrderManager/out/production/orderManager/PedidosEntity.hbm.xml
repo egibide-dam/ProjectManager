@@ -5,17 +5,17 @@
 <hibernate-mapping>
 
     <class name="Modelo.PedidosEntity" table="pedidos" schema="gestionpedidos">
-        <id name="cod">
-            <column name="cod" sql-type="varchar(6)" length="6"/>
+        <id name="codped">
+            <column name="codped" sql-type="int"/>
         </id>
         <property name="proveedor">
-            <column name="proveedor" sql-type="varchar(6)" length="6"/>
+            <column name="proveedor" sql-type="int"/>
         </property>
         <property name="pieza">
-            <column name="pieza" sql-type="varchar(6)" length="6"/>
+            <column name="pieza" sql-type="int"/>
         </property>
         <property name="proyecto">
-            <column name="proyecto" sql-type="varchar(6)" length="6"/>
+            <column name="proyecto" sql-type="int"/>
         </property>
         <property name="cantidad">
             <column name="cantidad" sql-type="float" precision="-1"/>

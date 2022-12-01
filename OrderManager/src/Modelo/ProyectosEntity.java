@@ -8,8 +8,8 @@ import java.util.Collection;
 public class ProyectosEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "cod", nullable = false, length = 6)
-    private String cod;
+    @Column(name = "codproy", nullable = false)
+    private int codproy;
     @Basic
     @Column(name = "nombre", nullable = false, length = 40)
     private String nombre;
@@ -20,14 +20,14 @@ public class ProyectosEntity {
     @Column(name = "alta", nullable = false)
     private byte alta;
     @OneToMany(mappedBy = "proyectosByProyecto")
-    private Collection<PedidosEntity> pedidosByCod;
+    private Collection<PedidosEntity> pedidosByCodproy;
 
-    public String getCod() {
-        return cod;
+    public int getCodproy() {
+        return codproy;
     }
 
-    public void setCod(String cod) {
-        this.cod = cod;
+    public void setCodproy(int codproy) {
+        this.codproy = codproy;
     }
 
     public String getNombre() {
@@ -54,11 +54,11 @@ public class ProyectosEntity {
         this.alta = alta;
     }
 
-    public Collection<PedidosEntity> getPedidosByCod() {
-        return pedidosByCod;
+    public Collection<PedidosEntity> getPedidosByCodproy() {
+        return pedidosByCodproy;
     }
 
-    public void setPedidosByCod(Collection<PedidosEntity> pedidosByCod) {
-        this.pedidosByCod = pedidosByCod;
+    public void setPedidosByCodproy(Collection<PedidosEntity> pedidosByCodproy) {
+        this.pedidosByCodproy = pedidosByCodproy;
     }
 }

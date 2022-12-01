@@ -8,8 +8,8 @@ import java.util.Collection;
 public class PiezasEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "cod", nullable = false, length = 6)
-    private String cod;
+    @Column(name = "codpiez", nullable = false)
+    private int codpiez;
     @Basic
     @Column(name = "nombre", nullable = false, length = 20)
     private String nombre;
@@ -20,23 +20,33 @@ public class PiezasEntity {
     @Column(name = "descripcion", nullable = true, length = -1)
     private String descripcion;
     @Basic
-    @Column(name = "proveedor", nullable = false, length = 6)
-    private String proveedor;
+    @Column(name = "proveedor", nullable = false)
+    private int proveedor;
     @Basic
     @Column(name = "alta", nullable = false)
     private byte alta;
     @OneToMany(mappedBy = "piezasByPieza")
-    private Collection<PedidosEntity> pedidosByCod;
+    private Collection<PedidosEntity> pedidosByCodpiez;
     @ManyToOne
-    @JoinColumn(name = "proveedor", referencedColumnName = "cod", nullable = false)
+    @JoinColumn(name = "proveedor", referencedColumnName = "codprov", nullable = false)
     private ProveedoresEntity proveedoresByProveedor;
 
-    public String getCod() {
-        return cod;
+
+    public PiezasEntity(int codpiez, String nombre, double precio, String descripcion, int proveedor, byte alta) {
+        this.codpiez = codpiez;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.descripcion = descripcion;
+        this.proveedor = proveedor;
+        this.alta = alta;
     }
 
-    public void setCod(String cod) {
-        this.cod = cod;
+    public int getCodpiez() {
+        return codpiez;
+    }
+
+    public void setCodpiez(int codpiez) {
+        this.codpiez = codpiez;
     }
 
     public String getNombre() {
@@ -63,11 +73,11 @@ public class PiezasEntity {
         this.descripcion = descripcion;
     }
 
-    public String getProveedor() {
+    public int getProveedor() {
         return proveedor;
     }
 
-    public void setProveedor(String proveedor) {
+    public void setProveedor(int proveedor) {
         this.proveedor = proveedor;
     }
 
@@ -79,12 +89,12 @@ public class PiezasEntity {
         this.alta = alta;
     }
 
-    public Collection<PedidosEntity> getPedidosByCod() {
-        return pedidosByCod;
+    public Collection<PedidosEntity> getPedidosByCodpiez() {
+        return pedidosByCodpiez;
     }
 
-    public void setPedidosByCod(Collection<PedidosEntity> pedidosByCod) {
-        this.pedidosByCod = pedidosByCod;
+    public void setPedidosByCodpiez(Collection<PedidosEntity> pedidosByCodpiez) {
+        this.pedidosByCodpiez = pedidosByCodpiez;
     }
 
     public ProveedoresEntity getProveedoresByProveedor() {

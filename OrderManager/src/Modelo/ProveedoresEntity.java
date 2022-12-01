@@ -8,8 +8,8 @@ import java.util.Collection;
 public class ProveedoresEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "cod", nullable = false, length = 6)
-    private String cod;
+    @Column(name = "codprov", nullable = false)
+    private int codprov;
     @Basic
     @Column(name = "nombre", nullable = false, length = 20)
     private String nombre;
@@ -23,16 +23,16 @@ public class ProveedoresEntity {
     @Column(name = "alta", nullable = false)
     private byte alta;
     @OneToMany(mappedBy = "proveedoresByProveedor")
-    private Collection<PedidosEntity> pedidosByCod;
+    private Collection<PedidosEntity> pedidosByCodprov;
     @OneToMany(mappedBy = "proveedoresByProveedor")
-    private Collection<PiezasEntity> piezasByCod;
+    private Collection<PiezasEntity> piezasByCodprov;
 
-    public String getCod() {
-        return cod;
+    public int getCodprov() {
+        return codprov;
     }
 
-    public void setCod(String cod) {
-        this.cod = cod;
+    public void setCodprov(int codprov) {
+        this.codprov = codprov;
     }
 
     public String getNombre() {
@@ -67,19 +67,19 @@ public class ProveedoresEntity {
         this.alta = alta;
     }
 
-    public Collection<PedidosEntity> getPedidosByCod() {
-        return pedidosByCod;
+    public Collection<PedidosEntity> getPedidosByCodprov() {
+        return pedidosByCodprov;
     }
 
-    public void setPedidosByCod(Collection<PedidosEntity> pedidosByCod) {
-        this.pedidosByCod = pedidosByCod;
+    public void setPedidosByCodprov(Collection<PedidosEntity> pedidosByCodprov) {
+        this.pedidosByCodprov = pedidosByCodprov;
     }
 
-    public Collection<PiezasEntity> getPiezasByCod() {
-        return piezasByCod;
+    public Collection<PiezasEntity> getPiezasByCodprov() {
+        return piezasByCodprov;
     }
 
-    public void setPiezasByCod(Collection<PiezasEntity> piezasByCod) {
-        this.piezasByCod = piezasByCod;
+    public void setPiezasByCodprov(Collection<PiezasEntity> piezasByCodprov) {
+        this.piezasByCodprov = piezasByCodprov;
     }
 }
