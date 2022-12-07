@@ -2,10 +2,6 @@ package com.proyecto.controller;
 
 import com.proyecto.ProveedoresEntity;
 import com.proyecto.utils.HibernateUtil;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +41,26 @@ public class ProveedorController {
             HibernateUtil.actualizar(p);
         } else {
             System.out.println("\nNo se ha encontrado el proveedor a editar.");
+        }
+    }
+
+    public static void bajaProveedor(int id){
+        ProveedoresEntity p = leerProveedor(id);
+        if(p != null){
+            p.setAlta((byte)0);
+            HibernateUtil.actualizar(p);
+        } else {
+            System.out.println("\nNo se ha encontrado el proveedor a dar de baja.");
+        }
+    }
+
+    public static void altaProveedor(int id){
+        ProveedoresEntity p = leerProveedor(id);
+        if(p != null){
+            p.setAlta((byte)1);
+            HibernateUtil.actualizar(p);
+        } else {
+            System.out.println("\nNo se ha encontrado el proveedor a dar de baja.");
         }
     }
 
