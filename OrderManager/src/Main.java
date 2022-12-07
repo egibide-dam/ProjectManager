@@ -9,13 +9,8 @@ import java.util.logging.Logger;
 public class Main {
     public static void main(String[] args) {
 
-
-        ProveedoresEntity p = new ProveedoresEntity();
-        p.setNombre("Irene");
-        p.setApellidos("Brea Elorza");
-        p.setDireccion("Avenida ciudad 44");
-        p.setAlta((byte)1);
-        HibernateUtil.guardar(p);
-
+        ProveedorController.editarProveedor(2,"Lucas", "Pérez Gómez", "Calle Falsa 12");
+        ProveedoresEntity p = ProveedorController.leerProveedor(2);
+        System.out.println(p.getIdproveedor() + " - " + p.getNombre() + " " + p.getApellidos() + "\n" + p.getDireccion() + "\n" + p.getAlta());
     }
 }

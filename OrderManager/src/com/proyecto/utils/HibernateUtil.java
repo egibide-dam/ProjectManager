@@ -9,6 +9,22 @@ import org.hibernate.cfg.Configuration;
 public class HibernateUtil {
 
 
+    public static Object leerObjeto(Class clase, int id) {
+        Configuration config = new Configuration();
+        config.configure();
+        SessionFactory sf = config.buildSessionFactory();
+        Session sesion = sf.openSession();
+        Transaction trans = sesion.beginTransaction();
+
+        //Get object
+        Object object = sesion.get(clase, id);
+
+        trans.commit();
+        sesion.close();
+        sf.close();
+
+        return object;
+    }
 
     public static void guardar(Object object) {
         Configuration config = new Configuration();
@@ -25,7 +41,7 @@ public class HibernateUtil {
     }
 
 
-    public static void editar(Object object) {
+    public static void actualizar(Object object) {
         Configuration config = new Configuration();
         config.configure();
         SessionFactory sf = config.buildSessionFactory();
