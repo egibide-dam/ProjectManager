@@ -6,8 +6,26 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+import java.util.List;
+
 public class HibernateUtil {
 
+    public static List<Object> leerTodos(Class clase) {
+        Configuration config = new Configuration();
+        config.configure();
+        SessionFactory sf = config.buildSessionFactory();
+        Session sesion = sf.openSession();
+        Transaction trans = sesion.beginTransaction();
+
+        //Get object
+        List<Object> objects = sesion.createQuery("from " + clase.getName()).list();
+
+        trans.commit();
+        sesion.close();
+        sf.close();
+
+        return objects;
+    }
 
     public static Object leerObjeto(Class clase, int id) {
         Configuration config = new Configuration();

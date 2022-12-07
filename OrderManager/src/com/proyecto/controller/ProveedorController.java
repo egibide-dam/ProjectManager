@@ -7,7 +7,19 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProveedorController {
+
+    public static List<ProveedoresEntity> leerTodosProveedores() {
+        List<Object> objetos = HibernateUtil.leerTodos(ProveedoresEntity.class);
+        List<ProveedoresEntity> proveedores = new ArrayList<>();
+        for (Object o : objetos) {
+            proveedores.add((ProveedoresEntity) o);
+        }
+        return proveedores;
+    }
 
 
     public static ProveedoresEntity leerProveedor(int id) {
