@@ -64,7 +64,7 @@ public class ProveedorController {
         }
     }
 
-    public static List<ProveedoresEntity> buscarProveedor(String busqueda){
+    public static List<ProveedoresEntity> buscarProveedores(String busqueda){
 
         busqueda = busqueda.trim();
         String sentencia = "";

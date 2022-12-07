@@ -68,7 +68,7 @@ public class PiezaController {
     }
 
 
-    public static List<PiezasEntity> buscarPieza(String busqueda){
+    public static List<PiezasEntity> buscarPiezas(String busqueda){
 
         busqueda = busqueda.trim();
         String sentencia = "";
