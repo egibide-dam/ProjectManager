@@ -1,6 +1,8 @@
 package com.proyecto.controller;
 
 import com.proyecto.PedidosEntity;
+import com.proyecto.PiezasEntity;
+import com.proyecto.ProveedoresEntity;
 import com.proyecto.ProyectosEntity;
 import com.proyecto.utils.HibernateUtil;
 
@@ -66,4 +68,33 @@ public class PedidosController {
             System.out.println("\nNo se ha encontrado el pedido a dar de alta.");
         }
     }
+
+    public static List<PedidosEntity> buscarPedidos(String busqueda){
+
+        busqueda = busqueda.trim();
+        String sentencia = "";
+        if (!busqueda.equals("")){
+
+            try {
+
+                int busid = Integer.parseInt(busqueda);
+                sentencia = "WHERE idpedido=" + busid;
+
+            } catch (NumberFormatException e){
+
+                sentencia = "WHERE idproveedor = (select idproveedor from " + ProveedoresEntity.class.getName() + " where UPPER(nombre) LIKE '%" + busqueda.toUpperCase() + "%') OR idpieza = (select idpieza from " + PiezasEntity.class.getName() + " where UPPER(nombre) LIKE '%" + busqueda.toUpperCase() + "%') or idproyecto = (select idproyecto from " + ProyectosEntity.class.getName() + " where UPPER(nombre) LIKE '%" + busqueda.toUpperCase() + "%')";
+
+            }
+
+        }
+        List<Object> objetos = HibernateUtil.filtrar(PedidosEntity.class, sentencia);
+        List<PedidosEntity> pedidos = new ArrayList<>();
+        for (Object o : objetos) {
+            pedidos.add((PedidosEntity) o);
+        }
+        return pedidos;
+
+    }
+
+
 }
