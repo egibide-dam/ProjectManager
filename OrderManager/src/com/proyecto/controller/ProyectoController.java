@@ -89,4 +89,26 @@ public class ProyectoController {
         return proyectos;
 
     }
+
+    public static List<ProyectosEntity> filtrarProyectos(int alta) {
+
+        String sentencia = "";
+        if (alta == 1) {
+            sentencia = "WHERE alta = 1";
+
+        } else if (alta == 2) {
+
+            sentencia = "WHERE alta = 0";
+
+        }
+        List<Object> objetos = HibernateUtil.filtrar(ProyectosEntity.class, sentencia);
+        List<ProyectosEntity> proyectos = new ArrayList<>();
+        for (Object o : objetos) {
+            proyectos.add((ProyectosEntity) o);
+        }
+        return proyectos;
+
+    }
+
+
 }

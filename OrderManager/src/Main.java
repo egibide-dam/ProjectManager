@@ -1,6 +1,7 @@
 import com.proyecto.PedidosEntity;
 import com.proyecto.PiezasEntity;
 import com.proyecto.ProveedoresEntity;
+import com.proyecto.ProyectosEntity;
 import com.proyecto.controller.PedidosController;
 import com.proyecto.controller.PiezaController;
 import com.proyecto.controller.ProveedorController;
@@ -15,9 +16,9 @@ public class Main {
     public static void main(String[] args) {
 
 
-        List<PiezasEntity> ps = PiezaController.filtrarPiezas(1);
+        List<ProyectosEntity> ps = ProyectoController.filtrarProyectos(2);
         if (ps.size() > 0){
-            for (PiezasEntity p : ps){
+            for (ProyectosEntity p : ps){
                 System.out.println("\n" + p.getNombre());
             }
         } else {
