@@ -15,10 +15,10 @@ public class Main {
     public static void main(String[] args) {
 
 
-        List<ProveedoresEntity> ps = ProveedorController.filtrarProveedores(2);
+        List<PiezasEntity> ps = PiezaController.filtrarPiezas(1);
         if (ps.size() > 0){
-            for (ProveedoresEntity p : ps){
-                System.out.println("\n" + p.getNombre() + " " + p.getApellidos());
+            for (PiezasEntity p : ps){
+                System.out.println("\n" + p.getNombre());
             }
         } else {
             System.out.println("No se han encontrado resultados");
