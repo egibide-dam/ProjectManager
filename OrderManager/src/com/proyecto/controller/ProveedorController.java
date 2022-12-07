@@ -60,7 +60,7 @@ public class ProveedorController {
             p.setAlta((byte)1);
             HibernateUtil.actualizar(p);
         } else {
-            System.out.println("\nNo se ha encontrado el proveedor a dar de baja.");
+            System.out.println("\nNo se ha encontrado el proveedor a dar de alta.");
         }
     }
 

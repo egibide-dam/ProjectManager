@@ -53,7 +53,7 @@ public class PiezaController {
             p.setAlta((byte)0);
             HibernateUtil.actualizar(p);
         } else {
-            System.out.println("\nNo se ha encontrado la pieza a editar.");
+            System.out.println("\nNo se ha encontrado la pieza a dar de baja.");
         }
     }
 
@@ -63,7 +63,7 @@ public class PiezaController {
             p.setAlta((byte)1);
             HibernateUtil.actualizar(p);
         } else {
-            System.out.println("\nNo se ha encontrado la pieza a editar.");
+            System.out.println("\nNo se ha encontrado la pieza a dar de alta.");
         }
     }
 
