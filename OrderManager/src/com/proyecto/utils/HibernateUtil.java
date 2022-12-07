@@ -87,6 +87,23 @@ public class HibernateUtil {
         sf.close();
     }
 
+    public static List<Object> filtrar(Class clase, String sentencia) {
+        Configuration config = new Configuration();
+        config.configure();
+        SessionFactory sf = config.buildSessionFactory();
+        Session sesion = sf.openSession();
+        Transaction trans = sesion.beginTransaction();
+
+        //Get object
+        List<Object> objects = sesion.createQuery("from " + clase.getName() + " " + sentencia).list();
+
+        trans.commit();
+        sesion.close();
+        sf.close();
+
+        return objects;
+    }
+
 
 
 }

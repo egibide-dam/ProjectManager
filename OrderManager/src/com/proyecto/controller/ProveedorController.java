@@ -64,6 +64,33 @@ public class ProveedorController {
         }
     }
 
+    public static List<ProveedoresEntity> buscarProveedor(String busqueda){
+
+        busqueda = busqueda.trim();
+        String sentencia = "";
+        if (!busqueda.equals("")){
+
+            try {
+
+                int busid = Integer.parseInt(busqueda);
+                sentencia = "WHERE idproveedor=" + busid;
+
+            } catch (NumberFormatException e){
+
+                sentencia = "WHERE UPPER(nombre) LIKE '%" + busqueda.toUpperCase() + "%' or UPPER(apellidos) LIKE '%" + busqueda.toUpperCase() + "%'";
+
+            }
+
+        }
+        List<Object> objetos = HibernateUtil.filtrar(ProveedoresEntity.class, sentencia);
+        List<ProveedoresEntity> proveedores = new ArrayList<>();
+        for (Object o : objetos) {
+            proveedores.add((ProveedoresEntity) o);
+        }
+        return proveedores;
+
+    }
+
 
 
 }
