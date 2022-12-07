@@ -1,4 +1,4 @@
-package Modelo;
+package com.proyecto;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -8,8 +8,8 @@ import java.util.Collection;
 public class ProyectosEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "codproy", nullable = false)
-    private int codproy;
+    @Column(name = "idproyecto", nullable = false)
+    private int idproyecto;
     @Basic
     @Column(name = "nombre", nullable = false, length = 40)
     private String nombre;
@@ -19,15 +19,15 @@ public class ProyectosEntity {
     @Basic
     @Column(name = "alta", nullable = false)
     private byte alta;
-    @OneToMany(mappedBy = "proyectosByProyecto")
-    private Collection<PedidosEntity> pedidosByCodproy;
+    @OneToMany(mappedBy = "proyectosByIdproyecto")
+    private Collection<PedidosEntity> pedidosByIdproyecto;
 
-    public int getCodproy() {
-        return codproy;
+    public int getIdproyecto() {
+        return idproyecto;
     }
 
-    public void setCodproy(int codproy) {
-        this.codproy = codproy;
+    public void setIdproyecto(int idproyecto) {
+        this.idproyecto = idproyecto;
     }
 
     public String getNombre() {
@@ -54,11 +54,11 @@ public class ProyectosEntity {
         this.alta = alta;
     }
 
-    public Collection<PedidosEntity> getPedidosByCodproy() {
-        return pedidosByCodproy;
+    public Collection<PedidosEntity> getPedidosByIdproyecto() {
+        return pedidosByIdproyecto;
     }
 
-    public void setPedidosByCodproy(Collection<PedidosEntity> pedidosByCodproy) {
-        this.pedidosByCodproy = pedidosByCodproy;
+    public void setPedidosByIdproyecto(Collection<PedidosEntity> pedidosByIdproyecto) {
+        this.pedidosByIdproyecto = pedidosByIdproyecto;
     }
 }

@@ -4,9 +4,9 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="Modelo.PiezasEntity" table="piezas" schema="gestionpedidos">
-        <id name="codpiez">
-            <column name="codpiez" sql-type="int"/>
+    <class name="com.proyecto.PiezasEntity" table="piezas" schema="gestionpedidos">
+        <id name="idpieza">
+            <column name="idpieza" sql-type="int"/>
         </id>
         <property name="nombre">
             <column name="nombre" sql-type="varchar(20)" length="20"/>
@@ -17,20 +17,17 @@
         <property name="descripcion">
             <column name="descripcion" sql-type="text" not-null="true"/>
         </property>
-        <property name="proveedor">
-            <column name="proveedor" sql-type="int"/>
-        </property>
         <property name="alta">
             <column name="alta" sql-type="tinyint(1)"/>
         </property>
-        <many-to-one name="proveedoresByProveedor" class="Modelo.ProveedoresEntity">
-            <column name="proveedor"/>
+        <many-to-one name="proveedoresByIdproveedor" class="com.proyecto.ProveedoresEntity">
+            <column name="idproveedor"/>
         </many-to-one>
-        <set name="pedidosByCodpiez" inverse="true">
+        <set name="pedidosByIdpieza" inverse="true">
             <key>
-                <column name="pieza"/>
+                <column name="idpieza"/>
             </key>
-            <one-to-many not-found="ignore" class="Modelo.PedidosEntity"/>
+            <one-to-many not-found="ignore" class="com.proyecto.PedidosEntity"/>
         </set>
     </class>
 </hibernate-mapping>

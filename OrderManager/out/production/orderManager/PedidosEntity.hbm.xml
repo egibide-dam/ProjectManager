@@ -4,33 +4,24 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="Modelo.PedidosEntity" table="pedidos" schema="gestionpedidos">
-        <id name="codped">
-            <column name="codped" sql-type="int"/>
+    <class name="com.proyecto.PedidosEntity" table="pedidos" schema="gestionpedidos">
+        <id name="idpedido">
+            <column name="idpedido" sql-type="int"/>
         </id>
-        <property name="proveedor">
-            <column name="proveedor" sql-type="int"/>
-        </property>
-        <property name="pieza">
-            <column name="pieza" sql-type="int"/>
-        </property>
-        <property name="proyecto">
-            <column name="proyecto" sql-type="int"/>
-        </property>
         <property name="cantidad">
             <column name="cantidad" sql-type="float" precision="-1"/>
         </property>
         <property name="alta">
             <column name="alta" sql-type="tinyint(1)"/>
         </property>
-        <many-to-one name="proveedoresByProveedor" class="Modelo.ProveedoresEntity">
-            <column name="proveedor"/>
+        <many-to-one name="proveedoresByIdproveedor" class="com.proyecto.ProveedoresEntity">
+            <column name="idproveedor"/>
         </many-to-one>
-        <many-to-one name="piezasByPieza" class="Modelo.PiezasEntity">
-            <column name="pieza"/>
+        <many-to-one name="piezasByIdpieza" class="com.proyecto.PiezasEntity">
+            <column name="idpieza"/>
         </many-to-one>
-        <many-to-one name="proyectosByProyecto" class="Modelo.ProyectosEntity">
-            <column name="proyecto"/>
+        <many-to-one name="proyectosByIdproyecto" class="com.proyecto.ProyectosEntity">
+            <column name="idproyecto"/>
         </many-to-one>
     </class>
 </hibernate-mapping>

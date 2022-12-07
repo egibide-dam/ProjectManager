@@ -9,14 +9,14 @@
     <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
     <property name="connection.username">root</property>
     <property name="connection.password">MySQL1234</property>
-      <mapping class="Modelo.PedidosEntity"/>
-      <mapping resource="PedidosEntity.hbm.xml"/>
+    <mapping resource="PedidosEntity.hbm.xml"/>
+      <mapping class="com.proyecto.PedidosEntity"/>
       <mapping resource="PiezasEntity.hbm.xml"/>
-      <mapping class="Modelo.PiezasEntity"/>
-    <mapping resource="ProveedoresEntity.hbm.xml"/>
-    <mapping class="Modelo.ProveedoresEntity"/>
+      <mapping class="com.proyecto.PiezasEntity"/>
+      <mapping class="com.proyecto.ProveedoresEntity"/>
+      <mapping resource="ProveedoresEntity.hbm.xml"/>
     <mapping resource="ProyectosEntity.hbm.xml"/>
-    <mapping class="Modelo.ProyectosEntity"/>
+    <mapping class="com.proyecto.ProyectosEntity"/>
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 

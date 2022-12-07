@@ -4,9 +4,9 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="Modelo.ProyectosEntity" table="proyectos" schema="gestionpedidos">
-        <id name="codproy">
-            <column name="codproy" sql-type="int"/>
+    <class name="com.proyecto.ProyectosEntity" table="proyectos" schema="gestionpedidos">
+        <id name="idproyecto">
+            <column name="idproyecto" sql-type="int"/>
         </id>
         <property name="nombre">
             <column name="nombre" sql-type="varchar(40)" length="40"/>
@@ -17,11 +17,11 @@
         <property name="alta">
             <column name="alta" sql-type="tinyint(1)"/>
         </property>
-        <set name="pedidosByCodproy" inverse="true">
+        <set name="pedidosByIdproyecto" inverse="true">
             <key>
-                <column name="proyecto"/>
+                <column name="idproyecto"/>
             </key>
-            <one-to-many not-found="ignore" class="Modelo.PedidosEntity"/>
+            <one-to-many not-found="ignore" class="com.proyecto.PedidosEntity"/>
         </set>
     </class>
 </hibernate-mapping>
