@@ -77,7 +77,7 @@ public class ProveedorController {
 
             } catch (NumberFormatException e){
 
-                sentencia = "WHERE UPPER(nombre) LIKE '%" + busqueda.toUpperCase() + "%' or UPPER(apellidos) LIKE '%" + busqueda.toUpperCase() + "%'";
+                sentencia = "WHERE UPPER(nombre) LIKE '%" + busqueda.toUpperCase() + "%' or UPPER(apellidos) LIKE '%" + busqueda.toUpperCase() + "%' or UPPER(direccion) LIKE '%" + busqueda.toUpperCase() + "%'";
 
             }
 

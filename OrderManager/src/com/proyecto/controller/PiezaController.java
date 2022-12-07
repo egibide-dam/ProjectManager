@@ -67,4 +67,33 @@ public class PiezaController {
         }
     }
 
+
+    public static List<PiezasEntity> buscarPieza(String busqueda){
+
+        busqueda = busqueda.trim();
+        String sentencia = "";
+        if (!busqueda.equals("")){
+
+            try {
+
+                int busid = Integer.parseInt(busqueda);
+                sentencia = "WHERE idpieza=" + busid;
+
+            } catch (NumberFormatException e){
+
+                sentencia = "WHERE UPPER(nombre) LIKE '%" + busqueda.toUpperCase()  + "%'";
+
+            }
+
+        }
+        List<Object> objetos = HibernateUtil.filtrar(PiezasEntity.class, sentencia);
+        List<PiezasEntity> piezas = new ArrayList<>();
+        for (Object o : objetos) {
+            piezas.add((PiezasEntity) o);
+        }
+        return piezas;
+
+    }
+
+
 }

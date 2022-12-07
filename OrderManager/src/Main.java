@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 public class Main {
     public static void main(String[] args) {
 
-        List<ProveedoresEntity> ps = ProveedorController.buscarProveedor("2 ");
+        List<ProveedoresEntity> ps = ProveedorController.buscarProveedor("al");
         for (ProveedoresEntity p : ps){
             System.out.println("\n" + p.getIdproveedor() + "- " + p.getNombre() + " " + p.getApellidos());
         }
