@@ -4,30 +4,22 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name = "piezas", schema = "gestionpedidos", catalog = "")
+@Table(name = "piezas", schema = "gestionpedidos")
 public class PiezasEntity {
+
+    private int idpieza;
+    private String nombre;
+    private double precio;
+    private String descripcion;
+    private byte alta;
+    private Collection<PedidosEntity> pedidosByIdpieza;
+    private ProveedoresEntity proveedoresByIdproveedor;
+
+
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "idpieza", nullable = false)
-    private int idpieza;
-    @Basic
-    @Column(name = "nombre", nullable = false, length = 20)
-    private String nombre;
-    @Basic
-    @Column(name = "precio", nullable = false, precision = 0)
-    private double precio;
-    @Basic
-    @Column(name = "descripcion", nullable = true, length = -1)
-    private String descripcion;
-    @Basic
-    @Column(name = "alta", nullable = false)
-    private byte alta;
-    @OneToMany(mappedBy = "piezasByIdpieza")
-    private Collection<PedidosEntity> pedidosByIdpieza;
-    @ManyToOne
-    @JoinColumn(name = "idproveedor", referencedColumnName = "idproveedor", nullable = false)
-    private ProveedoresEntity proveedoresByIdproveedor;
-
     public int getIdpieza() {
         return idpieza;
     }
@@ -36,6 +28,8 @@ public class PiezasEntity {
         this.idpieza = idpieza;
     }
 
+    @Basic
+    @Column(name = "nombre", nullable = false, length = 20)
     public String getNombre() {
         return nombre;
     }
@@ -44,6 +38,8 @@ public class PiezasEntity {
         this.nombre = nombre;
     }
 
+    @Basic
+    @Column(name = "precio", nullable = false, precision = 0)
     public double getPrecio() {
         return precio;
     }
@@ -51,6 +47,9 @@ public class PiezasEntity {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+
+    @Basic
+    @Column(name = "descripcion", nullable = true, length = -1)
 
     public String getDescripcion() {
         return descripcion;
@@ -60,6 +59,8 @@ public class PiezasEntity {
         this.descripcion = descripcion;
     }
 
+    @Basic
+    @Column(name = "alta", nullable = false)
     public byte getAlta() {
         return alta;
     }
@@ -68,6 +69,7 @@ public class PiezasEntity {
         this.alta = alta;
     }
 
+    @OneToMany(mappedBy = "piezasByIdpieza")
     public Collection<PedidosEntity> getPedidosByIdpieza() {
         return pedidosByIdpieza;
     }
@@ -75,6 +77,9 @@ public class PiezasEntity {
     public void setPedidosByIdpieza(Collection<PedidosEntity> pedidosByIdpieza) {
         this.pedidosByIdpieza = pedidosByIdpieza;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "idproveedor", referencedColumnName = "idproveedor", nullable = false)
 
     public ProveedoresEntity getProveedoresByIdproveedor() {
         return proveedoresByIdproveedor;

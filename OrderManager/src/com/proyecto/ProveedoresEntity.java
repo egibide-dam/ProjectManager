@@ -16,10 +16,6 @@ public class ProveedoresEntity {
     private Collection<PiezasEntity> piezasByIdproveedor;
 
 
-
-
-
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "idproveedor", nullable = false)
@@ -30,6 +26,7 @@ public class ProveedoresEntity {
     public void setIdproveedor(int idproveedor) {
         this.idproveedor = idproveedor;
     }
+
     @Basic
     @Column(name = "nombre", nullable = false, length = 20)
     public String getNombre() {
@@ -39,6 +36,7 @@ public class ProveedoresEntity {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     @Basic
     @Column(name = "apellidos", nullable = false, length = 30)
     public String getApellidos() {
@@ -48,6 +46,7 @@ public class ProveedoresEntity {
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
+
     @Basic
     @Column(name = "direccion", nullable = false, length = 40)
     public String getDireccion() {
@@ -57,6 +56,7 @@ public class ProveedoresEntity {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+
     @Basic
     @Column(name = "alta", nullable = false)
     public byte getAlta() {
@@ -66,6 +66,7 @@ public class ProveedoresEntity {
     public void setAlta(byte alta) {
         this.alta = alta;
     }
+
     @OneToMany(mappedBy = "proveedoresByIdproveedor")
     public Collection<PedidosEntity> getPedidosByIdproveedor() {
         return pedidosByIdproveedor;
@@ -74,6 +75,7 @@ public class ProveedoresEntity {
     public void setPedidosByIdproveedor(Collection<PedidosEntity> pedidosByIdproveedor) {
         this.pedidosByIdproveedor = pedidosByIdproveedor;
     }
+
     @OneToMany(mappedBy = "proveedoresByIdproveedor")
     public Collection<PiezasEntity> getPiezasByIdproveedor() {
         return piezasByIdproveedor;
@@ -82,8 +84,6 @@ public class ProveedoresEntity {
     public void setPiezasByIdproveedor(Collection<PiezasEntity> piezasByIdproveedor) {
         this.piezasByIdproveedor = piezasByIdproveedor;
     }
-
-
 
 
 }

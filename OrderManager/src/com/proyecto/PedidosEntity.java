@@ -5,25 +5,19 @@ import javax.persistence.*;
 @Entity
 @Table(name = "pedidos", schema = "gestionpedidos", catalog = "")
 public class PedidosEntity {
+
+    private int idpedido;
+    private double cantidad;
+    private byte alta;
+
+    private ProveedoresEntity proveedoresByIdproveedor;
+    private PiezasEntity piezasByIdpieza;
+    private ProyectosEntity proyectosByIdproyecto;
+
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "idpedido", nullable = false)
-    private int idpedido;
-    @Basic
-    @Column(name = "cantidad", nullable = false, precision = 0)
-    private double cantidad;
-    @Basic
-    @Column(name = "alta", nullable = false)
-    private byte alta;
-    @ManyToOne
-    @JoinColumn(name = "idproveedor", referencedColumnName = "idproveedor", nullable = false)
-    private ProveedoresEntity proveedoresByIdproveedor;
-    @ManyToOne
-    @JoinColumn(name = "idpieza", referencedColumnName = "idpieza", nullable = false)
-    private PiezasEntity piezasByIdpieza;
-    @ManyToOne
-    @JoinColumn(name = "idproyecto", referencedColumnName = "idproyecto", nullable = false)
-    private ProyectosEntity proyectosByIdproyecto;
 
     public int getIdpedido() {
         return idpedido;
@@ -33,6 +27,9 @@ public class PedidosEntity {
         this.idpedido = idpedido;
     }
 
+    @Basic
+    @Column(name = "cantidad", nullable = false, precision = 0)
+
     public double getCantidad() {
         return cantidad;
     }
@@ -40,6 +37,9 @@ public class PedidosEntity {
     public void setCantidad(double cantidad) {
         this.cantidad = cantidad;
     }
+
+    @Basic
+    @Column(name = "alta", nullable = false)
 
     public byte getAlta() {
         return alta;
@@ -49,6 +49,9 @@ public class PedidosEntity {
         this.alta = alta;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "idproveedor", referencedColumnName = "idproveedor", nullable = false)
+
     public ProveedoresEntity getProveedoresByIdproveedor() {
         return proveedoresByIdproveedor;
     }
@@ -57,6 +60,9 @@ public class PedidosEntity {
         this.proveedoresByIdproveedor = proveedoresByIdproveedor;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "idpieza", referencedColumnName = "idpieza", nullable = false)
+
     public PiezasEntity getPiezasByIdpieza() {
         return piezasByIdpieza;
     }
@@ -64,6 +70,9 @@ public class PedidosEntity {
     public void setPiezasByIdpieza(PiezasEntity piezasByIdpieza) {
         this.piezasByIdpieza = piezasByIdpieza;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "idproyecto", referencedColumnName = "idproyecto", nullable = false)
 
     public ProyectosEntity getProyectosByIdproyecto() {
         return proyectosByIdproyecto;
