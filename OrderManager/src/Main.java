@@ -15,18 +15,9 @@ import java.util.logging.Logger;
 public class Main {
     public static void main(String[] args) {
 
+        PiezasEntity p = PiezaController.leerPieza(1);
 
-        List<PedidosEntity> ps = PedidosController.filtrarPedidos(1,1,2, 1);
-        if (ps.size() > 0){
-            for (PedidosEntity p : ps){
-                System.out.println("\n" + p.getIdpedido() + " - ");
-            }
-        } else {
-            System.out.println("No se han encontrado resultados");
-        }
-
-
-
+        System.out.println(p.getProveedoresByIdproveedor().getIdproveedor());
 
     }
 }

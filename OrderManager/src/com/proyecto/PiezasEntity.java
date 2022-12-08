@@ -1,5 +1,8 @@
 package com.proyecto;
 
+import com.proyecto.controller.PiezaController;
+import com.proyecto.controller.ProveedorController;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -69,6 +72,7 @@ public class PiezasEntity {
         this.alta = alta;
     }
 
+
     @OneToMany(mappedBy = "piezasByIdpieza")
     public Collection<PedidosEntity> getPedidosByIdpieza() {
         return pedidosByIdpieza;
@@ -82,7 +86,7 @@ public class PiezasEntity {
     @JoinColumn(name = "idproveedor", referencedColumnName = "idproveedor", nullable = false)
 
     public ProveedoresEntity getProveedoresByIdproveedor() {
-        return proveedoresByIdproveedor;
+        return ProveedorController.leerProveedor(PiezaController.idProveedorPieza(this.idpieza));
     }
 
     public void setProveedoresByIdproveedor(ProveedoresEntity proveedoresByIdproveedor) {

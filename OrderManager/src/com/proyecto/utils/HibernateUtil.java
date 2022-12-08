@@ -1,5 +1,6 @@
 package com.proyecto.utils;
 
+import com.proyecto.PiezasEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -104,6 +105,22 @@ public class HibernateUtil {
         return objects;
     }
 
+
+    public static List<Integer> sentenciaEspecial(String sentencia) {
+        Configuration config = new Configuration();
+        config.configure();
+        SessionFactory sf = config.buildSessionFactory();
+        Session sesion = sf.openSession();
+        Transaction trans = sesion.beginTransaction();
+
+        List<Integer> objects = sesion.createNativeQuery(sentencia).list();
+
+        trans.commit();
+        sesion.close();
+        sf.close();
+
+        return objects;
+    }
 
 
 }

@@ -1,9 +1,14 @@
 package com.proyecto;
 
+import com.proyecto.controller.PedidosController;
+import com.proyecto.controller.PiezaController;
+import com.proyecto.controller.ProveedorController;
+import com.proyecto.controller.ProyectoController;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "pedidos", schema = "gestionpedidos", catalog = "")
+@Table(name = "pedidos", schema = "gestionpedidos")
 public class PedidosEntity {
 
     private int idpedido;
@@ -53,7 +58,7 @@ public class PedidosEntity {
     @JoinColumn(name = "idproveedor", referencedColumnName = "idproveedor", nullable = false)
 
     public ProveedoresEntity getProveedoresByIdproveedor() {
-        return proveedoresByIdproveedor;
+        return ProveedorController.leerProveedor(PedidosController.idProveedorPedido(this.idpedido));
     }
 
     public void setProveedoresByIdproveedor(ProveedoresEntity proveedoresByIdproveedor) {
@@ -64,7 +69,7 @@ public class PedidosEntity {
     @JoinColumn(name = "idpieza", referencedColumnName = "idpieza", nullable = false)
 
     public PiezasEntity getPiezasByIdpieza() {
-        return piezasByIdpieza;
+        return PiezaController.leerPieza(PedidosController.idPiezaPedido(this.idpedido));
     }
 
     public void setPiezasByIdpieza(PiezasEntity piezasByIdpieza) {
@@ -75,7 +80,7 @@ public class PedidosEntity {
     @JoinColumn(name = "idproyecto", referencedColumnName = "idproyecto", nullable = false)
 
     public ProyectosEntity getProyectosByIdproyecto() {
-        return proyectosByIdproyecto;
+        return ProyectoController.leerProyecto(PedidosController.idProyectoPedido(this.idpedido));
     }
 
     public void setProyectosByIdproyecto(ProyectosEntity proyectosByIdproyecto) {

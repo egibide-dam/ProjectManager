@@ -116,4 +116,28 @@ public class PiezaController {
     }
 
 
+    public static List<PiezasEntity> piezasPorProveedor(int idproveedor){
+
+        String sentencia = "WHERE idproveedor=" + idproveedor;
+        List<Object> objetos = HibernateUtil.filtrar(PiezasEntity.class, sentencia);
+        List<PiezasEntity> piezas = new ArrayList<>();
+        for (Object o : objetos) {
+            piezas.add((PiezasEntity) o);
+        }
+        return piezas;
+
+    }
+
+
+    public static int idProveedorPieza(int idpieza){
+
+        String sentencia = "SELECT idproveedor from piezas WHERE idpieza=" + idpieza;
+        List<Integer> objetos = HibernateUtil.sentenciaEspecial(sentencia);
+
+        int idproveedor = objetos.get(0);
+        return idproveedor;
+
+    }
+
+
 }

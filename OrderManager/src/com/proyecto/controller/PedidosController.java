@@ -169,4 +169,35 @@ public class PedidosController {
     }
 
 
+    public static int idProveedorPedido(int idpedido){
+
+        String sentencia = "SELECT idproveedor from pedidos WHERE idpedido=" + idpedido;
+        List<Integer> objetos = HibernateUtil.sentenciaEspecial(sentencia);
+
+        int idproveedor = objetos.get(0);
+        return idproveedor;
+
+    }
+
+    public static int idPiezaPedido(int idpedido){
+
+        String sentencia = "SELECT idpieza from pedidos WHERE idpedido=" + idpedido;
+        List<Integer> objetos = HibernateUtil.sentenciaEspecial(sentencia);
+
+        int idpieza = objetos.get(0);
+        return idpieza;
+
+    }
+
+    public static int idProyectoPedido(int idpedido){
+
+        String sentencia = "SELECT idproyecto from pedidos WHERE idpedido=" + idpedido;
+        List<Integer> objetos = HibernateUtil.sentenciaEspecial(sentencia);
+
+        int idproyecto = objetos.get(0);
+        return idproyecto;
+
+    }
+
+
 }
