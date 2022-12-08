@@ -200,4 +200,64 @@ public class PedidosController {
     }
 
 
+    public static int[][] top5Piezas(){
+
+        String sentencia = "SELECT idpieza, SUM(cantidad) FROM pedidos GROUP  BY idpieza ORDER BY SUM(cantidad) DESC";
+        List<Object> objetos = HibernateUtil.sentenciaTop5(sentencia);
+        int[][] top5 = new int[5][2];
+
+        int i = 0;
+        for (Object o : objetos) {
+            if(i<5){
+                Object[] piezacanti = (Object[]) o;
+                top5[i][0] = (int) piezacanti[0];
+                top5[i][1] = (int)(double) piezacanti[1];
+            }
+            i++;
+        }
+
+        return top5;
+
+    }
+
+    public static int[][] top5Proveedores(){
+
+        String sentencia = "SELECT idproveedor, SUM(cantidad) FROM pedidos GROUP  BY idproveedor ORDER BY SUM(cantidad) DESC";
+        List<Object> objetos = HibernateUtil.sentenciaTop5(sentencia);
+        int[][] top5 = new int[5][2];
+
+        int i = 0;
+        for (Object o : objetos) {
+            if(i<5){
+                Object[] piezacanti = (Object[]) o;
+                top5[i][0] = (int) piezacanti[0];
+                top5[i][1] = (int)(double) piezacanti[1];
+            }
+            i++;
+        }
+
+        return top5;
+
+    }
+
+    public static int[][] top5Proyectos(){
+
+        String sentencia = "SELECT idproyecto, SUM(cantidad) FROM pedidos GROUP  BY idproyecto ORDER BY SUM(cantidad) DESC";
+        List<Object> objetos = HibernateUtil.sentenciaTop5(sentencia);
+        int[][] top5 = new int[5][2];
+
+        int i = 0;
+        for (Object o : objetos) {
+            if(i<5){
+                Object[] piezacanti = (Object[]) o;
+                top5[i][0] = (int) piezacanti[0];
+                top5[i][1] = (int)(double) piezacanti[1];
+            }
+            i++;
+        }
+
+        return top5;
+
+    }
+
 }

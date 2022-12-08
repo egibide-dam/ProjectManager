@@ -122,5 +122,21 @@ public class HibernateUtil {
         return objects;
     }
 
+    public static List<Object> sentenciaTop5(String sentencia) {
+        Configuration config = new Configuration();
+        config.configure();
+        SessionFactory sf = config.buildSessionFactory();
+        Session sesion = sf.openSession();
+        Transaction trans = sesion.beginTransaction();
+
+        List<Object> objects = sesion.createNativeQuery(sentencia).list();
+
+        trans.commit();
+        sesion.close();
+        sf.close();
+
+        return objects;
+    }
+
 
 }

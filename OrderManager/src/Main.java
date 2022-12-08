@@ -15,9 +15,14 @@ import java.util.logging.Logger;
 public class Main {
     public static void main(String[] args) {
 
-        PiezasEntity p = PiezaController.leerPieza(1);
 
-        System.out.println(p.getProveedoresByIdproveedor().getIdproveedor());
+        System.out.println(PedidosController.top5Piezas()[0][1]);
+        /**
+        int[][] top5piezas = PedidosController.top5Piezas();
+        for (int i = 0; i<5; i++){
+            System.out.println("PIEZA-" + top5piezas[i][0] + " (" + top5piezas[i][1] + ")");
+        }
+         */
 
     }
 }
