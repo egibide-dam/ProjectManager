@@ -97,4 +97,76 @@ public class PedidosController {
     }
 
 
+    public static List<PedidosEntity> filtrarPedidos(int proveedor, int pieza, int proyecto, int alta) {
+
+        String sentencia = "";
+
+        if (proveedor != -1){
+            sentencia = "WHERE idproveedor=" + proveedor;
+
+            if (pieza != -1){
+                sentencia = sentencia + " AND idpieza=" + pieza;
+            }
+
+            if (proyecto != -1){
+                sentencia = sentencia + " AND idproyecto=" + proyecto;
+            }
+
+            if (alta == 1) {
+                sentencia = sentencia + " AND alta = 1";
+
+            } else if (alta == 2) {
+                sentencia = sentencia + " AND alta = 0";
+
+            }
+        } else {
+            if (pieza != -1){
+                sentencia = "WHERE idpieza=" + pieza;
+
+                if (proyecto != -1){
+                    sentencia = sentencia + " AND idproyecto=" + proyecto;
+                }
+
+                if (alta == 1) {
+                    sentencia = sentencia + " AND alta = 1";
+
+                } else if (alta == 2) {
+                    sentencia = sentencia + " AND alta = 0";
+
+                }
+            } else {
+                if (proyecto != -1){
+                    sentencia = "WHERE idproyecto=" + proyecto;
+
+                    if (alta == 1) {
+                        sentencia = sentencia + " AND alta = 1";
+
+                    } else if (alta == 2) {
+                        sentencia = sentencia + " AND alta = 0";
+
+                    }
+                } else {
+                    if (alta == 1) {
+                        sentencia = "WHERE alta = 1";
+
+                    } else if (alta == 2) {
+
+                        sentencia = "WHERE alta = 0";
+
+                    }
+                }
+            }
+        }
+        System.out.println(sentencia);
+
+        List<Object> objetos = HibernateUtil.filtrar(PedidosEntity.class, sentencia);
+        List<PedidosEntity> pedidos = new ArrayList<>();
+        for (Object o : objetos) {
+            pedidos.add((PedidosEntity) o);
+        }
+        return pedidos;
+
+    }
+
+
 }
