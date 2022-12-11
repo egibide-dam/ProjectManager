@@ -1,5 +1,7 @@
 package com.proyecto.views;
 
+import com.proyecto.Ciudades;
+
 import javax.swing.*;
 
 public class EditarProyecto {
@@ -9,4 +11,13 @@ public class EditarProyecto {
     private JButton cancelarEditarProyecto;
     private JButton guardarEditarProyecto;
     private JTextField editNameProyecto;
+
+
+
+    public EditarProyecto(){
+
+        editCiudadProyecto.setModel(new DefaultComboBoxModel<>(Ciudades.values()));
+
+
+    }
 }

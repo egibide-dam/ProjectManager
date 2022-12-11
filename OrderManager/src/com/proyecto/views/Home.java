@@ -3,6 +3,11 @@ package com.proyecto.views;
 import com.proyecto.PiezasEntity;
 import com.proyecto.ProveedoresEntity;
 import com.proyecto.ProyectosEntity;
+import com.proyecto.TableModels.PedidosTableModel;
+import com.proyecto.TableModels.PiezasTableModel;
+import com.proyecto.TableModels.ProveedoresTableModel;
+import com.proyecto.TableModels.ProyectosTableModel;
+import com.proyecto.controller.PedidosController;
 import com.proyecto.controller.PiezaController;
 import com.proyecto.controller.ProveedorController;
 import com.proyecto.controller.ProyectoController;
@@ -10,7 +15,6 @@ import com.proyecto.controller.ProyectoController;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.util.List;
 
 public class Home {
@@ -276,6 +280,8 @@ public class Home {
         listaProveedores(proveedorFiltroPedido);
         listaPiezas(piezaFiltroPedido);
         listaProyectos(proyectoFiltroPedido);
+        tablaPedidos.setModel(new PedidosTableModel(PedidosController.leerTodosPedidos()));
+
 
         nuevoPedido.addActionListener(new ActionListener() {
             @Override
@@ -289,10 +295,24 @@ public class Home {
             }
         });
 
+        eliminarPedido.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //ABRIR VENTANA!!!
+                JFrame frame = new JFrame("Cancelar Pedido");
+                frame.setContentPane(new CancelarPedido().cancelarPedido);
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+
 
         //PAG PROYECTOS
         searchTextProyectos.setText("Busca por nombre de proyecto\no ciudad:");
         listaProyectos(proyectoFiltroProyecto);
+        tablaProyectos.setModel(new ProyectosTableModel(ProyectoController.leerTodosProyectos()));
+
 
         nuevoProyecto.addActionListener(new ActionListener() {
             @Override
@@ -318,10 +338,24 @@ public class Home {
             }
         });
 
+        altaProyecto.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //ABRIR VENTANA!!!
+                JFrame frame = new JFrame("Estado Proyecto");
+                frame.setContentPane(new BajaProyecto().bajaProyecto);
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+
 
         //PAG PROVEEDORES
         searchTextProveedor.setText("Busca por nombre, apellidos\n o dirección de proveedor:");
         listaProveedores(proveedorFiltroProveedor);
+        tablaproveedores.setModel(new ProveedoresTableModel(ProveedorController.leerTodosProveedores()));
+
 
         nuevoProveedor.addActionListener(new ActionListener() {
             @Override
@@ -347,10 +381,24 @@ public class Home {
             }
         });
 
+        altasProveedor.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //ABRIR VENTANA!!!
+                JFrame frame = new JFrame("Estado Proveedor");
+                frame.setContentPane(new BajaProveedor().bajaProveedor);
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+
 
         //PAG PIEZAS
         searchTextPiezas.setText("Busca por nombre de pieza:");
         listaPiezas(piezaFiltroPieza);
+        tablaPiezas.setModel(new PiezasTableModel(PiezaController.leerTodosPiezas()));
+
 
         nuevaPieza.addActionListener(new ActionListener() {
             @Override
@@ -370,6 +418,18 @@ public class Home {
                 //ABRIR VENTANA!!!
                 JFrame frame = new JFrame("Editar Pieza");
                 frame.setContentPane(new EditarPieza().editarPieza);
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+
+        altasPieza.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //ABRIR VENTANA!!!
+                JFrame frame = new JFrame("Estado Pieza");
+                frame.setContentPane(new BajaPieza().bajaPieza);
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
