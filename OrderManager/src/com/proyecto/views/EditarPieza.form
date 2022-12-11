@@ -90,6 +90,7 @@
                 </constraints>
                 <properties>
                   <background color="-1"/>
+                  <enabled value="false"/>
                   <font name="Arial Nova" size="14" style="0"/>
                   <model/>
                 </properties>
