@@ -18,9 +18,9 @@ public class NuevaPieza {
 
     public NuevaPieza(){
 
-        Border border = BorderFactory.createLineBorder(Color.gray);
-        newDescripcionPieza.setBorder(BorderFactory.createCompoundBorder(border,
-                BorderFactory.createEmptyBorder(10, 10, 10, 10)));
+        newDescripcionPieza.setLineWrap(true);
+        newDescripcionPieza.setWrapStyleWord(true);
+
 
     }
 }

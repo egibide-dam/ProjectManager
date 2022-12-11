@@ -98,21 +98,6 @@
               <text value="PROYECTOS"/>
             </properties>
           </component>
-          <component id="e9061" class="javax.swing.JButton" binding="Piezas">
-            <constraints/>
-            <properties>
-              <borderPainted value="false"/>
-              <contentAreaFilled value="true"/>
-              <focusPainted value="false"/>
-              <font name="Arial Nova" size="14" style="0"/>
-              <maximumSize width="100" height="44"/>
-              <minimumSize width="100" height="44"/>
-              <opaque value="false"/>
-              <preferredSize width="100" height="44"/>
-              <rolloverEnabled value="true"/>
-              <text value="PIEZAS"/>
-            </properties>
-          </component>
           <component id="a3fe0" class="javax.swing.JButton" binding="Proveedores">
             <constraints/>
             <properties>
@@ -126,6 +111,21 @@
               <preferredSize width="120" height="44"/>
               <rolloverEnabled value="true"/>
               <text value="PROVEEDORES"/>
+            </properties>
+          </component>
+          <component id="e9061" class="javax.swing.JButton" binding="Piezas">
+            <constraints/>
+            <properties>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <focusPainted value="false"/>
+              <font name="Arial Nova" size="14" style="0"/>
+              <maximumSize width="100" height="44"/>
+              <minimumSize width="100" height="44"/>
+              <opaque value="false"/>
+              <preferredSize width="100" height="44"/>
+              <rolloverEnabled value="true"/>
+              <text value="PIEZAS"/>
             </properties>
           </component>
         </children>
