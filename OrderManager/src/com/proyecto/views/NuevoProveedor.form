@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.proyecto.views.NuevoPedido">
-  <grid id="27dc6" binding="nuevoPedido" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.proyecto.views.NuevoProveedor">
+  <grid id="27dc6" binding="nuevoProveedor" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="40" left="20" bottom="20" right="20"/>
     <constraints>
       <xy x="20" y="20" width="500" height="500"/>
     </constraints>
     <properties>
       <background color="-1"/>
-      <maximumSize width="440" height="500"/>
-      <minimumSize width="440" height="500"/>
-      <preferredSize width="440" height="500"/>
+      <maximumSize width="440" height="410"/>
+      <minimumSize width="440" height="410"/>
+      <preferredSize width="440" height="410"/>
     </properties>
     <border type="none"/>
     <children>
-      <grid id="fb132" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="14e49" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -23,16 +23,16 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="3cbd2" class="javax.swing.JLabel" binding="matchSearchTitle">
+          <component id="8fee2" class="javax.swing.JLabel" binding="matchSearchTitle">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <font name="Adobe Gothic Std B" size="16" style="1"/>
-              <text value="Nuevo Pedido"/>
+              <text value="Nuevo Proveedor"/>
             </properties>
           </component>
-          <grid id="5cdf6" layout-manager="GridLayoutManager" row-count="13" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="254ee" layout-manager="GridLayoutManager" row-count="10" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
@@ -44,53 +44,25 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="503ad" class="javax.swing.JLabel">
+              <component id="9f429" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font name="Arial Nova" size="14" style="0"/>
-                  <text value="Proyecto"/>
+                  <text value="Nombre"/>
                 </properties>
               </component>
-              <component id="7f08c" class="javax.swing.JComboBox" binding="newProyectoPedido">
-                <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <minimum-size width="400" height="40"/>
-                    <preferred-size width="400" height="40"/>
-                    <maximum-size width="400" height="40"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                  <font name="Arial Nova" size="14" style="0"/>
-                  <model/>
-                </properties>
-              </component>
-              <component id="adc75" class="javax.swing.JLabel">
+              <component id="45562" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font name="Arial Nova" size="14" style="0"/>
-                  <text value="Proveedor"/>
+                  <text value="Apellidos"/>
                 </properties>
               </component>
-              <component id="38e68" class="javax.swing.JComboBox" binding="newProveedorPedido">
-                <constraints>
-                  <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <minimum-size width="400" height="40"/>
-                    <preferred-size width="400" height="40"/>
-                    <maximum-size width="400" height="40"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                  <font name="Arial Nova" size="14" style="0"/>
-                  <model/>
-                </properties>
-              </component>
-              <vspacer id="37f1e">
+              <vspacer id="b9a8e">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
                     <minimum-size width="-1" height="12"/>
@@ -99,30 +71,16 @@
                   </grid>
                 </constraints>
               </vspacer>
-              <component id="f5648" class="javax.swing.JLabel">
+              <component id="ebd56" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font name="Arial Nova" size="14" style="0"/>
-                  <text value="Pieza"/>
+                  <text value="Dirección"/>
                 </properties>
               </component>
-              <component id="5f787" class="javax.swing.JComboBox" binding="newPiezaPedido">
-                <constraints>
-                  <grid row="7" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <minimum-size width="400" height="40"/>
-                    <preferred-size width="400" height="40"/>
-                    <maximum-size width="400" height="40"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                  <font name="Arial Nova" size="14" style="0"/>
-                  <model/>
-                </properties>
-              </component>
-              <vspacer id="b162f">
+              <vspacer id="7b11a">
                 <constraints>
                   <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
                     <minimum-size width="-1" height="12"/>
@@ -131,41 +89,10 @@
                   </grid>
                 </constraints>
               </vspacer>
-              <component id="a55d5" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <font name="Arial Nova" size="14" style="0"/>
-                  <text value="Cantidad de pieza"/>
-                </properties>
-              </component>
-              <component id="6dde1" class="javax.swing.JSpinner" binding="newCantidadPedido">
-                <constraints>
-                  <grid row="10" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="4" anchor="9" fill="1" indent="0" use-parent-layout="false">
-                    <minimum-size width="400" height="40"/>
-                    <preferred-size width="400" height="40"/>
-                    <maximum-size width="400" height="40"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                  <font name="Arial Nova" size="14" style="0"/>
-                </properties>
-              </component>
-              <vspacer id="2c0f2">
-                <constraints>
-                  <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-                    <minimum-size width="-1" height="12"/>
-                    <preferred-size width="-1" height="12"/>
-                    <maximum-size width="-1" height="12"/>
-                  </grid>
-                </constraints>
-              </vspacer>
-              <grid id="f1e20" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="2ea87" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
-                  <grid row="12" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                  <grid row="9" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
                     <minimum-size width="-1" height="40"/>
                     <preferred-size width="-1" height="40"/>
                     <maximum-size width="-1" height="40"/>
@@ -176,7 +103,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="8f39a" class="javax.swing.JButton" binding="cancelarNuevoPedido">
+                  <component id="dbd3f" class="javax.swing.JButton" binding="cancelarNuevoProveedor">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <minimum-size width="-1" height="40"/>
@@ -191,7 +118,7 @@
                       <text value="Cancelar"/>
                     </properties>
                   </component>
-                  <component id="e0980" class="javax.swing.JButton" binding="guardarNuevoPedido">
+                  <component id="2acac" class="javax.swing.JButton" binding="guardarNuevoProveedor">
                     <constraints>
                       <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <minimum-size width="-1" height="40"/>
@@ -209,18 +136,66 @@
                   </component>
                 </children>
               </grid>
-              <vspacer id="92cd">
+              <vspacer id="27ce2">
                 <constraints>
-                  <grid row="11" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                  <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
                     <minimum-size width="-1" height="24"/>
                     <preferred-size width="-1" height="24"/>
                     <maximum-size width="-1" height="24"/>
                   </grid>
                 </constraints>
               </vspacer>
+              <component id="e21c6" class="javax.swing.JTextField" binding="newNameProveedor">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="400" height="40"/>
+                    <preferred-size width="400" height="40"/>
+                    <maximum-size width="400" height="40"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Arial Nova" size="14" style="0"/>
+                  <margin top="2" left="6" bottom="2" right="6"/>
+                  <name value=""/>
+                  <text value=""/>
+                  <toolTipText value=""/>
+                </properties>
+              </component>
+              <component id="1c019" class="javax.swing.JTextField" binding="newApellidosProveedor">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="400" height="40"/>
+                    <preferred-size width="400" height="40"/>
+                    <maximum-size width="400" height="40"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Arial Nova" size="14" style="0"/>
+                  <margin top="2" left="6" bottom="2" right="6"/>
+                  <name value=""/>
+                  <text value=""/>
+                  <toolTipText value=""/>
+                </properties>
+              </component>
+              <component id="5f02a" class="javax.swing.JTextField" binding="newDireccionProveedor">
+                <constraints>
+                  <grid row="7" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="400" height="40"/>
+                    <preferred-size width="400" height="40"/>
+                    <maximum-size width="400" height="40"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Arial Nova" size="14" style="0"/>
+                  <margin top="2" left="6" bottom="2" right="6"/>
+                  <name value=""/>
+                  <text value=""/>
+                  <toolTipText value=""/>
+                </properties>
+              </component>
             </children>
           </grid>
-          <vspacer id="f10">
+          <vspacer id="5f5d8">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="12"/>

@@ -110,7 +110,7 @@ public class Home {
     private JLabel topProyect3uds;
     private JLabel topProyect4uds;
     private JLabel topProyect5uds;
-
+    private JButton nuevoProyecto;
 
 
     ///MÉTODOS
@@ -277,32 +277,69 @@ public class Home {
         listaPiezas(piezaFiltroPedido);
         listaProyectos(proyectoFiltroPedido);
 
-
-        //PAG PROYECTOS
-        searchTextProyectos.setText("Busca por nombre de proyecto\no ciudad:");
-        listaProyectos(proyectoFiltroProyecto);
-
-        //PAG PROVEEDORES
-        searchTextProveedor.setText("Busca por nombre, apellidos\n o dirección de proveedor:");
-        listaProveedores(proveedorFiltroProveedor);
-
-
-        //PAG PIEZAS
-        searchTextPiezas.setText("Busca por nombre de pieza:");
-        listaPiezas(piezaFiltroPieza);
-
-
         nuevoPedido.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //ABRIR VENTANA!!!
                 JFrame frame = new JFrame("Nuevo Pedido");
                 frame.setContentPane(new NuevoPedido().nuevoPedido);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
             }
         });
+
+
+        //PAG PROYECTOS
+        searchTextProyectos.setText("Busca por nombre de proyecto\no ciudad:");
+        listaProyectos(proyectoFiltroProyecto);
+
+        nuevoProyecto.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //ABRIR VENTANA!!!
+                JFrame frame = new JFrame("Nuevo Pedido");
+                frame.setContentPane(new NuevoProyecto().nuevoProyecto);
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+
+        //PAG PROVEEDORES
+        searchTextProveedor.setText("Busca por nombre, apellidos\n o dirección de proveedor:");
+        listaProveedores(proveedorFiltroProveedor);
+
+        nuevoProveedor.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //ABRIR VENTANA!!!
+                JFrame frame = new JFrame("Nuevo Pedido");
+                frame.setContentPane(new NuevoProveedor().nuevoProveedor);
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+
+
+        //PAG PIEZAS
+        searchTextPiezas.setText("Busca por nombre de pieza:");
+        listaPiezas(piezaFiltroPieza);
+
+        nuevaPieza.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //ABRIR VENTANA!!!
+                JFrame frame = new JFrame("Nueva Pieza");
+                frame.setContentPane(new NuevaPieza().nuevaPieza);
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+
+
     }
 
 
