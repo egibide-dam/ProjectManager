@@ -292,9 +292,17 @@ public class Home {
         listaPiezas(piezaFiltroPieza);
 
 
-
-
-
+        nuevoPedido.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //ABRIR VENTANA!!!
+                JFrame frame = new JFrame("Nuevo Pedido");
+                frame.setContentPane(new NuevoPedido().nuevoPedido);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
     }
 
 
