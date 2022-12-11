@@ -298,13 +298,26 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //ABRIR VENTANA!!!
-                JFrame frame = new JFrame("Nuevo Pedido");
+                JFrame frame = new JFrame("Nuevo Proyecto");
                 frame.setContentPane(new NuevoProyecto().nuevoProyecto);
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
             }
         });
+
+        editarProyecto.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //ABRIR VENTANA!!!
+                JFrame frame = new JFrame("Editar Proyecto");
+                frame.setContentPane(new EditarProyecto().editProyecto);
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+
 
         //PAG PROVEEDORES
         searchTextProveedor.setText("Busca por nombre, apellidos\n o dirección de proveedor:");
@@ -314,8 +327,20 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //ABRIR VENTANA!!!
-                JFrame frame = new JFrame("Nuevo Pedido");
+                JFrame frame = new JFrame("Nuevo Proveedor");
                 frame.setContentPane(new NuevoProveedor().nuevoProveedor);
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+
+        editarProveedor.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //ABRIR VENTANA!!!
+                JFrame frame = new JFrame("Editar Proveedor");
+                frame.setContentPane(new EditarProveedor().editarProveedor);
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
@@ -338,6 +363,19 @@ public class Home {
                 frame.setVisible(true);
             }
         });
+
+        editarPieza.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //ABRIR VENTANA!!!
+                JFrame frame = new JFrame("Editar Pieza");
+                frame.setContentPane(new EditarPieza().editarPieza);
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+
 
 
     }

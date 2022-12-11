@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.proyecto.views.NuevaPieza">
-  <grid id="27dc6" binding="nuevaPieza" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.proyecto.views.EditarPieza">
+  <grid id="27dc6" binding="editarPieza" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="40" left="20" bottom="20" right="20"/>
     <constraints>
       <xy x="20" y="20" width="500" height="530"/>
@@ -13,7 +13,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="96d44" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="7eb5d" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -23,16 +23,16 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="108e2" class="javax.swing.JLabel" binding="matchSearchTitle">
+          <component id="7b3f7" class="javax.swing.JLabel" binding="titleEditarPieza">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <font name="Arial" size="16" style="1"/>
-              <text value="Nueva Pieza"/>
+              <text value="Editar Pieza"/>
             </properties>
           </component>
-          <grid id="227e3" layout-manager="GridLayoutManager" row-count="13" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="d136f" layout-manager="GridLayoutManager" row-count="13" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
@@ -44,7 +44,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="9e483" class="javax.swing.JLabel">
+              <component id="11aa" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -53,7 +53,7 @@
                   <text value="Nombre"/>
                 </properties>
               </component>
-              <component id="64e45" class="javax.swing.JLabel">
+              <component id="a3349" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -62,7 +62,7 @@
                   <text value="Descripción"/>
                 </properties>
               </component>
-              <vspacer id="55f7f">
+              <vspacer id="3a7da">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
                     <minimum-size width="-1" height="12"/>
@@ -71,7 +71,7 @@
                   </grid>
                 </constraints>
               </vspacer>
-              <component id="bbac8" class="javax.swing.JLabel">
+              <component id="9de5b" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -80,7 +80,7 @@
                   <text value="Proveedor"/>
                 </properties>
               </component>
-              <component id="843b" class="javax.swing.JComboBox" binding="newProveedorPieza">
+              <component id="a20a1" class="javax.swing.JComboBox" binding="editProveedorPieza">
                 <constraints>
                   <grid row="7" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <minimum-size width="400" height="40"/>
@@ -94,7 +94,7 @@
                   <model/>
                 </properties>
               </component>
-              <vspacer id="26529">
+              <vspacer id="ccd11">
                 <constraints>
                   <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
                     <minimum-size width="-1" height="12"/>
@@ -103,7 +103,7 @@
                   </grid>
                 </constraints>
               </vspacer>
-              <component id="86f4b" class="javax.swing.JLabel">
+              <component id="1cb2c" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -112,7 +112,7 @@
                   <text value="Precio"/>
                 </properties>
               </component>
-              <component id="dd2df" class="javax.swing.JSpinner" binding="newPrecioPieza">
+              <component id="5990b" class="javax.swing.JSpinner" binding="editPrecioPieza">
                 <constraints>
                   <grid row="10" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="4" anchor="9" fill="1" indent="0" use-parent-layout="false">
                     <minimum-size width="400" height="40"/>
@@ -125,7 +125,7 @@
                   <font name="Arial Nova" size="14" style="0"/>
                 </properties>
               </component>
-              <vspacer id="83c5e">
+              <vspacer id="4d6a5">
                 <constraints>
                   <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
                     <minimum-size width="-1" height="12"/>
@@ -134,7 +134,7 @@
                   </grid>
                 </constraints>
               </vspacer>
-              <grid id="3bced" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="347b5" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="12" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
@@ -148,7 +148,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="53519" class="javax.swing.JButton" binding="cancelarNuevoPieza">
+                  <component id="20a88" class="javax.swing.JButton" binding="cancelarEditarPieza">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <minimum-size width="-1" height="40"/>
@@ -163,7 +163,7 @@
                       <text value="Cancelar"/>
                     </properties>
                   </component>
-                  <component id="5b297" class="javax.swing.JButton" binding="guardarNuevoPieza">
+                  <component id="e240d" class="javax.swing.JButton" binding="guardarEditarPieza">
                     <constraints>
                       <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <minimum-size width="-1" height="40"/>
@@ -181,7 +181,7 @@
                   </component>
                 </children>
               </grid>
-              <vspacer id="66b2">
+              <vspacer id="97141">
                 <constraints>
                   <grid row="11" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
                     <minimum-size width="-1" height="24"/>
@@ -190,7 +190,7 @@
                   </grid>
                 </constraints>
               </vspacer>
-              <component id="e548c" class="javax.swing.JTextField" binding="newNamePieza">
+              <component id="f31fd" class="javax.swing.JTextField" binding="editNamePieza">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="5" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <minimum-size width="400" height="40"/>
@@ -206,7 +206,7 @@
                   <toolTipText value=""/>
                 </properties>
               </component>
-              <scrollpane id="ddec1">
+              <scrollpane id="33909">
                 <constraints>
                   <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="1" indent="0" use-parent-layout="false">
                     <minimum-size width="400" height="80"/>
@@ -217,7 +217,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="a868c" class="javax.swing.JTextArea" binding="newDescripcionPieza">
+                  <component id="3e366" class="javax.swing.JTextArea" binding="editDescripcionPieza">
                     <constraints/>
                     <properties>
                       <background color="-1"/>
@@ -228,7 +228,7 @@
               </scrollpane>
             </children>
           </grid>
-          <vspacer id="16cfe">
+          <vspacer id="82c64">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="12"/>
