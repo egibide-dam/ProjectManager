@@ -70,6 +70,37 @@ public class Home {
     private JComboBox estadoFiltroProyectos;
     private JButton limpiarFiltrosProyectos;
     private JButton filtrarProyectos;
+    private JPanel paginaHome;
+    private JLabel topPieza1nombre;
+    private JLabel topPieza2nombre;
+    private JLabel topPieza3nombre;
+    private JLabel topPieza4nombre;
+    private JLabel topPieza5nombre;
+    private JLabel topPieza1uds;
+    private JLabel topPieza2uds;
+    private JLabel topPieza3uds;
+    private JLabel topPieza4uds;
+    private JLabel topPieza5uds;
+    private JLabel topProveedor1nombre;
+    private JLabel topProveedor2nombre;
+    private JLabel topProveedor3nombre;
+    private JLabel topProveedor4nombre;
+    private JLabel topProveedor5nombre;
+    private JLabel topProveedor1uds;
+    private JLabel topProveedor2uds;
+    private JLabel topProveedor3uds;
+    private JLabel topProveedor4uds;
+    private JLabel topProveedor5uds;
+    private JLabel topProyect1nombre;
+    private JLabel topProyect2nombre;
+    private JLabel topProyect3nombre;
+    private JLabel topProyect4nombre;
+    private JLabel topProyect5nombre;
+    private JLabel topProyect1uds;
+    private JLabel topProyect2uds;
+    private JLabel topProyect3uds;
+    private JLabel topProyect4uds;
+    private JLabel topProyect5uds;
 
 
     public Home(){
@@ -81,7 +112,8 @@ public class Home {
         Proyectos.setEnabled(true);
         Piezas.setEnabled(true);
         Proveedores.setEnabled(true);
-        paginaPedidos.setVisible(true);
+        paginaHome.setVisible(true);
+        paginaPedidos.setVisible(false);
         paginaProyectos.setVisible(false);
         paginaProveedores.setVisible(false);
         paginaPiezas.setVisible(false);
@@ -95,7 +127,8 @@ public class Home {
                 Proyectos.setEnabled(true);
                 Piezas.setEnabled(true);
                 Proveedores.setEnabled(true);
-                paginaPedidos.setVisible(true);
+                paginaHome.setVisible(true);
+                paginaPedidos.setVisible(false);
                 paginaProyectos.setVisible(false);
                 paginaProveedores.setVisible(false);
                 paginaPiezas.setVisible(false);
@@ -112,6 +145,7 @@ public class Home {
                 Proyectos.setEnabled(true);
                 Piezas.setEnabled(true);
                 Proveedores.setEnabled(true);
+                paginaHome.setVisible(false);
                 paginaPedidos.setVisible(true);
                 paginaProyectos.setVisible(false);
                 paginaProveedores.setVisible(false);
@@ -128,6 +162,7 @@ public class Home {
                 Proyectos.setEnabled(false);
                 Piezas.setEnabled(true);
                 Proveedores.setEnabled(true);
+                paginaHome.setVisible(false);
                 paginaPedidos.setVisible(false);
                 paginaProyectos.setVisible(true);
                 paginaProveedores.setVisible(false);
@@ -136,22 +171,6 @@ public class Home {
             }
         });
 
-        Piezas.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Homebutton.setEnabled(true);
-                Pedidos.setEnabled(true);
-                Proyectos.setEnabled(true);
-                Piezas.setEnabled(false);
-                Proveedores.setEnabled(true);
-                paginaPedidos.setVisible(false);
-                paginaProyectos.setVisible(false);
-                paginaProveedores.setVisible(false);
-                paginaPiezas.setVisible(true);
-                //blankMatches();
-
-            }
-        });
 
         Proveedores.addActionListener(new ActionListener() {
             @Override
@@ -161,6 +180,7 @@ public class Home {
                 Proyectos.setEnabled(true);
                 Piezas.setEnabled(true);
                 Proveedores.setEnabled(false);
+                paginaHome.setVisible(false);
                 paginaPedidos.setVisible(false);
                 paginaProyectos.setVisible(false);
                 paginaProveedores.setVisible(true);
@@ -169,6 +189,26 @@ public class Home {
 
             }
         });
+
+
+        Piezas.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Homebutton.setEnabled(true);
+                Pedidos.setEnabled(true);
+                Proyectos.setEnabled(true);
+                Piezas.setEnabled(false);
+                Proveedores.setEnabled(true);
+                paginaHome.setVisible(false);
+                paginaPedidos.setVisible(false);
+                paginaProyectos.setVisible(false);
+                paginaProveedores.setVisible(false);
+                paginaPiezas.setVisible(true);
+                //blankMatches();
+
+            }
+        });
+
 
 
         //PAG PEDIDOS
