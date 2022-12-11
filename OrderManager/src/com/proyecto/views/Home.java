@@ -1,8 +1,17 @@
 package com.proyecto.views;
 
+import com.proyecto.PiezasEntity;
+import com.proyecto.ProveedoresEntity;
+import com.proyecto.ProyectosEntity;
+import com.proyecto.controller.PiezaController;
+import com.proyecto.controller.ProveedorController;
+import com.proyecto.controller.ProyectoController;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.List;
 
 public class Home {
     public JPanel Home;
@@ -101,6 +110,56 @@ public class Home {
     private JLabel topProyect3uds;
     private JLabel topProyect4uds;
     private JLabel topProyect5uds;
+
+
+
+    ///MÉTODOS
+    public void listaProyectos(JComboBox<ProyectosEntity> select) {
+        DefaultComboBoxModel<ProyectosEntity> proyectosListModel = new DefaultComboBoxModel<>();
+
+        proyectosListModel.removeAllElements();
+
+        List<ProyectosEntity> proves = ProyectoController.leerTodosProyectos();
+
+        for (ProyectosEntity p : proves) {
+            proyectosListModel.addElement(p);
+        }
+
+        select.setModel(proyectosListModel);
+
+    }
+
+    public void listaProveedores(JComboBox<ProveedoresEntity> select) {
+        DefaultComboBoxModel<ProveedoresEntity> proveedoresListModel = new DefaultComboBoxModel<>();
+
+        proveedoresListModel.removeAllElements();
+
+        List<ProveedoresEntity> proves = ProveedorController.leerTodosProveedores();
+
+        for (ProveedoresEntity p : proves) {
+            proveedoresListModel.addElement(p);
+        }
+
+        select.setModel(proveedoresListModel);
+
+    }
+
+    public void listaPiezas(JComboBox<PiezasEntity> select) {
+        DefaultComboBoxModel<PiezasEntity> piezasListModel = new DefaultComboBoxModel<>();
+
+        piezasListModel.removeAllElements();
+
+        List<PiezasEntity> proves = PiezaController.leerTodosPiezas();
+
+        for (PiezasEntity p : proves) {
+            piezasListModel.addElement(p);
+        }
+
+        select.setModel(piezasListModel);
+
+    }
+
+
 
 
     public Home(){
@@ -214,15 +273,23 @@ public class Home {
         //PAG PEDIDOS
         searchtTextPedidos.setText("Busca por nombre de proyecto,\npieza a proveedor:");
         scrollFiltroPedidos.setBorder(BorderFactory.createEmptyBorder());
+        listaProveedores(proveedorFiltroPedido);
+        listaPiezas(piezaFiltroPedido);
+        listaProyectos(proyectoFiltroPedido);
+
 
         //PAG PROYECTOS
         searchTextProyectos.setText("Busca por nombre de proyecto\no ciudad:");
+        listaProyectos(proyectoFiltroProyecto);
 
         //PAG PROVEEDORES
         searchTextProveedor.setText("Busca por nombre, apellidos\n o dirección de proveedor:");
+        listaProveedores(proveedorFiltroProveedor);
+
 
         //PAG PIEZAS
         searchTextPiezas.setText("Busca por nombre de pieza:");
+        listaPiezas(piezaFiltroPieza);
 
 
 

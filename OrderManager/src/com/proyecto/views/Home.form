@@ -1126,10 +1126,10 @@
                           </component>
                           <component id="55738" class="javax.swing.JComboBox" binding="piezaFiltroPedido">
                             <constraints>
-                              <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
-                                <minimum-size width="-1" height="40"/>
-                                <preferred-size width="-1" height="40"/>
-                                <maximum-size width="-1" height="40"/>
+                              <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                                <minimum-size width="208" height="40"/>
+                                <preferred-size width="208" height="40"/>
+                                <maximum-size width="208" height="40"/>
                               </grid>
                             </constraints>
                             <properties>
@@ -1149,10 +1149,10 @@
                           </component>
                           <component id="8362a" class="javax.swing.JComboBox" binding="proveedorFiltroPedido">
                             <constraints>
-                              <grid row="11" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
-                                <minimum-size width="-1" height="40"/>
-                                <preferred-size width="-1" height="40"/>
-                                <maximum-size width="-1" height="40"/>
+                              <grid row="11" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                                <minimum-size width="208" height="40"/>
+                                <preferred-size width="208" height="40"/>
+                                <maximum-size width="208" height="40"/>
                               </grid>
                             </constraints>
                             <properties>
@@ -1163,10 +1163,10 @@
                           </component>
                           <component id="f8708" class="javax.swing.JComboBox" binding="proyectoFiltroPedido">
                             <constraints>
-                              <grid row="14" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
-                                <minimum-size width="-1" height="40"/>
-                                <preferred-size width="-1" height="40"/>
-                                <maximum-size width="-1" height="40"/>
+                              <grid row="14" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                                <minimum-size width="208" height="40"/>
+                                <preferred-size width="208" height="40"/>
+                                <maximum-size width="208" height="40"/>
                               </grid>
                             </constraints>
                             <properties>
@@ -1213,10 +1213,10 @@
                           </component>
                           <component id="c1496" class="javax.swing.JComboBox" binding="estadoFiltroPedido">
                             <constraints>
-                              <grid row="17" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
-                                <minimum-size width="-1" height="40"/>
-                                <preferred-size width="-1" height="40"/>
-                                <maximum-size width="-1" height="40"/>
+                              <grid row="17" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                                <minimum-size width="208" height="40"/>
+                                <preferred-size width="208" height="40"/>
+                                <maximum-size width="208" height="40"/>
                               </grid>
                             </constraints>
                             <properties>
@@ -1262,7 +1262,11 @@
                           </vspacer>
                           <component id="d820f" class="javax.swing.JTextArea" binding="searchtTextPedidos">
                             <constraints>
-                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                                <minimum-size width="208" height="-1"/>
+                                <preferred-size width="208" height="-1"/>
+                                <maximum-size width="208" height="-1"/>
+                              </grid>
                             </constraints>
                             <properties>
                               <font name="Arial Nova" size="14" style="0"/>
@@ -1658,10 +1662,10 @@
                       </component>
                       <component id="bc8bc" class="javax.swing.JComboBox" binding="proyectoFiltroProyecto">
                         <constraints>
-                          <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
-                            <minimum-size width="-1" height="40"/>
-                            <preferred-size width="-1" height="40"/>
-                            <maximum-size width="-1" height="40"/>
+                          <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                            <minimum-size width="228" height="40"/>
+                            <preferred-size width="228" height="40"/>
+                            <maximum-size width="228" height="40"/>
                           </grid>
                         </constraints>
                         <properties>
@@ -1681,10 +1685,10 @@
                       </component>
                       <component id="8c77d" class="javax.swing.JComboBox" binding="estadoFiltroProyectos">
                         <constraints>
-                          <grid row="11" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
-                            <minimum-size width="-1" height="40"/>
-                            <preferred-size width="-1" height="40"/>
-                            <maximum-size width="-1" height="40"/>
+                          <grid row="11" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                            <minimum-size width="228" height="40"/>
+                            <preferred-size width="228" height="40"/>
+                            <maximum-size width="228" height="40"/>
                           </grid>
                         </constraints>
                         <properties>
@@ -1730,10 +1734,10 @@
                       </vspacer>
                       <component id="46aef" class="javax.swing.JTextArea" binding="searchTextProyectos">
                         <constraints>
-                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="9" fill="0" indent="0" use-parent-layout="false">
-                            <minimum-size width="208" height="-1"/>
-                            <preferred-size width="208" height="-1"/>
-                            <maximum-size width="208" height="-1"/>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="228" height="-1"/>
+                            <preferred-size width="228" height="-1"/>
+                            <maximum-size width="228" height="-1"/>
                           </grid>
                         </constraints>
                         <properties>
@@ -2133,10 +2137,10 @@
                       </component>
                       <component id="64889" class="javax.swing.JComboBox" binding="proveedorFiltroProveedor">
                         <constraints>
-                          <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
-                            <minimum-size width="-1" height="40"/>
-                            <preferred-size width="-1" height="40"/>
-                            <maximum-size width="-1" height="40"/>
+                          <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                            <minimum-size width="228" height="40"/>
+                            <preferred-size width="228" height="40"/>
+                            <maximum-size width="228" height="40"/>
                           </grid>
                         </constraints>
                         <properties>
@@ -2156,10 +2160,10 @@
                       </component>
                       <component id="373e8" class="javax.swing.JComboBox" binding="estadoFiltroProveedor">
                         <constraints>
-                          <grid row="11" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
-                            <minimum-size width="-1" height="40"/>
-                            <preferred-size width="-1" height="40"/>
-                            <maximum-size width="-1" height="40"/>
+                          <grid row="11" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                            <minimum-size width="228" height="40"/>
+                            <preferred-size width="228" height="40"/>
+                            <maximum-size width="228" height="40"/>
                           </grid>
                         </constraints>
                         <properties>
@@ -2205,10 +2209,10 @@
                       </vspacer>
                       <component id="bb424" class="javax.swing.JTextArea" binding="searchTextProveedor">
                         <constraints>
-                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="9" fill="0" indent="0" use-parent-layout="false">
-                            <minimum-size width="208" height="-1"/>
-                            <preferred-size width="208" height="-1"/>
-                            <maximum-size width="208" height="-1"/>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="228" height="-1"/>
+                            <preferred-size width="228" height="-1"/>
+                            <maximum-size width="228" height="-1"/>
                           </grid>
                         </constraints>
                         <properties>
@@ -2608,10 +2612,10 @@
                       </component>
                       <component id="feb6f" class="javax.swing.JComboBox" binding="piezaFiltroPieza">
                         <constraints>
-                          <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
-                            <minimum-size width="-1" height="40"/>
-                            <preferred-size width="-1" height="40"/>
-                            <maximum-size width="-1" height="40"/>
+                          <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                            <minimum-size width="228" height="40"/>
+                            <preferred-size width="228" height="40"/>
+                            <maximum-size width="228" height="40"/>
                           </grid>
                         </constraints>
                         <properties>
@@ -2631,10 +2635,10 @@
                       </component>
                       <component id="435ed" class="javax.swing.JComboBox" binding="estadoFiltroPieza">
                         <constraints>
-                          <grid row="11" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
-                            <minimum-size width="-1" height="40"/>
-                            <preferred-size width="-1" height="40"/>
-                            <maximum-size width="-1" height="40"/>
+                          <grid row="11" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                            <minimum-size width="228" height="40"/>
+                            <preferred-size width="228" height="40"/>
+                            <maximum-size width="228" height="40"/>
                           </grid>
                         </constraints>
                         <properties>
@@ -2680,10 +2684,10 @@
                       </vspacer>
                       <component id="695e2" class="javax.swing.JTextArea" binding="searchTextPiezas">
                         <constraints>
-                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="9" fill="0" indent="0" use-parent-layout="false">
-                            <minimum-size width="208" height="-1"/>
-                            <preferred-size width="208" height="-1"/>
-                            <maximum-size width="208" height="-1"/>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="228" height="-1"/>
+                            <preferred-size width="228" height="-1"/>
+                            <maximum-size width="228" height="-1"/>
                           </grid>
                         </constraints>
                         <properties>

@@ -85,5 +85,9 @@ public class ProveedoresEntity {
         this.piezasByIdproveedor = piezasByIdproveedor;
     }
 
+    @Override
+    public String toString() {
+        return "PROV-" + idproveedor + " : " + nombre + " " + apellidos;
+    }
 
 }

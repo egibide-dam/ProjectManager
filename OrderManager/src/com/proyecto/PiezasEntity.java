@@ -92,4 +92,10 @@ public class PiezasEntity {
     public void setProveedoresByIdproveedor(ProveedoresEntity proveedoresByIdproveedor) {
         this.proveedoresByIdproveedor = proveedoresByIdproveedor;
     }
+
+
+    @Override
+    public String toString() {
+        return "PIEZ-" + idpieza + " : " + nombre;
+    }
 }

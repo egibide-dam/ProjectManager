@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name = "proyectos", schema = "gestionpedidos", catalog = "")
+@Table(name = "proyectos", schema = "gestionpedidos")
 public class ProyectosEntity {
 
     private int idproyecto;
@@ -59,5 +59,10 @@ public class ProyectosEntity {
 
     public void setPedidosByIdproyecto(Collection<PedidosEntity> pedidosByIdproyecto) {
         this.pedidosByIdproyecto = pedidosByIdproyecto;
+    }
+
+    @Override
+    public String toString() {
+        return "PROY-" + idproyecto + " : " + nombre;
     }
 }
