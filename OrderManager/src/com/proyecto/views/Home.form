@@ -1545,7 +1545,7 @@
                           <contentAreaFilled value="false"/>
                           <focusPainted value="false"/>
                           <font name="Arial Nova" size="14" style="0"/>
-                          <text value="Eliminar"/>
+                          <text value="Baja"/>
                         </properties>
                       </component>
                       <component id="6e4f1" class="javax.swing.JButton" binding="editarProyecto">
@@ -2020,7 +2020,7 @@
                           <contentAreaFilled value="false"/>
                           <focusPainted value="false"/>
                           <font name="Arial Nova" size="14" style="0"/>
-                          <text value="Eliminar"/>
+                          <text value="Baja"/>
                         </properties>
                       </component>
                       <component id="c8f70" class="javax.swing.JButton" binding="editarProveedor">
@@ -2495,7 +2495,7 @@
                           <contentAreaFilled value="false"/>
                           <focusPainted value="false"/>
                           <font name="Arial Nova" size="14" style="0"/>
-                          <text value="Eliminar"/>
+                          <text value="Baja"/>
                         </properties>
                       </component>
                       <component id="567ec" class="javax.swing.JButton" binding="editarPieza">
