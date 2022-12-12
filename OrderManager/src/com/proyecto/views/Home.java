@@ -13,6 +13,7 @@ import com.proyecto.controller.ProveedorController;
 import com.proyecto.controller.ProyectoController;
 
 import javax.swing.*;
+import javax.swing.table.TableRowSorter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -363,6 +364,9 @@ public class Home {
 
 
 
+
+
+
         //PAG PEDIDOS
         searchtTextPedidos.setText("Busca por nombre de proyecto,\npieza a proveedor:");
         scrollFiltroPedidos.setBorder(BorderFactory.createEmptyBorder());
@@ -395,6 +399,22 @@ public class Home {
                 frame.setVisible(true);
             }
         });
+
+        detallePedido.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //ABRIR VENTANA!!!
+                JFrame frame = new JFrame("Detalle de Pedido");
+                frame.setContentPane(new DetallePedido().detallePedido);
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+
+
+
+
 
 
         //PAG PROYECTOS
@@ -433,6 +453,18 @@ public class Home {
                 //ABRIR VENTANA!!!
                 JFrame frame = new JFrame("Estado Proyecto");
                 frame.setContentPane(new BajaProyecto().bajaProyecto);
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+
+        detallesProyecto.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //ABRIR VENTANA!!!
+                JFrame frame = new JFrame("Detalle de Proyecto");
+                frame.setContentPane(new DetalleProyecto().detalleProyecto);
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
@@ -482,6 +514,22 @@ public class Home {
             }
         });
 
+        detallesProveedor.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //ABRIR VENTANA!!!
+                JFrame frame = new JFrame("Detalle de Proveedor");
+                frame.setContentPane(new DetalleProveedor().detalleProveedor);
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+
+
+
+
+
 
         //PAG PIEZAS
         searchTextPiezas.setText("Busca por nombre de pieza:");
@@ -519,6 +567,18 @@ public class Home {
                 //ABRIR VENTANA!!!
                 JFrame frame = new JFrame("Estado Pieza");
                 frame.setContentPane(new BajaPieza().bajaPieza);
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+
+        detallesPieza.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //ABRIR VENTANA!!!
+                JFrame frame = new JFrame("Detalle de Pieza");
+                frame.setContentPane(new DetallePieza().detallePieza);
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.proyecto.views.DetallePieza">
+  <grid id="27dc6" binding="detallePieza" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="40" left="20" bottom="20" right="20"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="440"/>
+    </constraints>
+    <properties>
+      <background color="-1"/>
+      <maximumSize width="440" height="260"/>
+      <minimumSize width="440" height="260"/>
+      <preferredSize width="440" height="260"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="dc44e" layout-manager="GridLayoutManager" row-count="8" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="98bba" class="javax.swing.JLabel" binding="idDetallePieza">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="5" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial" size="16" style="1"/>
+              <text value="PIEZA {ID}"/>
+            </properties>
+          </component>
+          <component id="d7bfa" class="javax.swing.JLabel" binding="estadodetallePieza">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="5" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial Nova" size="12" style="0"/>
+              <text value="ESTADO"/>
+            </properties>
+          </component>
+          <component id="af4b3" class="javax.swing.JLabel" binding="piezanombreDetallePieza">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="5" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial Nova" size="14" style="0"/>
+              <text value="Nombre de pieza"/>
+            </properties>
+          </component>
+          <vspacer id="e997b">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="24"/>
+                <preferred-size width="-1" height="24"/>
+                <maximum-size width="-1" height="24"/>
+              </grid>
+            </constraints>
+          </vspacer>
+          <component id="51bf2" class="javax.swing.JLabel" binding="precioDetallePieza">
+            <constraints>
+              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="5" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial Nova" size="14" style="0"/>
+              <text value="XXX €/ud."/>
+            </properties>
+          </component>
+          <vspacer id="1a2d6">
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="24"/>
+                <preferred-size width="-1" height="24"/>
+                <maximum-size width="-1" height="24"/>
+              </grid>
+            </constraints>
+          </vspacer>
+          <component id="d1fff" class="javax.swing.JTextArea" binding="descripDetallePieza">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="40"/>
+                <preferred-size width="-1" height="40"/>
+                <maximum-size width="-1" height="120"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+              <editable value="false"/>
+              <font name="Arial Nova" size="14" style="0"/>
+              <rows value="8"/>
+              <text value="Esta es la descripcción del producto y si la hago mas larga se va a dos líneas o a tres o a cuatro o a cinco o a las que sean"/>
+            </properties>
+          </component>
+          <vspacer id="8d7db">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="8"/>
+                <preferred-size width="-1" height="8"/>
+                <maximum-size width="-1" height="8"/>
+              </grid>
+            </constraints>
+          </vspacer>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

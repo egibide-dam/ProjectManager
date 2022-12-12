@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.proyecto.views.DetallePedido">
+  <grid id="27dc6" binding="detallePedido" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="40" left="20" bottom="20" right="20"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="440"/>
+    </constraints>
+    <properties>
+      <background color="-1"/>
+      <maximumSize width="440" height="360"/>
+      <minimumSize width="440" height="360"/>
+      <preferredSize width="440" height="360"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="4f909" layout-manager="GridLayoutManager" row-count="12" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="f30f0" class="javax.swing.JLabel" binding="idDetallePedido">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="5" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial" size="16" style="1"/>
+              <text value="PEDIDO {ID}"/>
+            </properties>
+          </component>
+          <component id="1d096" class="javax.swing.JLabel" binding="estadoDetallePedido">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="5" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial Nova" size="12" style="0"/>
+              <text value="ESTADO"/>
+            </properties>
+          </component>
+          <component id="6390f" class="javax.swing.JLabel" binding="proyectoidDetallePedido">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="5" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial Nova" size="14" style="1"/>
+              <text value="Proyecto {ID}"/>
+            </properties>
+          </component>
+          <component id="7a3bd" class="javax.swing.JLabel" binding="proyectonombreDetallePedido">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="5" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial Nova" size="14" style="0"/>
+              <text value="Nombre de proyecto"/>
+            </properties>
+          </component>
+          <vspacer id="2623c">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="24"/>
+                <preferred-size width="-1" height="24"/>
+                <maximum-size width="-1" height="24"/>
+              </grid>
+            </constraints>
+          </vspacer>
+          <component id="a248" class="javax.swing.JLabel" binding="proveedoridDetallePedido">
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="5" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial Nova" size="14" style="1"/>
+              <text value="Proveedor {ID}"/>
+            </properties>
+          </component>
+          <component id="d9d63" class="javax.swing.JLabel" binding="piezaidDetallePEdido">
+            <constraints>
+              <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="5" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial Nova" size="14" style="1"/>
+              <text value="Pieza {ID}"/>
+            </properties>
+          </component>
+          <component id="ce7e1" class="javax.swing.JLabel" binding="proveedornombreDetallePedido">
+            <constraints>
+              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="5" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial Nova" size="14" style="0"/>
+              <text value="Nombre y Apellidos proveedor"/>
+            </properties>
+          </component>
+          <component id="fb527" class="javax.swing.JLabel" binding="piezanombreDetallePedida">
+            <constraints>
+              <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="5" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial Nova" size="14" style="0"/>
+              <text value="Nombre de pieza"/>
+            </properties>
+          </component>
+          <vspacer id="fef9f">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="24"/>
+                <preferred-size width="-1" height="24"/>
+                <maximum-size width="-1" height="24"/>
+              </grid>
+            </constraints>
+          </vspacer>
+          <vspacer id="31259">
+            <constraints>
+              <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="24"/>
+                <preferred-size width="-1" height="24"/>
+                <maximum-size width="-1" height="24"/>
+              </grid>
+            </constraints>
+          </vspacer>
+          <component id="edcd1" class="javax.swing.JLabel" binding="piezaunidadesDetallePedido">
+            <constraints>
+              <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="5" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial Nova" size="16" style="0"/>
+              <text value="XX uds."/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
