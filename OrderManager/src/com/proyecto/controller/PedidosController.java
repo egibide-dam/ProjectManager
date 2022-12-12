@@ -200,18 +200,19 @@ public class PedidosController {
     }
 
 
-    public static int[][] top5Piezas(){
+    public static List<Integer> top5Piezas(){
 
         String sentencia = "SELECT idpieza, SUM(cantidad) FROM pedidos GROUP  BY idpieza ORDER BY SUM(cantidad) DESC";
         List<Object> objetos = HibernateUtil.sentenciaTop5(sentencia);
-        int[][] top5 = new int[5][2];
+        List<Integer> top5 = new ArrayList<>();
+
 
         int i = 0;
         for (Object o : objetos) {
             if(i<5){
                 Object[] piezacanti = (Object[]) o;
-                top5[i][0] = (int) piezacanti[0];
-                top5[i][1] = (int)(double) piezacanti[1];
+                top5.add((int) piezacanti[0]);
+                top5.add((int)(double) piezacanti[1]);
             }
             i++;
         }
@@ -220,18 +221,18 @@ public class PedidosController {
 
     }
 
-    public static int[][] top5Proveedores(){
+    public static List<Integer> top5Proveedores(){
 
         String sentencia = "SELECT idproveedor, SUM(cantidad) FROM pedidos GROUP  BY idproveedor ORDER BY SUM(cantidad) DESC";
         List<Object> objetos = HibernateUtil.sentenciaTop5(sentencia);
-        int[][] top5 = new int[5][2];
+        List<Integer> top5 = new ArrayList<>();
 
         int i = 0;
         for (Object o : objetos) {
             if(i<5){
-                Object[] piezacanti = (Object[]) o;
-                top5[i][0] = (int) piezacanti[0];
-                top5[i][1] = (int)(double) piezacanti[1];
+                Object[] proveecanti = (Object[]) o;
+                top5.add((int) proveecanti[0]);
+                top5.add((int)(double) proveecanti[1]);
             }
             i++;
         }
@@ -240,24 +241,29 @@ public class PedidosController {
 
     }
 
-    public static int[][] top5Proyectos(){
+    public static List<Integer> top5Proyectos(){
 
         String sentencia = "SELECT idproyecto, SUM(cantidad) FROM pedidos GROUP  BY idproyecto ORDER BY SUM(cantidad) DESC";
         List<Object> objetos = HibernateUtil.sentenciaTop5(sentencia);
-        int[][] top5 = new int[5][2];
+        List<Integer> top5 = new ArrayList<>();
+
 
         int i = 0;
         for (Object o : objetos) {
             if(i<5){
-                Object[] piezacanti = (Object[]) o;
-                top5[i][0] = (int) piezacanti[0];
-                top5[i][1] = (int)(double) piezacanti[1];
+                Object[] proyecanti = (Object[]) o;
+                top5.add((int) proyecanti[0]);
+                top5.add((int)(double) proyecanti[1]);
             }
             i++;
         }
 
+
         return top5;
 
+    }
+
+    public static void main(String[] args) {
     }
 
 }

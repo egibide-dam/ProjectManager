@@ -163,6 +163,86 @@ public class Home {
 
     }
 
+    public void rellenarTop5Piezas(){
+
+        List<Integer> piezas = PedidosController.top5Piezas();
+
+        if (piezas.size() == 0 ){
+            //nada
+        } else if (piezas.size() == 2){
+            topPieza1nombre.setText(piezas.get(0) + "- " + PiezaController.leerPieza(piezas.get(0)).getNombre());
+            topPieza1uds.setText(String.valueOf(piezas.get(1)));
+        } else if (piezas.size() == 4){
+            topPieza2nombre.setText(piezas.get(2) + "- " + PiezaController.leerPieza(piezas.get(2)).getNombre());
+            topPieza2uds.setText(String.valueOf(piezas.get(3)));
+        } else if (piezas.size() == 6){
+            topPieza3nombre.setText(piezas.get(4) + "- " + PiezaController.leerPieza(piezas.get(4)).getNombre());
+            topPieza3uds.setText(String.valueOf(piezas.get(5)));
+        } else if (piezas.size() == 8){
+            topPieza4nombre.setText(piezas.get(6) + "- " + PiezaController.leerPieza(piezas.get(6)).getNombre());
+            topPieza4uds.setText(String.valueOf(piezas.get(7)));
+        } else if (piezas.size() == 10){
+            topPieza5nombre.setText(piezas.get(8) + "- " + PiezaController.leerPieza(piezas.get(8)).getNombre());
+            topPieza5uds.setText(String.valueOf(piezas.get(9)));
+        }
+
+    }
+
+
+    public void rellenarTop5Proveedores(){
+
+        List<Integer> provs = PedidosController.top5Proveedores();
+
+        if (provs.size() == 0 ){
+            //nada
+        } else if (provs.size() == 2){
+            topProveedor1nombre.setText(provs.get(0) + "- " + ProveedorController.leerProveedor(provs.get(0)).getNombre() + " " + ProveedorController.leerProveedor(provs.get(0)).getApellidos());
+            topProveedor1uds.setText(String.valueOf(provs.get(1)));
+        } else if (provs.size() == 4){
+            topProveedor2nombre.setText(provs.get(2) + "- " + ProveedorController.leerProveedor(provs.get(2)).getNombre() + " " + ProveedorController.leerProveedor(provs.get(2)).getApellidos());
+            topProveedor2uds.setText(String.valueOf(provs.get(3)));
+        } else if (provs.size() == 6){
+            topProveedor3nombre.setText(provs.get(4) + "- " + ProveedorController.leerProveedor(provs.get(4)).getNombre() + " " + ProveedorController.leerProveedor(provs.get(4)).getApellidos());
+            topProveedor3uds.setText(String.valueOf(provs.get(5)));
+        } else if (provs.size() == 8){
+            topProveedor4nombre.setText(provs.get(6) + "- " + ProveedorController.leerProveedor(provs.get(6)).getNombre() + " " + ProveedorController.leerProveedor(provs.get(6)).getApellidos());
+            topProveedor4uds.setText(String.valueOf(provs.get(7)));
+        } else if (provs.size() == 10){
+            topProveedor5nombre.setText(provs.get(8) + "- " + ProveedorController.leerProveedor(provs.get(8)).getNombre() + " " + ProveedorController.leerProveedor(provs.get(8)).getNombre());
+            topProveedor5uds.setText(String.valueOf(provs.get(9)));
+        }
+
+    }
+
+
+    public void rellenarTop5Proyectos(){
+
+        List<Integer> proyecs = PedidosController.top5Proyectos();
+
+        if (PedidosController.leerTodosPedidos().size() == 0 ){
+            //nada
+        } else if (proyecs.size() == 2){
+            topProyect1nombre.setText(proyecs.get(0) + "- " + ProyectoController.leerProyecto(proyecs.get(0)).getNombre());
+            topProyect1uds.setText(String.valueOf(proyecs.get(1)));
+        } else if (proyecs.size() == 4){
+            topProyect2nombre.setText(proyecs.get(2) + "- " + ProyectoController.leerProyecto(proyecs.get(2)).getNombre());
+            topProyect2uds.setText(String.valueOf(proyecs.get(3)));
+        } else if (proyecs.size() == 6){
+            topProyect3nombre.setText(proyecs.get(4) + "- " + ProyectoController.leerProyecto(proyecs.get(4)).getNombre());
+            topProyect3uds.setText(String.valueOf(proyecs.get(5)));
+        } else if (proyecs.size() == 8){
+            topProyect4nombre.setText(proyecs.get(6) + "- " + ProyectoController.leerProyecto(proyecs.get(6)).getNombre());
+            topProyect4uds.setText(String.valueOf(proyecs.get(7)));
+        } else if (proyecs.size() == 10){
+            topProyect5nombre.setText(proyecs.get(8) + "- " + ProyectoController.leerProyecto(proyecs.get(8)).getNombre());
+            topProyect5uds.setText(String.valueOf(proyecs.get(9)));
+        }
+
+    }
+
+
+
+
 
 
 
@@ -195,7 +275,9 @@ public class Home {
                 paginaProyectos.setVisible(false);
                 paginaProveedores.setVisible(false);
                 paginaPiezas.setVisible(false);
-                //blankMatches();
+                rellenarTop5Piezas();
+                rellenarTop5Proveedores();
+                rellenarTop5Proyectos();
 
             }
         });
@@ -271,6 +353,13 @@ public class Home {
 
             }
         });
+
+
+        //PAG HOME
+
+        rellenarTop5Piezas();
+        rellenarTop5Proveedores();
+        rellenarTop5Proyectos();
 
 
 
