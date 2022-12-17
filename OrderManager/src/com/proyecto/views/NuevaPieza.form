@@ -73,7 +73,7 @@
               </vspacer>
               <component id="bbac8" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font name="Arial Nova" size="14" style="0"/>
@@ -82,7 +82,7 @@
               </component>
               <component id="843b" class="javax.swing.JComboBox" binding="newProveedorPieza">
                 <constraints>
-                  <grid row="7" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                  <grid row="10" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <minimum-size width="400" height="40"/>
                     <preferred-size width="400" height="40"/>
                     <maximum-size width="400" height="40"/>
@@ -97,37 +97,6 @@
               <vspacer id="26529">
                 <constraints>
                   <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-                    <minimum-size width="-1" height="12"/>
-                    <preferred-size width="-1" height="12"/>
-                    <maximum-size width="-1" height="12"/>
-                  </grid>
-                </constraints>
-              </vspacer>
-              <component id="86f4b" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <font name="Arial Nova" size="14" style="0"/>
-                  <text value="Precio"/>
-                </properties>
-              </component>
-              <component id="dd2df" class="javax.swing.JSpinner" binding="newPrecioPieza">
-                <constraints>
-                  <grid row="10" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="4" anchor="9" fill="1" indent="0" use-parent-layout="false">
-                    <minimum-size width="400" height="40"/>
-                    <preferred-size width="400" height="40"/>
-                    <maximum-size width="400" height="40"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                  <font name="Arial Nova" size="14" style="0"/>
-                </properties>
-              </component>
-              <vspacer id="83c5e">
-                <constraints>
-                  <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
                     <minimum-size width="-1" height="12"/>
                     <preferred-size width="-1" height="12"/>
                     <maximum-size width="-1" height="12"/>
@@ -226,6 +195,37 @@
                   </component>
                 </children>
               </scrollpane>
+              <component id="86f4b" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Arial Nova" size="14" style="0"/>
+                  <text value="Precio"/>
+                </properties>
+              </component>
+              <component id="dd2df" class="javax.swing.JSpinner" binding="newPrecioPieza">
+                <constraints>
+                  <grid row="7" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="4" anchor="9" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="400" height="40"/>
+                    <preferred-size width="400" height="40"/>
+                    <maximum-size width="400" height="40"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                  <font name="Arial Nova" size="14" style="0"/>
+                </properties>
+              </component>
+              <vspacer id="fdb27">
+                <constraints>
+                  <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                    <minimum-size width="-1" height="12"/>
+                    <preferred-size width="-1" height="12"/>
+                    <maximum-size width="-1" height="12"/>
+                  </grid>
+                </constraints>
+              </vspacer>
             </children>
           </grid>
           <vspacer id="16cfe">
