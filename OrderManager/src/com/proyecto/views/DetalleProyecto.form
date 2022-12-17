@@ -23,7 +23,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="2e375" class="javax.swing.JLabel" binding="idDetallePropietario">
+          <component id="2e375" class="javax.swing.JLabel" binding="idDetalleProyecto">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="5" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>

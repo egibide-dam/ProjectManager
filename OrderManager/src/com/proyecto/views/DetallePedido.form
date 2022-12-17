@@ -7,13 +7,13 @@
     </constraints>
     <properties>
       <background color="-1"/>
-      <maximumSize width="440" height="360"/>
-      <minimumSize width="440" height="360"/>
-      <preferredSize width="440" height="360"/>
+      <maximumSize width="440" height="400"/>
+      <minimumSize width="440" height="400"/>
+      <preferredSize width="440" height="400"/>
     </properties>
     <border type="none"/>
     <children>
-      <grid id="4f909" layout-manager="GridLayoutManager" row-count="12" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="4f909" layout-manager="GridLayoutManager" row-count="14" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
@@ -131,6 +131,24 @@
               <text value="XX uds."/>
             </properties>
           </component>
+          <component id="fce8b" class="javax.swing.JLabel" binding="precioTotalText">
+            <constraints>
+              <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="5" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial Nova" size="16" style="0"/>
+              <text value="PRECIO TOTAL"/>
+            </properties>
+          </component>
+          <vspacer id="e2dde">
+            <constraints>
+              <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="24"/>
+                <preferred-size width="-1" height="24"/>
+                <maximum-size width="-1" height="24"/>
+              </grid>
+            </constraints>
+          </vspacer>
         </children>
       </grid>
     </children>

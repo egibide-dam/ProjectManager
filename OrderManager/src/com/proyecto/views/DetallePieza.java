@@ -1,5 +1,7 @@
 package com.proyecto.views;
 
+import com.proyecto.Main;
+
 import javax.swing.*;
 
 public class DetallePieza extends JFrame{
@@ -17,6 +19,17 @@ public class DetallePieza extends JFrame{
 
         descripDetallePieza.setLineWrap(true);
         descripDetallePieza.setWrapStyleWord(true);
+
+        idDetallePieza.setText("PIEZ-" + Main.currentPieza.getIdpieza());
+        if (Main.currentPieza.getAlta() == 1){
+            estadodetallePieza.setText("ALTA");
+        } else {
+            estadodetallePieza.setText("BAJA");
+        }
+        piezanombreDetallePieza.setText(Main.currentPieza.getNombre());
+        descripDetallePieza.setText(Main.currentPieza.getDescripcion());
+        precioDetallePieza.setText("Precio/ud. : " + Main.currentPieza.getPrecio() + " €");
+
 
     }
 
