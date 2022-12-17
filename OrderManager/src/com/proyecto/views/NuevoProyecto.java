@@ -1,6 +1,7 @@
 package com.proyecto.views;
 
 import com.proyecto.Ciudades;
+import com.proyecto.Main;
 import com.proyecto.ProyectosEntity;
 import com.proyecto.controller.ProyectoController;
 
@@ -26,9 +27,9 @@ public class NuevoProyecto extends JFrame {
         newNameProyecto.setEnabled(true);
         newCiudadProyecto.setEnabled(true);
         newNameProyecto.setText("");
-        newNameProyecto.setBackground(Color.white);
+        newNameProyecto.setBackground(Main.white);
         newCiudadProyecto.setSelectedIndex(-1);
-        newCiudadProyecto.setBackground(Color.white);
+        newCiudadProyecto.setBackground(Main.white);
         guardarNuevoProyecto.setEnabled(false);
         cancelarNuevoProyecto.setEnabled(true);
     }
@@ -63,7 +64,7 @@ public class NuevoProyecto extends JFrame {
 
             public void updated() {
                 guardarNuevoProyecto.setEnabled(newNameProyecto.getText().length() > 0);
-                newNameProyecto.setBackground(Color.white);
+                newNameProyecto.setBackground(Main.white);
             }
         });
 
@@ -71,9 +72,13 @@ public class NuevoProyecto extends JFrame {
         newNameProyecto.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
-                if(newNameProyecto.getText().length() >= 40)
-                {
+                if(newNameProyecto.getText().length() >= 40) {
                     e.consume();
+                    newNameProyecto.setBackground(Main.warn);
+
+                } else {
+                    newNameProyecto.setBackground(Main.white);
+
                 }
             }
         });
@@ -82,13 +87,15 @@ public class NuevoProyecto extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 guardarNuevoProyecto.setEnabled(true);
-                newCiudadProyecto.setBackground(Color.white);
+                newCiudadProyecto.setBackground(Main.white);
             }
         });
 
         cancelarNuevoProyecto.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                clearForm();
                 dispose();
             }
         });
@@ -102,11 +109,11 @@ public class NuevoProyecto extends JFrame {
                 if (newNameProyecto.getText().length() == 0 || newCiudadProyecto.getSelectedIndex() == -1) {
 
                     if (newNameProyecto.getText().length() == 0) {
-                        newNameProyecto.setBackground(Color.pink);
+                        newNameProyecto.setBackground(Main.error);
                     }
 
                     if (newCiudadProyecto.getSelectedIndex() == -1) {
-                        newCiudadProyecto.setBackground(Color.pink);
+                        newCiudadProyecto.setBackground(Main.error);
                     }
 
                     cancelarNuevoProyecto.setEnabled(true);
@@ -117,7 +124,7 @@ public class NuevoProyecto extends JFrame {
                     Ciudades ciudad = (Ciudades) newCiudadProyecto.getSelectedItem();
                     ProyectoController.nuevoProyecto(name, ciudad.toString());
                     clearForm();
-                    JOptionPane.showMessageDialog(null, "Proyecto" + name + "Guardado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Proyecto" + name + " guardado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                     dispose();
 
 

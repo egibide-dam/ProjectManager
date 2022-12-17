@@ -7,6 +7,7 @@ import com.proyecto.ProyectosEntity;
 import com.proyecto.views.Home;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.List;
 
 public class Main {
@@ -17,6 +18,9 @@ public class Main {
     public static ProyectosEntity currentProyecto = null;
     public static PedidosEntity currentPedido = null;
 
+    public static Color white = new Color(255,255,255);
+    public static Color error = new Color(255,229,242);
+    public static Color warn = new Color(251,244,227);
 
 
 
