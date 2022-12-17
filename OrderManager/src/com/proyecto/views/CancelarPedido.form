@@ -10,7 +10,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <component id="2f01c" class="javax.swing.JLabel" binding="textoEliminarInmueble">
+      <component id="2f01c" class="javax.swing.JLabel" binding="textoEliminarPedido">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -33,7 +33,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="4b8d0" class="javax.swing.JButton" binding="cancelarEliminarInmueble">
+          <component id="4b8d0" class="javax.swing.JButton" binding="cancelarEliminarPedido">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>
@@ -48,7 +48,7 @@
               <text value="Cancelar"/>
             </properties>
           </component>
-          <component id="514e4" class="javax.swing.JButton" binding="guardarEliminarInmueble">
+          <component id="514e4" class="javax.swing.JButton" binding="guardarEliminarPedido">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>

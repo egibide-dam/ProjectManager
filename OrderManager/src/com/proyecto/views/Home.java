@@ -484,7 +484,11 @@ public class Home {
                 PedidosEntity ped = currentPedidosList.get(row);
                 Main.currentPedido = ped;
                 detallePedido.setEnabled(true);
-                eliminarPedido.setEnabled(true);
+                if (ped.getAlta()==1){
+                    eliminarPedido.setEnabled(true);
+                } else {
+                    eliminarPedido.setEnabled(false);
+                }
             }
         });
 
