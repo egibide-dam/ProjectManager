@@ -38,7 +38,7 @@ public class ProveedoresTableModel extends AbstractTableModel {
 
         switch (columnIndex) {
             case 0:
-                return p.getIdproveedor();
+                return "PROV-" + p.getIdproveedor();
             case 1:
                 return p.getNombre();
             case 2:

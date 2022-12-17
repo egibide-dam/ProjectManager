@@ -36,7 +36,7 @@ public class PedidosTableModel extends AbstractTableModel {
 
         switch (columnIndex) {
             case 0:
-                return p.getIdpedido();
+                return "PED-" + p.getIdpedido();
             case 1:
                 return p.getProyectosByIdproyecto();
             case 2:

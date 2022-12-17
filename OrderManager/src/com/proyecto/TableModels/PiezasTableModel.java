@@ -38,7 +38,7 @@ public class PiezasTableModel extends AbstractTableModel {
 
         switch (columnIndex) {
             case 0:
-                return p.getIdpieza();
+                return "PIEZ-" + p.getIdpieza();
             case 1:
                 return p.getNombre();
             case 2:

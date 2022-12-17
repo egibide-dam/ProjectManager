@@ -38,7 +38,7 @@ public class ProyectosTableModel extends AbstractTableModel {
 
         switch (columnIndex) {
             case 0:
-                return p.getIdproyecto();
+                return "PROY-" + p.getIdproyecto();
             case 1:
                 return p.getNombre();
             case 2:
