@@ -2,6 +2,8 @@ package com.proyecto.views;
 
 import com.proyecto.Ciudades;
 import com.proyecto.Main;
+import com.proyecto.ProveedoresEntity;
+import com.proyecto.controller.ProveedorController;
 import com.proyecto.controller.ProyectoController;
 
 import javax.swing.*;
@@ -11,6 +13,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.util.List;
 
 public class EditarProyecto extends JFrame{
     JPanel editProyecto;
@@ -26,11 +30,12 @@ public class EditarProyecto extends JFrame{
         editNameProyecto.setText(Main.currentProyecto.getNombre());
         editNameProyecto.setBackground(Main.white);
         editCiudadProyecto.setEnabled(true);
-        editCiudadProyecto.setSelectedItem(Main.currentProyecto.getCiudad());
+        editCiudadProyecto.setSelectedItem(Ciudades.valueOf(Main.currentProyecto.getCiudad()));
         editCiudadProyecto.setBackground(Main.white);
         guardarEditarProyecto.setEnabled(false);
         cancelarEditarProyecto.setEnabled(true);
     }
+
 
     public void disableForm() {
         editNameProyecto.setEnabled(false);

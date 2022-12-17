@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.util.List;
 
 public class EditarPieza extends JFrame{
@@ -27,7 +28,7 @@ public class EditarPieza extends JFrame{
     private JTextArea editDescripcionPieza;
 
 
-    public void fillForm() {
+    public void fillForm() throws IOException, ClassNotFoundException {
         editNamePieza.setEnabled(true);
         editDescripcionPieza.setEnabled(true);
         editPrecioPieza.setEnabled(true);
@@ -38,7 +39,7 @@ public class EditarPieza extends JFrame{
         editDescripcionPieza.setBackground(Main.white);
         editPrecioPieza.setValue(Main.currentPieza.getPrecio());
         editPrecioPieza.getEditor().getComponent(0).setBackground(Main.white);
-        editProveedorPieza.setSelectedItem(Main.currentPieza.getProveedoresByIdproveedor());
+        editProveedorPieza.setSelectedIndex(rellenarComboProveedor());
         editProveedorPieza.setBackground(Main.white);
         guardarEditarPieza.setEnabled(false);
         cancelarEditarPieza.setEnabled(true);
@@ -51,6 +52,21 @@ public class EditarPieza extends JFrame{
         editProveedorPieza.setEnabled(false);
         guardarEditarPieza.setEnabled(false);
         cancelarEditarPieza.setEnabled(false);
+    }
+
+    public int rellenarComboProveedor() throws IOException, ClassNotFoundException {
+        ProveedoresEntity pro = Main.currentPieza.getProveedoresByIdproveedor();
+        List<ProveedoresEntity> props = ProveedorController.leerTodosProveedores();
+        int id = -1;
+        int i = 0;
+        for (ProveedoresEntity p : props){
+            if (p.getIdproveedor() == pro.getIdproveedor()){
+                id = i;
+            }
+            i += 1;
+        }
+
+        return id;
     }
 
     public void listaProveedores(JComboBox<ProveedoresEntity> select) {
@@ -69,7 +85,7 @@ public class EditarPieza extends JFrame{
     }
 
 
-    public EditarPieza(){
+    public EditarPieza() throws IOException, ClassNotFoundException {
 
         setContentPane(editarPieza);
         listaProveedores(editProveedorPieza);
@@ -200,7 +216,10 @@ public class EditarPieza extends JFrame{
                     }
                     float precio = (float) ((double) editPrecioPieza.getValue());
                     PiezaController.editarPieza(id, name, precio, descrip);
-                    fillForm();
+                    try {
+                        fillForm();
+                    } catch (IOException | ClassNotFoundException ex) {
+                    }
                     JOptionPane.showMessageDialog(null, "Pieza" + name + " actualizada.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                     dispose();
 
