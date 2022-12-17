@@ -59,15 +59,6 @@ public class PedidosController {
         }
     }
 
-    public static void altaPedido(int id){
-        PedidosEntity p = leerPedido(id);
-        if(p != null){
-            p.setAlta((byte)1);
-            HibernateUtil.actualizar(p);
-        } else {
-            System.out.println("\nNo se ha encontrado el pedido a dar de alta.");
-        }
-    }
 
     public static List<PedidosEntity> buscarPedidos(String busqueda){
 

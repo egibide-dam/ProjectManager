@@ -1,6 +1,8 @@
 package com.proyecto.views;
 
 import com.proyecto.Main;
+import com.proyecto.controller.PiezaController;
+import com.proyecto.controller.ProveedorController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -21,8 +23,12 @@ public class BajaProveedor extends JFrame{
 
         if (Main.currentProveedor.getAlta() == 1){
             textoBajaProveedor.setText("¿Estás segura de dar de baja el proveedor?");
+            guardarBajaProveedor.setText("Dar de Baja");
+
         } else {
             textoBajaProveedor.setText("¿Estás segura de volver a dar de alta el proveedor?");
+            guardarBajaProveedor.setText("Dar de Alta");
+
         }
 
         idBajaProveedor.setText("PROVEEDOR-" + Main.currentProveedor.getIdproveedor());
@@ -37,7 +43,16 @@ public class BajaProveedor extends JFrame{
         guardarBajaProveedor.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                cancelarBajaProveedor.setEnabled(false);
+                guardarBajaProveedor.setEnabled(false);
 
+                if (Main.currentProveedor.getAlta() == 1){
+                    ProveedorController.bajaProveedor(Main.currentProveedor.getIdproveedor());
+                } else {
+                    ProveedorController.altaProveedor(Main.currentProveedor.getIdproveedor());
+                }
+
+                dispose();
             }
         });
 

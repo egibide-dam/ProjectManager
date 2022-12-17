@@ -1017,16 +1017,16 @@
                       <component id="87db8" class="javax.swing.JButton" binding="eliminarPedido">
                         <constraints>
                           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                            <minimum-size width="100" height="36"/>
-                            <preferred-size width="100" height="36"/>
-                            <maximum-size width="100" height="36"/>
+                            <minimum-size width="140" height="36"/>
+                            <preferred-size width="140" height="36"/>
+                            <maximum-size width="140" height="36"/>
                           </grid>
                         </constraints>
                         <properties>
                           <contentAreaFilled value="false"/>
                           <focusPainted value="false"/>
                           <font name="Arial Nova" size="14" style="0"/>
-                          <text value="Cancelar"/>
+                          <text value="Cancelar pedido"/>
                         </properties>
                       </component>
                     </children>
@@ -1551,16 +1551,16 @@
                       <component id="580a2" class="javax.swing.JButton" binding="altaProyecto">
                         <constraints>
                           <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                            <minimum-size width="100" height="36"/>
-                            <preferred-size width="100" height="36"/>
-                            <maximum-size width="100" height="36"/>
+                            <minimum-size width="140" height="36"/>
+                            <preferred-size width="140" height="36"/>
+                            <maximum-size width="140" height="36"/>
                           </grid>
                         </constraints>
                         <properties>
                           <contentAreaFilled value="false"/>
                           <focusPainted value="false"/>
                           <font name="Arial Nova" size="14" style="0"/>
-                          <text value="Baja"/>
+                          <text value="Cambiar estado"/>
                         </properties>
                       </component>
                       <component id="6e4f1" class="javax.swing.JButton" binding="editarProyecto">
@@ -2026,16 +2026,16 @@
                       <component id="b4aee" class="javax.swing.JButton" binding="altasProveedor">
                         <constraints>
                           <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                            <minimum-size width="100" height="36"/>
-                            <preferred-size width="100" height="36"/>
-                            <maximum-size width="100" height="36"/>
+                            <minimum-size width="140" height="36"/>
+                            <preferred-size width="140" height="36"/>
+                            <maximum-size width="140" height="36"/>
                           </grid>
                         </constraints>
                         <properties>
                           <contentAreaFilled value="false"/>
                           <focusPainted value="false"/>
                           <font name="Arial Nova" size="14" style="0"/>
-                          <text value="Baja"/>
+                          <text value="Cambiar estado"/>
                         </properties>
                       </component>
                       <component id="c8f70" class="javax.swing.JButton" binding="editarProveedor">
@@ -2501,16 +2501,16 @@
                       <component id="b5d73" class="javax.swing.JButton" binding="altasPieza">
                         <constraints>
                           <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                            <minimum-size width="100" height="36"/>
-                            <preferred-size width="100" height="36"/>
-                            <maximum-size width="100" height="36"/>
+                            <minimum-size width="140" height="36"/>
+                            <preferred-size width="140" height="36"/>
+                            <maximum-size width="140" height="36"/>
                           </grid>
                         </constraints>
                         <properties>
                           <contentAreaFilled value="false"/>
                           <focusPainted value="false"/>
                           <font name="Arial Nova" size="14" style="0"/>
-                          <text value="Baja"/>
+                          <text value="Cambiar estado"/>
                         </properties>
                       </component>
                       <component id="567ec" class="javax.swing.JButton" binding="editarPieza">

@@ -1,5 +1,6 @@
 package com.proyecto.controller;
 
+import com.proyecto.PiezasEntity;
 import com.proyecto.ProveedoresEntity;
 import com.proyecto.utils.HibernateUtil;
 
@@ -49,6 +50,12 @@ public class ProveedorController {
         if (p != null) {
             p.setAlta((byte) 0);
             HibernateUtil.actualizar(p);
+
+            List<PiezasEntity> piezasdeproveedor = PiezaController.piezasPorProveedor(id);
+            for (PiezasEntity pi : piezasdeproveedor){
+                PiezaController.bajaPieza(pi.getIdpieza());
+            }
+
         } else {
             System.out.println("\nNo se ha encontrado el proveedor a dar de baja.");
         }

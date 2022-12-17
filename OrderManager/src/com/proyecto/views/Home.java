@@ -370,7 +370,7 @@ public class Home {
                 paginaProyectos.setVisible(false);
                 paginaProveedores.setVisible(false);
                 paginaPiezas.setVisible(false);
-                //blankMatches();
+                clearPedidos();
             }
         });
 
@@ -387,7 +387,7 @@ public class Home {
                 paginaProyectos.setVisible(true);
                 paginaProveedores.setVisible(false);
                 paginaPiezas.setVisible(false);
-                //blankMatches();
+                clearProyectos();
             }
         });
 
@@ -405,7 +405,7 @@ public class Home {
                 paginaProyectos.setVisible(false);
                 paginaProveedores.setVisible(true);
                 paginaPiezas.setVisible(false);
-                //blankMatches();
+                clearProveedores();
 
             }
         });
@@ -424,7 +424,7 @@ public class Home {
                 paginaProyectos.setVisible(false);
                 paginaProveedores.setVisible(false);
                 paginaPiezas.setVisible(true);
-                //blankMatches();
+                clearPiezas();
 
             }
         });
@@ -694,7 +694,12 @@ public class Home {
                 Main.currentPieza = piez;
                 detallesPieza.setEnabled(true);
                 editarPieza.setEnabled(true);
-                altasPieza.setEnabled(true);
+                ProveedoresEntity prov = piez.getProveedoresByIdproveedor();
+                if (prov.getAlta() == 1){
+                    altasPieza.setEnabled(true);
+                } else {
+                    altasPieza.setEnabled(false);
+                }
             }
         });
 

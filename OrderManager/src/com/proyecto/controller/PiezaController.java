@@ -140,4 +140,9 @@ public class PiezaController {
     }
 
 
+    public static void main(String[] args) {
+        nuevaPieza("Prueba", 2.35, "Nada", 1);
+    }
+
+
 }

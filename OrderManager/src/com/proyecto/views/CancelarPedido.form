@@ -61,7 +61,7 @@
               <focusPainted value="false"/>
               <font name="Arial Nova" size="14" style="0"/>
               <opaque value="false"/>
-              <text value="Eliminar"/>
+              <text value="Cancelar pedido"/>
             </properties>
           </component>
         </children>

@@ -1,6 +1,8 @@
 package com.proyecto.views;
 
 import com.proyecto.Main;
+import com.proyecto.controller.PedidosController;
+import com.proyecto.controller.ProyectoController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -23,7 +25,7 @@ public class CancelarPedido extends JFrame{
         textoEliminarPedido.setText("¿Estás seguro de cancelar el pedido?");
 
 
-        idCancelarPedido.setText("PEDIDO-" + Main.currentPieza.getIdpieza());
+        idCancelarPedido.setText("PEDIDO-" + Main.currentPedido.getIdpedido());
 
         cancelarEliminarPedido.addActionListener(new ActionListener() {
             @Override
@@ -35,7 +37,13 @@ public class CancelarPedido extends JFrame{
         guardarEliminarPedido.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                cancelarPedido.setEnabled(false);
+                guardarEliminarPedido.setEnabled(false);
 
+                PedidosController.bajaPedido(Main.currentPedido.getIdpedido());
+
+
+                dispose();
             }
         });
     }
