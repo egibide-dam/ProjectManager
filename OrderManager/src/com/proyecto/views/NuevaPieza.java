@@ -1,10 +1,8 @@
 package com.proyecto.views;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import java.awt.*;
 
-public class NuevaPieza {
+public class NuevaPieza extends JFrame{
     JPanel nuevaPieza;
     private JLabel matchSearchTitle;
     private JComboBox newProveedorPieza;
@@ -17,6 +15,8 @@ public class NuevaPieza {
 
 
     public NuevaPieza(){
+
+        setContentPane(nuevaPieza);
 
         newDescripcionPieza.setLineWrap(true);
         newDescripcionPieza.setWrapStyleWord(true);

@@ -4,7 +4,7 @@ import com.proyecto.Ciudades;
 
 import javax.swing.*;
 
-public class EditarProyecto {
+public class EditarProyecto extends JFrame{
     JPanel editProyecto;
     private JLabel titleEditarProyecto;
     private JComboBox editCiudadProyecto;
@@ -15,6 +15,8 @@ public class EditarProyecto {
 
 
     public EditarProyecto(){
+
+        setContentPane(editProyecto);
 
         editCiudadProyecto.setModel(new DefaultComboBoxModel<>(Ciudades.values()));
 

@@ -2,7 +2,7 @@ package com.proyecto.views;
 
 import javax.swing.*;
 
-public class DetallePieza {
+public class DetallePieza extends JFrame{
     JPanel detallePieza;
     private JLabel idDetallePieza;
     private JLabel estadodetallePieza;
@@ -12,6 +12,8 @@ public class DetallePieza {
 
 
     public DetallePieza(){
+
+        setContentPane(detallePieza);
 
         descripDetallePieza.setLineWrap(true);
         descripDetallePieza.setWrapStyleWord(true);

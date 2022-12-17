@@ -2,7 +2,7 @@ package com.proyecto.views;
 
 import javax.swing.*;
 
-public class DetalleProveedor {
+public class DetalleProveedor  extends JFrame{
     JPanel detalleProveedor;
     private JLabel idDetalleProveedor;
     private JLabel estadoDetalleProveedor;
@@ -11,4 +11,13 @@ public class DetalleProveedor {
     private JLabel piezaidDetallePEdido;
     private JTable tablePropiedades;
     private JScrollPane tablaDetalleProveedor;
+
+
+
+
+    public DetalleProveedor(){
+
+        setContentPane(detalleProveedor);
+
+    }
 }

@@ -10,7 +10,7 @@ import com.proyecto.controller.ProyectoController;
 import javax.swing.*;
 import java.util.List;
 
-public class NuevoPedido {
+public class NuevoPedido extends JFrame{
     JPanel nuevoPedido;
     private JLabel matchSearchTitle;
     private JComboBox newProyectoPedido;
@@ -69,6 +69,8 @@ public class NuevoPedido {
 
 
     public NuevoPedido(){
+
+        setContentPane(nuevoPedido);
 
         listaProveedores(newProveedorPedido);
         listaPiezas(newPiezaPedido);

@@ -4,7 +4,7 @@ import com.proyecto.Ciudades;
 
 import javax.swing.*;
 
-public class NuevoProyecto {
+public class NuevoProyecto extends JFrame{
     JPanel nuevoProyecto;
     private JLabel matchSearchTitle;
     private JComboBox newCiudadProyecto;
@@ -16,6 +16,8 @@ public class NuevoProyecto {
 
 
     public NuevoProyecto(){
+
+        setContentPane(nuevoProyecto);
 
         newCiudadProyecto.setModel(new DefaultComboBoxModel<>(Ciudades.values()));
 

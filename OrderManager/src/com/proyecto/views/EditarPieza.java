@@ -2,7 +2,7 @@ package com.proyecto.views;
 
 import javax.swing.*;
 
-public class EditarPieza {
+public class EditarPieza extends JFrame{
     JPanel editarPieza;
     private JLabel titleEditarPieza;
     private JComboBox editProveedorPieza;
@@ -14,6 +14,8 @@ public class EditarPieza {
 
 
     public EditarPieza(){
+
+        setContentPane(editarPieza);
 
         editDescripcionPieza.setLineWrap(true);
         editDescripcionPieza.setWrapStyleWord(true);

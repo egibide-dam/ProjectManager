@@ -105,8 +105,8 @@
               <contentAreaFilled value="true"/>
               <focusPainted value="false"/>
               <font name="Arial Nova" size="14" style="0"/>
-              <maximumSize width="120" height="44"/>
-              <minimumSize width="120" height="44"/>
+              <maximumSize width="140" height="44"/>
+              <minimumSize width="140" height="44"/>
               <opaque value="false"/>
               <preferredSize width="120" height="44"/>
               <rolloverEnabled value="true"/>
@@ -126,6 +126,21 @@
               <preferredSize width="100" height="44"/>
               <rolloverEnabled value="true"/>
               <text value="PIEZAS"/>
+            </properties>
+          </component>
+          <component id="1e297" class="javax.swing.JButton" binding="Ayuda">
+            <constraints/>
+            <properties>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <focusPainted value="false"/>
+              <font name="Arial Nova" size="14" style="0"/>
+              <maximumSize width="100" height="44"/>
+              <minimumSize width="100" height="44"/>
+              <opaque value="false"/>
+              <preferredSize width="100" height="44"/>
+              <rolloverEnabled value="true"/>
+              <text value="AYUDA"/>
             </properties>
           </component>
         </children>
