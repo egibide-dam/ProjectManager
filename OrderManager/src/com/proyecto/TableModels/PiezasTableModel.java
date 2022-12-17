@@ -1,5 +1,6 @@
 package com.proyecto.TableModels;
 
+import com.proyecto.PedidosEntity;
 import com.proyecto.PiezasEntity;
 import com.proyecto.ProyectosEntity;
 
@@ -47,7 +48,7 @@ public class PiezasTableModel extends AbstractTableModel {
             case 4:
                 return p.getProveedoresByIdproveedor();
             case 5:
-                return p.getAlta();
+                return estadotext(p);
         }
 
         return null;
@@ -58,5 +59,15 @@ public class PiezasTableModel extends AbstractTableModel {
         return columnas[column];
     }
 
+    public String estadotext(PiezasEntity p){
+        String text = "";
+        if (p.getAlta() == 1){
+            text = "ALTA";
+        } else {
+            text = "BAJA";
+        }
+
+        return text;
+    }
 
 }

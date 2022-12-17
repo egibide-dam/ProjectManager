@@ -44,7 +44,7 @@ public class ProyectosTableModel extends AbstractTableModel {
             case 2:
                 return p.getCiudad();
             case 3:
-                return p.getAlta();
+                return estadotext(p);
         }
 
         return null;
@@ -55,5 +55,15 @@ public class ProyectosTableModel extends AbstractTableModel {
         return columnas[column];
     }
 
+    public String estadotext(ProyectosEntity p){
+        String text = "";
+        if (p.getAlta() == 1){
+            text = "ALTA";
+        } else {
+            text = "BAJA";
+        }
+
+        return text;
+    }
 
 }

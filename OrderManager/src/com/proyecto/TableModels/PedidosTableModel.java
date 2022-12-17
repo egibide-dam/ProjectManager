@@ -46,7 +46,7 @@ public class PedidosTableModel extends AbstractTableModel {
             case 4:
                 return p.getCantidad();
             case 5:
-                return p.getAlta();
+                return estadotext(p);
         }
 
         return null;
@@ -55,6 +55,17 @@ public class PedidosTableModel extends AbstractTableModel {
     @Override
     public String getColumnName(int column) {
         return columnas[column];
+    }
+
+    public String estadotext(PedidosEntity p){
+        String text = "";
+        if (p.getAlta() == 1){
+            text = "ACTIVO";
+        } else {
+            text = "CANCELADO";
+        }
+
+        return text;
     }
 
 }
