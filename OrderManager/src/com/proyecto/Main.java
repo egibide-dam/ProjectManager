@@ -1,3 +1,5 @@
+package com.proyecto;
+
 import com.proyecto.PedidosEntity;
 import com.proyecto.PiezasEntity;
 import com.proyecto.ProveedoresEntity;
@@ -5,6 +7,7 @@ import com.proyecto.ProyectosEntity;
 import com.proyecto.views.Home;
 
 import javax.swing.*;
+import java.util.List;
 
 public class Main {
 
@@ -13,6 +16,9 @@ public class Main {
     public static ProveedoresEntity currentProveedor = null;
     public static ProyectosEntity currentProyecto = null;
     public static PedidosEntity currentPedido = null;
+
+
+
 
     public static void main(String[] args) {
 

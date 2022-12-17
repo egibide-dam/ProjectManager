@@ -1,8 +1,6 @@
 package com.proyecto.views;
 
-import com.proyecto.PiezasEntity;
-import com.proyecto.ProveedoresEntity;
-import com.proyecto.ProyectosEntity;
+import com.proyecto.*;
 import com.proyecto.TableModels.PedidosTableModel;
 import com.proyecto.TableModels.PiezasTableModel;
 import com.proyecto.TableModels.ProveedoresTableModel;
@@ -16,6 +14,8 @@ import javax.swing.*;
 import javax.swing.table.TableRowSorter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.List;
 
 public class Home {
@@ -118,6 +118,13 @@ public class Home {
     private JButton nuevoProyecto;
     private JButton Ayuda;
 
+
+    //LISTAS ACTUALES EN TABLA
+    /// LISTAS EN TABLAS (para descargar)
+    List<PiezasEntity> currentPiezasList;
+    List<ProveedoresEntity> currentProveedoresList;
+    List<ProyectosEntity> currentProyectosList;
+    List<PedidosEntity> currentPedidosList;
 
     ///MÉTODOS
     public void listaProyectos(JComboBox<ProyectosEntity> select) {
@@ -389,6 +396,7 @@ public class Home {
         listaPiezas(piezaFiltroPedido);
         listaProyectos(proyectoFiltroPedido);
         tablaPedidos.setModel(new PedidosTableModel(PedidosController.leerTodosPedidos()));
+        currentPedidosList = PedidosController.leerTodosPedidos();
 
 
         nuevoPedido.addActionListener(new ActionListener() {
@@ -400,6 +408,18 @@ public class Home {
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
+            }
+        });
+
+        tablaPedidos.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                int row = tablaPedidos.getSelectedRow();
+                PedidosEntity ped = currentPedidosList.get(row);
+                Main.currentPedido = ped;
+                detallePedido.setEnabled(true);
+                eliminarPedido.setEnabled(true);
             }
         });
 
@@ -432,10 +452,12 @@ public class Home {
 
 
 
+
         //PAG PROYECTOS
         searchTextProyectos.setText("Busca por nombre de proyecto\no ciudad:");
         listaProyectos(proyectoFiltroProyecto);
         tablaProyectos.setModel(new ProyectosTableModel(ProyectoController.leerTodosProyectos()));
+        currentProyectosList = ProyectoController.leerTodosProyectos();
 
 
         nuevoProyecto.addActionListener(new ActionListener() {
@@ -447,6 +469,19 @@ public class Home {
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
+            }
+        });
+
+        tablaProyectos.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                int row = tablaProyectos.getSelectedRow();
+                ProyectosEntity proy = currentProyectosList.get(row);
+                Main.currentProyecto = proy;
+                detallesProyecto.setEnabled(true);
+                editarProyecto.setEnabled(true);
+                altaProyecto.setEnabled(true);
             }
         });
 
@@ -491,6 +526,7 @@ public class Home {
         searchTextProveedor.setText("Busca por nombre, apellidos\n o dirección de proveedor:");
         listaProveedores(proveedorFiltroProveedor);
         tablaproveedores.setModel(new ProveedoresTableModel(ProveedorController.leerTodosProveedores()));
+        currentProveedoresList = ProveedorController.leerTodosProveedores();
 
 
         nuevoProveedor.addActionListener(new ActionListener() {
@@ -502,6 +538,19 @@ public class Home {
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
+            }
+        });
+
+        tablaproveedores.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                int row = tablaproveedores.getSelectedRow();
+                ProveedoresEntity prov = currentProveedoresList.get(row);
+                Main.currentProveedor = prov;
+                detallesProveedor.setEnabled(true);
+                editarProveedor.setEnabled(true);
+                altasProveedor.setEnabled(true);
             }
         });
 
@@ -550,6 +599,7 @@ public class Home {
         searchTextPiezas.setText("Busca por nombre de pieza:");
         listaPiezas(piezaFiltroPieza);
         tablaPiezas.setModel(new PiezasTableModel(PiezaController.leerTodosPiezas()));
+        currentPiezasList = PiezaController.leerTodosPiezas();
 
 
         nuevaPieza.addActionListener(new ActionListener() {
@@ -561,6 +611,19 @@ public class Home {
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
+            }
+        });
+
+        tablaPiezas.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                int row = tablaPiezas.getSelectedRow();
+                PiezasEntity piez = currentPiezasList.get(row);
+                Main.currentPieza = piez;
+                detallesPieza.setEnabled(true);
+                editarPieza.setEnabled(true);
+                altasPieza.setEnabled(true);
             }
         });
 
