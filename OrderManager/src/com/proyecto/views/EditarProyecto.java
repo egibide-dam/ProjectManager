@@ -23,6 +23,10 @@ public class EditarProyecto extends JFrame{
 
         editCiudadProyecto.setModel(new DefaultComboBoxModel<>(Ciudades.values()));
 
+        titleEditarProyecto.setText("Editar PROY-" + Main.currentProyecto.getIdproyecto());
+        editCiudadProyecto.setSelectedItem(Main.currentProyecto.getCiudad());
+        editNameProyecto.setText(Main.currentProyecto.getNombre());
+
         cancelarEditarProyecto.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -37,9 +41,6 @@ public class EditarProyecto extends JFrame{
             }
         });
 
-        titleEditarProyecto.setText("Editar PROY-" + Main.currentProyecto.getIdproyecto());
-        editCiudadProyecto.setSelectedItem(Main.currentProyecto.getCiudad());
-        editNameProyecto.setText(Main.currentProyecto.getNombre());
 
 
     }

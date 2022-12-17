@@ -8,6 +8,8 @@ import com.proyecto.controller.ProveedorController;
 import com.proyecto.controller.ProyectoController;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 public class NuevoPedido extends JFrame{
@@ -75,6 +77,13 @@ public class NuevoPedido extends JFrame{
         listaProveedores(newProveedorPedido);
         listaPiezas(newPiezaPedido);
         listaProyectos(newProyectoPedido);
+
+        cancelarNuevoPedido.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
 
 
     }

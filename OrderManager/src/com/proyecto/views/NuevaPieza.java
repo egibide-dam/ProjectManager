@@ -4,6 +4,8 @@ import com.proyecto.ProveedoresEntity;
 import com.proyecto.controller.ProveedorController;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 public class NuevaPieza extends JFrame{
@@ -41,6 +43,13 @@ public class NuevaPieza extends JFrame{
         newDescripcionPieza.setLineWrap(true);
         newDescripcionPieza.setWrapStyleWord(true);
         listaProveedores(newProveedorPieza);
+
+        cancelarNuevoPieza.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
 
 
     }
