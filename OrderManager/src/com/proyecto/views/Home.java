@@ -11,7 +11,6 @@ import com.proyecto.controller.ProveedorController;
 import com.proyecto.controller.ProyectoController;
 
 import javax.swing.*;
-import javax.swing.table.TableRowSorter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -120,13 +119,80 @@ public class Home {
 
 
     //LISTAS ACTUALES EN TABLA
-    /// LISTAS EN TABLAS (para descargar)
     List<PiezasEntity> currentPiezasList;
     List<ProveedoresEntity> currentProveedoresList;
     List<ProyectosEntity> currentProyectosList;
     List<PedidosEntity> currentPedidosList;
 
+
     ///MÉTODOS
+    public void clearPedidos(){
+
+        tablaPedidos.setModel(new PedidosTableModel(PedidosController.leerTodosPedidos()));
+        currentPedidosList = PedidosController.leerTodosPedidos();
+        detallePedido.setEnabled(false);
+        eliminarPedido.setEnabled(false);
+        limpiarbuscarPedidos.setEnabled(false);
+        buscarPedidosboton.setEnabled(false);
+        limpiarFiltrarPedidos.setEnabled(false);
+        filtrarPedidos.setEnabled(false);
+        searchinputPedido.setText("");
+        piezaFiltroPedido.setSelectedIndex(-1);
+        proveedorFiltroPedido.setSelectedIndex(-1);
+        proyectoFiltroPedido.setSelectedIndex(-1);
+        estadoFiltroPedido.setSelectedIndex(0);
+    }
+
+    public void clearProyectos(){
+
+        tablaProyectos.setModel(new ProyectosTableModel(ProyectoController.leerTodosProyectos()));
+        currentProyectosList = ProyectoController.leerTodosProyectos();
+        detallesProyecto.setEnabled(false);
+        editarProyecto.setEnabled(false);
+        altaProyecto.setEnabled(false);
+        limpiarBuscarProyectos.setEnabled(false);
+        buscarProyectoboton.setEnabled(false);
+        limpiarFiltrosProyectos.setEnabled(false);
+        filtrarProyectos.setEnabled(false);
+        searchinputProyectos.setText("");
+        proyectoFiltroProyecto.setSelectedIndex(-1);
+        estadoFiltroProyectos.setSelectedIndex(0);
+
+    }
+
+
+    public void clearProveedores(){
+
+        tablaproveedores.setModel(new ProveedoresTableModel(ProveedorController.leerTodosProveedores()));
+        currentProveedoresList = ProveedorController.leerTodosProveedores();
+        detallesProveedor.setEnabled(false);
+        editarProveedor.setEnabled(false);
+        altasProveedor.setEnabled(false);
+        limpiarBuscarProveedor.setEnabled(false);
+        buscarProveedorboton.setEnabled(false);
+        limpiarFiltrosProveedores.setEnabled(false);
+        filtrarProveedores.setEnabled(false);
+        searchinputProveedores.setText("");
+        proveedorFiltroProveedor.setSelectedIndex(-1);
+        estadoFiltroProveedor.setSelectedIndex(0);
+
+    }
+
+    public void clearPiezas(){
+        tablaPiezas.setModel(new PiezasTableModel(PiezaController.leerTodosPiezas()));
+        currentPiezasList = PiezaController.leerTodosPiezas();
+        detallesPieza.setEnabled(false);
+        editarPieza.setEnabled(false);
+        altasPieza.setEnabled(false);
+        limpiarBuscarPiezas.setEnabled(false);
+        buscarPiezasboton.setEnabled(false);
+        limpiarFiltroPieza.setEnabled(false);
+        filtrarPieza.setEnabled(false);
+        searchinputPiezas.setText("");
+        piezaFiltroPieza.setSelectedIndex(-1);
+        estadoFiltroPieza.setSelectedIndex(0);
+    }
+
     public void listaProyectos(JComboBox<ProyectosEntity> select) {
         DefaultComboBoxModel<ProyectosEntity> proyectosListModel = new DefaultComboBoxModel<>();
 
@@ -395,8 +461,7 @@ public class Home {
         listaProveedores(proveedorFiltroPedido);
         listaPiezas(piezaFiltroPedido);
         listaProyectos(proyectoFiltroPedido);
-        tablaPedidos.setModel(new PedidosTableModel(PedidosController.leerTodosPedidos()));
-        currentPedidosList = PedidosController.leerTodosPedidos();
+        clearPedidos();
 
 
         nuevoPedido.addActionListener(new ActionListener() {
@@ -456,8 +521,7 @@ public class Home {
         //PAG PROYECTOS
         searchTextProyectos.setText("Busca por nombre de proyecto\no ciudad:");
         listaProyectos(proyectoFiltroProyecto);
-        tablaProyectos.setModel(new ProyectosTableModel(ProyectoController.leerTodosProyectos()));
-        currentProyectosList = ProyectoController.leerTodosProyectos();
+        clearProyectos();
 
 
         nuevoProyecto.addActionListener(new ActionListener() {
@@ -522,11 +586,15 @@ public class Home {
         });
 
 
+
+
+
+
+
         //PAG PROVEEDORES
         searchTextProveedor.setText("Busca por nombre, apellidos\n o dirección de proveedor:");
         listaProveedores(proveedorFiltroProveedor);
-        tablaproveedores.setModel(new ProveedoresTableModel(ProveedorController.leerTodosProveedores()));
-        currentProveedoresList = ProveedorController.leerTodosProveedores();
+        clearProveedores();
 
 
         nuevoProveedor.addActionListener(new ActionListener() {
@@ -598,8 +666,7 @@ public class Home {
         //PAG PIEZAS
         searchTextPiezas.setText("Busca por nombre de pieza:");
         listaPiezas(piezaFiltroPieza);
-        tablaPiezas.setModel(new PiezasTableModel(PiezaController.leerTodosPiezas()));
-        currentPiezasList = PiezaController.leerTodosPiezas();
+        clearPiezas();
 
 
         nuevaPieza.addActionListener(new ActionListener() {
