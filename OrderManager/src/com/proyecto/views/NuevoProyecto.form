@@ -50,7 +50,7 @@
                 </constraints>
                 <properties>
                   <font name="Arial Nova" size="14" style="0"/>
-                  <text value="Nombre del proyecto"/>
+                  <text value="Nombre del proyecto (máx 40 car.)"/>
                 </properties>
               </component>
               <component id="fcb1d" class="javax.swing.JLabel">
