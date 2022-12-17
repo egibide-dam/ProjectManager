@@ -34,13 +34,12 @@ public class PiezaController {
         HibernateUtil.guardar(p);
     }
 
-    public static void editarPieza(int id, String nombre, double precio, String descripcion, int idproveedor){
+    public static void editarPieza(int id, String nombre, double precio, String descripcion){
         PiezasEntity p = leerPieza(id);
         if(p != null){
             p.setNombre(nombre);
             p.setPrecio(precio);
             p.setDescripcion(descripcion);
-            p.setProveedoresByIdproveedor(ProveedorController.leerProveedor(idproveedor));
             HibernateUtil.actualizar(p);
         } else {
             System.out.println("\nNo se ha encontrado la pieza a editar.");

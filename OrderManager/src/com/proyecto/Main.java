@@ -1,14 +1,11 @@
 package com.proyecto;
 
-import com.proyecto.PedidosEntity;
-import com.proyecto.PiezasEntity;
-import com.proyecto.ProveedoresEntity;
-import com.proyecto.ProyectosEntity;
+
 import com.proyecto.views.Home;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.List;
+
 
 public class Main {
 

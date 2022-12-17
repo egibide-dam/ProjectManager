@@ -44,6 +44,8 @@ public class NuevoProveedor extends JFrame{
         guardarNuevoProveedor.setEnabled(false);
         cancelarNuevoProveedor.setEnabled(false);
     }
+
+
     public NuevoProveedor(){
 
         setContentPane(nuevoProveedor);
