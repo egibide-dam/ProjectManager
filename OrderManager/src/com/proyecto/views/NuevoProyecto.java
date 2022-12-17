@@ -122,12 +122,15 @@ public class NuevoProyecto extends JFrame {
                     disableForm();
                     String name = newNameProyecto.getText();
                     Ciudades ciudad = (Ciudades) newCiudadProyecto.getSelectedItem();
-                    ProyectoController.nuevoProyecto(name, ciudad.toString());
-                    clearForm();
-                    JOptionPane.showMessageDialog(null, "Proyecto" + name + " guardado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
-                    dispose();
+                    if (ProyectoController.nuevoProyecto(name, ciudad.toString())){
+                        clearForm();
+                        JOptionPane.showMessageDialog(null, "Proyecto " + name + " guardado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                        dispose();
 
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se ha podido guardar el proyecto " + name + ".", "ERROR", JOptionPane.ERROR_MESSAGE);
 
+                    }
                 }
 
             }

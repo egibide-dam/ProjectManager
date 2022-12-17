@@ -24,50 +24,65 @@ public class ProveedorController {
         return p;
     }
 
-    public static void nuevoProveedor(String nombre, String apellidos, String direccion) {
+    public static Boolean nuevoProveedor(String nombre, String apellidos, String direccion) {
         ProveedoresEntity p = new ProveedoresEntity();
         p.setNombre(nombre);
         p.setApellidos(apellidos);
         p.setDireccion(direccion);
         p.setAlta((byte) 1);
-        HibernateUtil.guardar(p);
+        if (HibernateUtil.guardar(p)){
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public static void editarProveedor(int id, String nombre, String apellidos, String direccion) {
+    public static Boolean editarProveedor(int id, String nombre, String apellidos, String direccion) {
         ProveedoresEntity p = leerProveedor(id);
         if (p != null) {
             p.setNombre(nombre);
             p.setApellidos(apellidos);
             p.setDireccion(direccion);
-            HibernateUtil.actualizar(p);
+            if (HibernateUtil.actualizar(p)){
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            System.out.println("\nNo se ha encontrado el proveedor a editar.");
+            return false;
         }
     }
 
-    public static void bajaProveedor(int id) {
+    public static Boolean bajaProveedor(int id) {
         ProveedoresEntity p = leerProveedor(id);
         if (p != null) {
             p.setAlta((byte) 0);
-            HibernateUtil.actualizar(p);
+            if (HibernateUtil.actualizar(p)){
+                List<PiezasEntity> piezasdeproveedor = PiezaController.piezasPorProveedor(id);
+                for (PiezasEntity pi : piezasdeproveedor){
+                    PiezaController.bajaPieza(pi.getIdpieza());
+                }
 
-            List<PiezasEntity> piezasdeproveedor = PiezaController.piezasPorProveedor(id);
-            for (PiezasEntity pi : piezasdeproveedor){
-                PiezaController.bajaPieza(pi.getIdpieza());
+                return true;
+            } else {
+                return false;
             }
-
         } else {
-            System.out.println("\nNo se ha encontrado el proveedor a dar de baja.");
+            return false;
         }
     }
 
-    public static void altaProveedor(int id) {
+    public static Boolean altaProveedor(int id) {
         ProveedoresEntity p = leerProveedor(id);
         if (p != null) {
             p.setAlta((byte) 1);
-            HibernateUtil.actualizar(p);
+            if(HibernateUtil.actualizar(p)){
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            System.out.println("\nNo se ha encontrado el proveedor a dar de alta.");
+            return false;
         }
     }
 

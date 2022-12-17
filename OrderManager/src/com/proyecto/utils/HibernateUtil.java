@@ -1,6 +1,7 @@
 package com.proyecto.utils;
 
 import com.proyecto.PiezasEntity;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -45,48 +46,45 @@ public class HibernateUtil {
         return object;
     }
 
-    public static void guardar(Object object) {
-        Configuration config = new Configuration();
-        config.configure();
-        SessionFactory sf = config.buildSessionFactory();
-        Session sesion = sf.openSession();
-        Transaction trans = sesion.beginTransaction();
+    public static Boolean guardar(Object object) {
+        try {
+            Configuration config = new Configuration();
+            config.configure();
+            SessionFactory sf = config.buildSessionFactory();
+            Session sesion = sf.openSession();
+            Transaction trans = sesion.beginTransaction();
 
-        sesion.save(object);
+            sesion.save(object);
 
-        trans.commit();
-        sesion.close();
-        sf.close();
+            trans.commit();
+            sesion.close();
+            sf.close();
+            return true;
+        } catch (HibernateException e) {
+            return false;
+        }
     }
 
 
-    public static void actualizar(Object object) {
-        Configuration config = new Configuration();
-        config.configure();
-        SessionFactory sf = config.buildSessionFactory();
-        Session sesion = sf.openSession();
-        Transaction trans = sesion.beginTransaction();
+    public static Boolean actualizar(Object object) {
+        try {
+            Configuration config = new Configuration();
+            config.configure();
+            SessionFactory sf = config.buildSessionFactory();
+            Session sesion = sf.openSession();
+            Transaction trans = sesion.beginTransaction();
 
-        sesion.update(object);
+            sesion.update(object);
 
-        trans.commit();
-        sesion.close();
-        sf.close();
+            trans.commit();
+            sesion.close();
+            sf.close();
+            return true;
+        } catch (HibernateException e) {
+            return false;
+        }
     }
 
-    public static void eliminar(Object object) {
-        Configuration config = new Configuration();
-        config.configure();
-        SessionFactory sf = config.buildSessionFactory();
-        Session sesion = sf.openSession();
-        Transaction trans = sesion.beginTransaction();
-
-        sesion.delete(object);
-
-        trans.commit();
-        sesion.close();
-        sf.close();
-    }
 
     public static List<Object> filtrar(Class clase, String sentencia) {
         Configuration config = new Configuration();

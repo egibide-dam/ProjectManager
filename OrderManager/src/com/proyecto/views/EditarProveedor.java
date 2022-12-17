@@ -196,13 +196,16 @@ public class EditarProveedor extends JFrame{
                     String name = editNameProveedor.getText();
                     String apellidos = editApellidosProveedor.getText();
                     String direccion = editDireccionProveedor.getText();
-                    ProveedorController.editarProveedor(id, name, apellidos, direccion);
-                    Main.currentProveedor = ProveedorController.leerProveedor(id);
-                    fillForm();
-                    JOptionPane.showMessageDialog(null, "Proveedor" + name + " " + apellidos + " actualizado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
-                    dispose();
+                    if (ProveedorController.editarProveedor(id, name, apellidos, direccion)){
+                        Main.currentProveedor = ProveedorController.leerProveedor(id);
+                        fillForm();
+                        JOptionPane.showMessageDialog(null, "Proveedor " + name + " " + apellidos + " actualizado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                        dispose();
 
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se ha podido actualizar el proveedor " + Main.currentProveedor.getNombre() + " " + Main.currentProveedor.getApellidos() + ".", "ERROR", JOptionPane.ERROR_MESSAGE);
 
+                    }
                 }
 
             }

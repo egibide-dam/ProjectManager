@@ -188,11 +188,14 @@ public class NuevoPedido extends JFrame{
                     ProveedoresEntity proveedor = (ProveedoresEntity) newProveedorPedido.getSelectedItem();
                     PiezasEntity pieza = (PiezasEntity) newPiezaPedido.getSelectedItem();
                     int cantidad = (int) newCantidadPedido.getValue();
-                    PedidosController.nuevoPedido(cantidad, proveedor.getIdproveedor(), pieza.getIdpieza(), proyecto.getIdproyecto());
-                    clearForm();
-                    JOptionPane.showMessageDialog(null, "Nuevo pedido guardado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
-                    dispose();
+                    if (PedidosController.nuevoPedido(cantidad, proveedor.getIdproveedor(), pieza.getIdpieza(), proyecto.getIdproyecto())){
+                        clearForm();
+                        JOptionPane.showMessageDialog(null, "Nuevo pedido guardado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                        dispose();
 
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se ha podido guardar el pedido.", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    }
                 }
 
 

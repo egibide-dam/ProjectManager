@@ -24,45 +24,61 @@ public class PiezaController {
         return p;
     }
 
-    public static void nuevaPieza(String nombre, double precio, String descripcion, int idproveedor){
+    public static Boolean nuevaPieza(String nombre, double precio, String descripcion, int idproveedor){
         PiezasEntity p = new PiezasEntity();
         p.setNombre(nombre);
         p.setPrecio(precio);
         p.setDescripcion(descripcion);
         p.setAlta((byte)1);
         p.setProveedoresByIdproveedor(ProveedorController.leerProveedor(idproveedor));
-        HibernateUtil.guardar(p);
+        if (HibernateUtil.guardar(p)){
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public static void editarPieza(int id, String nombre, double precio, String descripcion){
+    public static Boolean editarPieza(int id, String nombre, double precio, String descripcion){
         PiezasEntity p = leerPieza(id);
         if(p != null){
             p.setNombre(nombre);
             p.setPrecio(precio);
             p.setDescripcion(descripcion);
-            HibernateUtil.actualizar(p);
+            if (HibernateUtil.actualizar(p)){
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            System.out.println("\nNo se ha encontrado la pieza a editar.");
+            return false;
         }
     }
 
-    public static void bajaPieza(int id){
+    public static Boolean bajaPieza(int id){
         PiezasEntity p = leerPieza(id);
         if(p != null){
             p.setAlta((byte)0);
-            HibernateUtil.actualizar(p);
+            if (HibernateUtil.actualizar(p)){
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            System.out.println("\nNo se ha encontrado la pieza a dar de baja.");
+            return false;
         }
     }
 
-    public static void altaPieza(int id){
+    public static Boolean altaPieza(int id){
         PiezasEntity p = leerPieza(id);
         if(p != null){
             p.setAlta((byte)1);
-            HibernateUtil.actualizar(p);
+            if(HibernateUtil.actualizar(p)){
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            System.out.println("\nNo se ha encontrado la pieza a dar de alta.");
+            return false;
         }
     }
 
@@ -136,11 +152,6 @@ public class PiezaController {
         int idproveedor = objetos.get(0);
         return idproveedor;
 
-    }
-
-
-    public static void main(String[] args) {
-        nuevaPieza("Prueba", 2.35, "Nada", 1);
     }
 
 

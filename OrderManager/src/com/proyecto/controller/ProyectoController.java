@@ -24,42 +24,58 @@ public class ProyectoController {
         return p;
     }
 
-    public static void nuevoProyecto(String nombre, String ciudad){
+    public static Boolean nuevoProyecto(String nombre, String ciudad){
         ProyectosEntity p = new ProyectosEntity();
         p.setNombre(nombre);
         p.setCiudad(ciudad);
         p.setAlta((byte)1);
-        HibernateUtil.guardar(p);
+        if (HibernateUtil.guardar(p)){
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public static void editarProyecto(int id, String nombre, String ciudad){
+    public static Boolean editarProyecto(int id, String nombre, String ciudad){
         ProyectosEntity p = leerProyecto(id);
         if(p != null){
             p.setNombre(nombre);
             p.setCiudad(ciudad);
-            HibernateUtil.actualizar(p);
+            if (HibernateUtil.actualizar(p)){
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            System.out.println("\nNo se ha encontrado el proyecto a editar.");
+            return false;
         }
     }
 
-    public static void bajaProyecto(int id){
+    public static Boolean bajaProyecto(int id){
         ProyectosEntity p = leerProyecto(id);
         if(p != null){
             p.setAlta((byte)0);
-            HibernateUtil.actualizar(p);
+            if (HibernateUtil.actualizar(p)){
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            System.out.println("\nNo se ha encontrado el proyecto a dar de baja.");
+            return false;
         }
     }
 
-    public static void altaProyecto(int id){
+    public static Boolean altaProyecto(int id){
         ProyectosEntity p = leerProyecto(id);
         if(p != null){
             p.setAlta((byte)1);
-            HibernateUtil.actualizar(p);
+            if (HibernateUtil.actualizar(p)){
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            System.out.println("\nNo se ha encontrado el proyecto a dar de alta.");
+            return false;
         }
     }
 

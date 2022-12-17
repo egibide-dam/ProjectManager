@@ -17,7 +17,7 @@ import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.List;
 
-public class EditarPieza extends JFrame{
+public class EditarPieza extends JFrame {
     JPanel editarPieza;
     private JLabel titleEditarPieza;
     private JComboBox editProveedorPieza;
@@ -59,8 +59,8 @@ public class EditarPieza extends JFrame{
         List<ProveedoresEntity> props = ProveedorController.leerTodosProveedores();
         int id = -1;
         int i = 0;
-        for (ProveedoresEntity p : props){
-            if (p.getIdproveedor() == pro.getIdproveedor()){
+        for (ProveedoresEntity p : props) {
+            if (p.getIdproveedor() == pro.getIdproveedor()) {
                 id = i;
             }
             i += 1;
@@ -93,7 +93,7 @@ public class EditarPieza extends JFrame{
         titleEditarPieza.setText("Editar PIEZ-" + Main.currentPieza.getIdpieza());
         editDescripcionPieza.setLineWrap(true);
         editDescripcionPieza.setWrapStyleWord(true);
-        SpinnerNumberModel spinnermodel = new SpinnerNumberModel(0.00,0.00,1000.00,0.05);
+        SpinnerNumberModel spinnermodel = new SpinnerNumberModel(0.00, 0.00, 1000.00, 0.05);
         editPrecioPieza.setModel(spinnermodel);
         fillForm();
 
@@ -120,7 +120,7 @@ public class EditarPieza extends JFrame{
         editNamePieza.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
-                if(editNamePieza.getText().length() >= 40) {
+                if (editNamePieza.getText().length() >= 40) {
                     e.consume();
                     editNamePieza.setBackground(Main.warn);
 
@@ -154,7 +154,7 @@ public class EditarPieza extends JFrame{
         editDescripcionPieza.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
-                if(editDescripcionPieza.getText().length() >= 200) {
+                if (editDescripcionPieza.getText().length() >= 200) {
                     e.consume();
                     editDescripcionPieza.setBackground(Main.warn);
 
@@ -168,7 +168,7 @@ public class EditarPieza extends JFrame{
         editPrecioPieza.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
-                if ((double)editPrecioPieza.getValue() > 0.0){
+                if ((double) editPrecioPieza.getValue() > 0.0) {
                     guardarEditarPieza.setEnabled(true);
                     editPrecioPieza.getEditor().getComponent(0).setBackground(Main.white);
                 }
@@ -191,13 +191,13 @@ public class EditarPieza extends JFrame{
                 guardarEditarPieza.setEnabled(false);
                 cancelarEditarPieza.setEnabled(false);
 
-                if (editNamePieza.getText().length() == 0 || (double)editPrecioPieza.getValue() == 0.00) {
+                if (editNamePieza.getText().length() == 0 || (double) editPrecioPieza.getValue() == 0.00) {
 
                     if (editNamePieza.getText().length() == 0) {
                         editNamePieza.setBackground(Main.error);
                     }
 
-                    if ((double)editPrecioPieza.getValue() == 0.00) {
+                    if ((double) editPrecioPieza.getValue() == 0.00) {
                         editPrecioPieza.getEditor().getComponent(0).setBackground(Main.error);
                     }
 
@@ -209,19 +209,24 @@ public class EditarPieza extends JFrame{
                     int id = Main.currentPieza.getIdpieza();
                     String name = editNamePieza.getText();
                     String descrip;
-                    if (editDescripcionPieza.getText().length() == 0){
+                    if (editDescripcionPieza.getText().length() == 0) {
                         descrip = "-";
                     } else {
                         descrip = editDescripcionPieza.getText();
                     }
                     float precio = (float) ((double) editPrecioPieza.getValue());
-                    PiezaController.editarPieza(id, name, precio, descrip);
-                    try {
-                        fillForm();
-                    } catch (IOException | ClassNotFoundException ex) {
+                    if (PiezaController.editarPieza(id, name, precio, descrip)) {
+                        Main.currentPieza = PiezaController.leerPieza(id);
+                        try {
+                            fillForm();
+                        } catch (IOException | ClassNotFoundException ex) {
+                        }
+                        JOptionPane.showMessageDialog(null, "Pieza " + name + " actualizada.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                        dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se ha podido actualizar la pieza " + Main.currentPieza.getNombre() + ".", "ERROR", JOptionPane.ERROR_MESSAGE);
                     }
-                    JOptionPane.showMessageDialog(null, "Pieza" + name + " actualizada.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
-                    dispose();
+
 
                 }
 

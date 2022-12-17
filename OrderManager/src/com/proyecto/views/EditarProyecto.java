@@ -125,13 +125,16 @@ public class EditarProyecto extends JFrame{
                     int id = Main.currentProyecto.getIdproyecto();
                     String name = editNameProyecto.getText();
                     Ciudades ciudad = (Ciudades) editCiudadProyecto.getSelectedItem();
-                    ProyectoController.editarProyecto(id, name, ciudad.toString());
-                    Main.currentProyecto = ProyectoController.leerProyecto(id);
-                    fillForm();
-                    JOptionPane.showMessageDialog(null, "Proyecto" + name + " actualizado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
-                    dispose();
+                    if (ProyectoController.editarProyecto(id, name, ciudad.toString())){
+                        Main.currentProyecto = ProyectoController.leerProyecto(id);
+                        fillForm();
+                        JOptionPane.showMessageDialog(null, "Proyecto " + name + " actualizado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                        dispose();
 
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se ha podido actualizar el proyecto " + Main.currentProyecto.getNombre() + ".", "ERROR", JOptionPane.ERROR_MESSAGE);
 
+                    }
                 }
 
             }

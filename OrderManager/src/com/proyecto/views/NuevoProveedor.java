@@ -196,12 +196,15 @@ public class NuevoProveedor extends JFrame{
                     String name = newNameProveedor.getText();
                     String apellidos = newApellidosProveedor.getText();
                     String direccion = newDireccionProveedor.getText();
-                    ProveedorController.nuevoProveedor(name, apellidos, direccion);
-                    clearForm();
-                    JOptionPane.showMessageDialog(null, "Proveedor" + name + " " + apellidos + " guardado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
-                    dispose();
+                    if (ProveedorController.nuevoProveedor(name, apellidos, direccion)){
+                        clearForm();
+                        JOptionPane.showMessageDialog(null, "Proveedor " + name + " " + apellidos + " guardado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                        dispose();
 
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se ha podido guardar el proveedor " + name + " " + apellidos + ".", "ERROR", JOptionPane.ERROR_MESSAGE);
 
+                    }
                 }
 
             }

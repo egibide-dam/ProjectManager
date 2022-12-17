@@ -48,9 +48,17 @@ public class BajaProyecto extends JFrame{
                 guardarBajaProyecto.setEnabled(false);
 
                 if (Main.currentProyecto.getAlta() == 1){
-                    ProyectoController.bajaProyecto(Main.currentProyecto.getIdproyecto());
+                    if (ProyectoController.bajaProyecto(Main.currentProyecto.getIdproyecto())){
+                        JOptionPane.showMessageDialog(null, "Se ha dado de baja el proyecto " + Main.currentProyecto.getNombre() + ".", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se ha podido dar de baja el proyecto " + Main.currentProyecto.getNombre() + ".", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    }
                 } else {
-                    ProyectoController.altaProyecto(Main.currentProyecto.getIdproyecto());
+                    if (ProyectoController.altaProyecto(Main.currentProyecto.getIdproyecto())){
+                        JOptionPane.showMessageDialog(null, "Se ha dado de alta el proyecto " + Main.currentProyecto.getNombre() + ".", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se ha podido dar de alta el proyecto " + Main.currentProyecto.getNombre() + ".", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    }
                 }
 
                 dispose();

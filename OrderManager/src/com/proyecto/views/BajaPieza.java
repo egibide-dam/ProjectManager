@@ -44,9 +44,17 @@ public class BajaPieza extends JFrame{
                 guardarBajaPieza.setEnabled(false);
 
                 if (Main.currentPieza.getAlta() == 1){
-                    PiezaController.bajaPieza(Main.currentPieza.getIdpieza());
+                    if(PiezaController.bajaPieza(Main.currentPieza.getIdpieza())){
+                        JOptionPane.showMessageDialog(null, "Se ha dado de baja la pieza " + Main.currentPieza.getNombre() + ".", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se ha podido dar de baja la pieza " + Main.currentPieza.getNombre() + ".", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    }
                 } else {
-                    PiezaController.altaPieza(Main.currentPieza.getIdpieza());
+                    if(PiezaController.altaPieza(Main.currentPieza.getIdpieza())){
+                        JOptionPane.showMessageDialog(null, "Se ha dado de alta la pieza " + Main.currentPieza.getNombre() + ".", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se ha podido dar de alta la pieza " + Main.currentPieza.getNombre() + ".", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    }
                 }
 
                 dispose();

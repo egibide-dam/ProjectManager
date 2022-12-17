@@ -40,8 +40,11 @@ public class CancelarPedido extends JFrame{
                 cancelarPedido.setEnabled(false);
                 guardarEliminarPedido.setEnabled(false);
 
-                PedidosController.bajaPedido(Main.currentPedido.getIdpedido());
-
+                if (PedidosController.bajaPedido(Main.currentPedido.getIdpedido())){
+                    JOptionPane.showMessageDialog(null, "Se ha cancelado el pedido " + Main.currentPedido.getIdpedido() + ".", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se ha podido cancelar el pedido " + Main.currentPedido.getIdpedido() + ".", "ERROR", JOptionPane.ERROR_MESSAGE);
+                }
 
                 dispose();
             }

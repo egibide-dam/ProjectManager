@@ -218,11 +218,14 @@ public class NuevaPieza extends JFrame{
                     }
                     float precio = (float) ((double) newPrecioPieza.getValue());
                     int proveedor = ((ProveedoresEntity) newProveedorPieza.getSelectedItem()).getIdproveedor();
-                    PiezaController.nuevaPieza(name, precio, descrip, proveedor);
-                    clearForm();
-                    JOptionPane.showMessageDialog(null, "Pieza" + name + " guardada.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
-                    dispose();
+                    if (PiezaController.nuevaPieza(name, precio, descrip, proveedor)){
+                        clearForm();
+                        JOptionPane.showMessageDialog(null, "Pieza " + name + " guardada.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                        dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se ha podido guardar la pieza " + name + ".", "ERROR", JOptionPane.ERROR_MESSAGE);
 
+                    }
                 }
 
 

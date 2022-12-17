@@ -26,36 +26,32 @@ public class PedidosController {
         return p;
     }
 
-    public static void nuevoPedido(int cantidad, int idproveedor, int idpieza, int idproyecto){
+    public static Boolean nuevoPedido(int cantidad, int idproveedor, int idpieza, int idproyecto){
         PedidosEntity p = new PedidosEntity();
         p.setCantidad(cantidad);
         p.setProveedoresByIdproveedor(ProveedorController.leerProveedor(idproveedor));
         p.setPiezasByIdpieza(PiezaController.leerPieza(idpieza));
         p.setProyectosByIdproyecto(ProyectoController.leerProyecto(idproyecto));
         p.setAlta((byte)1);
-        HibernateUtil.guardar(p);
-    }
-
-    public static void editarPedido(int id, int cantidad, int idproveedor, int idpieza, int idproyecto){
-        PedidosEntity p = leerPedido(id);
-        if(p != null){
-            p.setCantidad(cantidad);
-            p.setProveedoresByIdproveedor(ProveedorController.leerProveedor(idproveedor));
-            p.setPiezasByIdpieza(PiezaController.leerPieza(idpieza));
-            p.setProyectosByIdproyecto(ProyectoController.leerProyecto(idproyecto));
-            HibernateUtil.actualizar(p);
+        if (HibernateUtil.guardar(p)){
+            return true;
         } else {
-            System.out.println("\nNo se ha encontrado el pedido a editar.");
+            return false;
         }
     }
 
-    public static void bajaPedido(int id){
+
+    public static Boolean bajaPedido(int id){
         PedidosEntity p = leerPedido(id);
         if(p != null){
             p.setAlta((byte)0);
-            HibernateUtil.actualizar(p);
+            if(HibernateUtil.actualizar(p)){
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            System.out.println("\nNo se ha encontrado el pedido a dar de baja.");
+            return false;
         }
     }
 
@@ -166,6 +162,7 @@ public class PedidosController {
         List<Integer> objetos = HibernateUtil.sentenciaEspecial(sentencia);
 
         int idproveedor = objetos.get(0);
+
         return idproveedor;
 
     }
@@ -176,6 +173,7 @@ public class PedidosController {
         List<Integer> objetos = HibernateUtil.sentenciaEspecial(sentencia);
 
         int idpieza = objetos.get(0);
+
         return idpieza;
 
     }
@@ -186,6 +184,7 @@ public class PedidosController {
         List<Integer> objetos = HibernateUtil.sentenciaEspecial(sentencia);
 
         int idproyecto = objetos.get(0);
+
         return idproyecto;
 
     }
@@ -254,7 +253,5 @@ public class PedidosController {
 
     }
 
-    public static void main(String[] args) {
-    }
 
 }
