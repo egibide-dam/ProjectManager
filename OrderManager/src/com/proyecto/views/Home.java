@@ -11,10 +11,8 @@ import com.proyecto.controller.ProveedorController;
 import com.proyecto.controller.ProyectoController;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import javax.swing.table.TableRowSorter;
+import java.awt.event.*;
 import java.io.IOException;
 import java.util.List;
 
@@ -38,8 +36,6 @@ public class Home {
     private JComboBox proyectoFiltroPedido;
     private JComboBox estadoFiltroPedido;
     private JTextArea searchtTextPedidos;
-    private JButton limpiarbuscarPedidos;
-    private JButton buscarPedidosboton;
     private JButton filtrarPedidos;
     private JButton limpiarFiltrarPedidos;
     private JTextField searchinputPedido;
@@ -62,28 +58,13 @@ public class Home {
     private JButton altasPieza;
     private JTable tablaPiezas;
     private JTextArea searchTextPiezas;
-    private JComboBox piezaFiltroPieza;
     private JComboBox estadoFiltroPieza;
-    private JButton limpiarBuscarPiezas;
-    private JButton buscarPiezasboton;
-    private JButton limpiarFiltroPieza;
-    private JButton filtrarPieza;
     private JTextField searchinputPiezas;
-    private JComboBox proveedorFiltroProveedor;
     private JComboBox estadoFiltroProveedor;
     private JTextArea searchTextProveedor;
-    private JButton limpiarBuscarProveedor;
-    private JButton buscarProveedorboton;
-    private JButton limpiarFiltrosProveedores;
-    private JButton filtrarProveedores;
     private JTextField searchinputProveedores;
     private JTextField searchinputProyectos;
-    private JButton limpiarBuscarProyectos;
-    private JButton buscarProyectoboton;
-    private JComboBox proyectoFiltroProyecto;
     private JComboBox estadoFiltroProyectos;
-    private JButton limpiarFiltrosProyectos;
-    private JButton filtrarProyectos;
     private JPanel paginaHome;
     private JLabel topPieza1nombre;
     private JLabel topPieza2nombre;
@@ -133,8 +114,6 @@ public class Home {
         currentPedidosList = PedidosController.leerTodosPedidos();
         detallePedido.setEnabled(false);
         eliminarPedido.setEnabled(false);
-        limpiarbuscarPedidos.setEnabled(false);
-        buscarPedidosboton.setEnabled(false);
         limpiarFiltrarPedidos.setEnabled(false);
         filtrarPedidos.setEnabled(false);
         searchinputPedido.setText("");
@@ -151,12 +130,7 @@ public class Home {
         detallesProyecto.setEnabled(false);
         editarProyecto.setEnabled(false);
         altaProyecto.setEnabled(false);
-        limpiarBuscarProyectos.setEnabled(false);
-        buscarProyectoboton.setEnabled(false);
-        limpiarFiltrosProyectos.setEnabled(false);
-        filtrarProyectos.setEnabled(false);
         searchinputProyectos.setText("");
-        proyectoFiltroProyecto.setSelectedIndex(-1);
         estadoFiltroProyectos.setSelectedIndex(0);
 
     }
@@ -169,12 +143,7 @@ public class Home {
         detallesProveedor.setEnabled(false);
         editarProveedor.setEnabled(false);
         altasProveedor.setEnabled(false);
-        limpiarBuscarProveedor.setEnabled(false);
-        buscarProveedorboton.setEnabled(false);
-        limpiarFiltrosProveedores.setEnabled(false);
-        filtrarProveedores.setEnabled(false);
         searchinputProveedores.setText("");
-        proveedorFiltroProveedor.setSelectedIndex(-1);
         estadoFiltroProveedor.setSelectedIndex(0);
 
     }
@@ -185,12 +154,7 @@ public class Home {
         detallesPieza.setEnabled(false);
         editarPieza.setEnabled(false);
         altasPieza.setEnabled(false);
-        limpiarBuscarPiezas.setEnabled(false);
-        buscarPiezasboton.setEnabled(false);
-        limpiarFiltroPieza.setEnabled(false);
-        filtrarPieza.setEnabled(false);
         searchinputPiezas.setText("");
-        piezaFiltroPieza.setSelectedIndex(-1);
         estadoFiltroPieza.setSelectedIndex(0);
     }
 
@@ -237,6 +201,34 @@ public class Home {
 
         select.setModel(piezasListModel);
 
+    }
+
+    private void buscarPedidos(String consulta){
+        PedidosTableModel ptm = (PedidosTableModel) tablaPedidos.getModel();
+        TableRowSorter<PedidosTableModel> tr = new TableRowSorter<>(ptm);
+        tablaPedidos.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(consulta));
+    }
+
+    private void buscarProyectos(String consulta){
+        ProyectosTableModel ptm = (ProyectosTableModel) tablaProyectos.getModel();
+        TableRowSorter<ProyectosTableModel> tr = new TableRowSorter<>(ptm);
+        tablaProyectos.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(consulta));
+    }
+
+    private void buscarProveedores(String consulta){
+        ProveedoresTableModel ptm = (ProveedoresTableModel) tablaproveedores.getModel();
+        TableRowSorter<ProveedoresTableModel> tr = new TableRowSorter<>(ptm);
+        tablaproveedores.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(consulta));
+    }
+
+    private void buscarPiezas(String consulta){
+        PiezasTableModel ptm = (PiezasTableModel) tablaPiezas.getModel();
+        TableRowSorter<PiezasTableModel> tr = new TableRowSorter<>(ptm);
+        tablaPiezas.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(consulta));
     }
 
     public void rellenarTop5Piezas(){
@@ -457,7 +449,7 @@ public class Home {
 
 
         //PAG PEDIDOS
-        searchtTextPedidos.setText("Busca por nombre de proyecto,\npieza a proveedor:");
+        searchtTextPedidos.setText("Busca por id, nombre de\nproyecto, pieza a proveedor:");
         scrollFiltroPedidos.setBorder(BorderFactory.createEmptyBorder());
         listaProveedores(proveedorFiltroPedido);
         listaPiezas(piezaFiltroPedido);
@@ -517,6 +509,81 @@ public class Home {
             }
         });
 
+        searchinputPedido.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                buscarPedidos(searchinputPedido.getText());
+            }
+        });
+
+        proyectoFiltroPedido.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                filtrarPedidos.setEnabled(true);
+                limpiarFiltrarPedidos.setEnabled(true);
+                searchinputPedido.setText("");
+            }
+        });
+
+        proveedorFiltroPedido.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                filtrarPedidos.setEnabled(true);
+                limpiarFiltrarPedidos.setEnabled(true);
+                searchinputPedido.setText("");
+            }
+        });
+
+        piezaFiltroPedido.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                filtrarPedidos.setEnabled(true);
+                limpiarFiltrarPedidos.setEnabled(true);
+                searchinputPedido.setText("");
+            }
+        });
+
+        estadoFiltroPedido.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                filtrarPedidos.setEnabled(true);
+                limpiarFiltrarPedidos.setEnabled(true);
+                searchinputPedido.setText("");
+            }
+        });
+
+        filtrarPedidos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                filtrarPedidos.setEnabled(false);
+                limpiarFiltrarPedidos.setEnabled(true);
+                searchinputPedido.setText("");
+
+                Integer proyecto = -1;
+                if (proyectoFiltroPedido.getSelectedIndex() != -1){
+                    proyecto = ((ProyectosEntity)proyectoFiltroPedido.getSelectedItem()).getIdproyecto();
+                }
+                Integer proveedor = -1;
+                if (proveedorFiltroPedido.getSelectedIndex() != -1){
+                    proveedor = ((ProveedoresEntity)proveedorFiltroPedido.getSelectedItem()).getIdproveedor();
+                }
+                Integer pieza = -1;
+                if (piezaFiltroPedido.getSelectedIndex() != -1){
+                    pieza = ((PiezasEntity)piezaFiltroPedido.getSelectedItem()).getIdpieza();
+                }
+                Integer estado = estadoFiltroPedido.getSelectedIndex();
+                tablaPedidos.setModel(new PedidosTableModel(PedidosController.filtrarPedidos(proyecto, pieza, proyecto, estado)));
+                currentPedidosList = PedidosController.filtrarPedidos(proveedor, pieza, proyecto, estado);
+            }
+        });
+
+        limpiarFiltrarPedidos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clearPedidos();
+            }
+        });
+
 
 
 
@@ -524,8 +591,7 @@ public class Home {
 
 
         //PAG PROYECTOS
-        searchTextProyectos.setText("Busca por nombre de proyecto\no ciudad:");
-        listaProyectos(proyectoFiltroProyecto);
+        searchTextProyectos.setText("Busca por id, nombre de\nproyecto o ciudad:");
         clearProyectos();
 
 
@@ -590,6 +656,24 @@ public class Home {
             }
         });
 
+        searchinputProyectos.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                buscarProyectos(searchinputProyectos.getText());
+            }
+        });
+
+
+        estadoFiltroProyectos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (estadoFiltroProyectos.getSelectedIndex() != 0){
+                    tablaProyectos.setModel(new ProyectosTableModel(ProyectoController.filtrarProyectos(estadoFiltroProyectos.getSelectedIndex())));
+                } else {
+                    clearProyectos();
+                }
+            }
+        });
 
 
 
@@ -597,8 +681,7 @@ public class Home {
 
 
         //PAG PROVEEDORES
-        searchTextProveedor.setText("Busca por nombre, apellidos\n o dirección de proveedor:");
-        listaProveedores(proveedorFiltroProveedor);
+        searchTextProveedor.setText("Busca por id, nombre, apellidos\no dirección de proveedor:");
         clearProveedores();
 
 
@@ -663,14 +746,31 @@ public class Home {
             }
         });
 
+        searchinputProveedores.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                buscarProveedores(searchinputProveedores.getText());
+            }
+        });
+
+        estadoFiltroProveedor.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (estadoFiltroProveedor.getSelectedIndex() != 0){
+                    tablaproveedores.setModel(new ProveedoresTableModel(ProveedorController.filtrarProveedores(estadoFiltroProveedor.getSelectedIndex())));
+                } else {
+                    clearProveedores();
+                }
+            }
+        });
+
 
 
 
 
 
         //PAG PIEZAS
-        searchTextPiezas.setText("Busca por nombre de pieza:");
-        listaPiezas(piezaFiltroPieza);
+        searchTextPiezas.setText("Busca por id o nombre de pieza\no de proveedor:");
         clearPiezas();
 
 
@@ -747,6 +847,23 @@ public class Home {
             }
         });
 
+        searchinputPiezas.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                buscarPiezas(searchinputPiezas.getText());
+            }
+        });
+
+        estadoFiltroPieza.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (estadoFiltroPieza.getSelectedIndex() != 0){
+                    tablaPiezas.setModel(new PiezasTableModel(PiezaController.filtrarPiezas(estadoFiltroPieza.getSelectedIndex())));
+                } else {
+                    clearPiezas();
+                }
+            }
+        });
 
 
     }

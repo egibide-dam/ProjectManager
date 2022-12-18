@@ -79,32 +79,7 @@ public class ProyectoController {
         }
     }
 
-    public static List<ProyectosEntity> buscarProyectos(String busqueda){
 
-        busqueda = busqueda.trim();
-        String sentencia = "";
-        if (!busqueda.equals("")){
-
-            try {
-
-                int busid = Integer.parseInt(busqueda);
-                sentencia = "WHERE idproyecto=" + busid;
-
-            } catch (NumberFormatException e){
-
-                sentencia = "WHERE UPPER(nombre) LIKE '%" + busqueda.toUpperCase() + "%' or UPPER(ciudad) LIKE '%";
-
-            }
-
-        }
-        List<Object> objetos = HibernateUtil.filtrar(ProyectosEntity.class, sentencia);
-        List<ProyectosEntity> proyectos = new ArrayList<>();
-        for (Object o : objetos) {
-            proyectos.add((ProyectosEntity) o);
-        }
-        return proyectos;
-
-    }
 
     public static List<ProyectosEntity> filtrarProyectos(int alta) {
 

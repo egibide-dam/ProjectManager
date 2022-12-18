@@ -38,9 +38,9 @@ public class PedidosTableModel extends AbstractTableModel {
             case 0:
                 return "PED-" + p.getIdpedido();
             case 1:
-                return p.getProyectosByIdproyecto();
+                return p.getProyectosByIdproyecto().toString();
             case 2:
-                return p.getProveedoresByIdproveedor();
+                return p.getProveedoresByIdproveedor().toString();
             case 3:
                 return p.getPiezasByIdpieza();
             case 4:

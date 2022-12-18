@@ -84,7 +84,7 @@ public class PedidosController {
     }
 
 
-    public static List<PedidosEntity> filtrarPedidos(int proveedor, int pieza, int proyecto, int alta) {
+    public static List<PedidosEntity> filtrarPedidos(Integer proveedor, Integer pieza, Integer proyecto, Integer alta) {
 
         String sentencia = "";
 
@@ -148,8 +148,10 @@ public class PedidosController {
 
         List<Object> objetos = HibernateUtil.filtrar(PedidosEntity.class, sentencia);
         List<PedidosEntity> pedidos = new ArrayList<>();
-        for (Object o : objetos) {
-            pedidos.add((PedidosEntity) o);
+        if (objetos != null){
+            for (Object o : objetos) {
+                pedidos.add((PedidosEntity) o);
+            }
         }
         return pedidos;
 
