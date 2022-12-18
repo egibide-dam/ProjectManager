@@ -1,6 +1,7 @@
 package com.proyecto.views;
 
 import com.proyecto.Main;
+import com.proyecto.TableModels.PiezasTableModel;
 import com.proyecto.controller.PiezaController;
 
 import javax.swing.*;
@@ -15,7 +16,7 @@ public class BajaPieza extends JFrame{
     private JButton guardarBajaPieza;
 
 
-    public BajaPieza(){
+    public BajaPieza(JTable tabla, JButton ver, JButton editar, JButton eliminar){
 
         setContentPane(bajaPieza);
 
@@ -45,12 +46,20 @@ public class BajaPieza extends JFrame{
 
                 if (Main.currentPieza.getAlta() == 1){
                     if(PiezaController.bajaPieza(Main.currentPieza.getIdpieza())){
+                        tabla.setModel(new PiezasTableModel(PiezaController.leerTodosPiezas()));
+                        ver.setEnabled(false);
+                        editar.setEnabled(false);
+                        eliminar.setEnabled(false);
                         JOptionPane.showMessageDialog(null, "Se ha dado de baja la pieza " + Main.currentPieza.getNombre() + ".", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                     } else {
                         JOptionPane.showMessageDialog(null, "No se ha podido dar de baja la pieza " + Main.currentPieza.getNombre() + ".", "ERROR", JOptionPane.ERROR_MESSAGE);
                     }
                 } else {
                     if(PiezaController.altaPieza(Main.currentPieza.getIdpieza())){
+                        tabla.setModel(new PiezasTableModel(PiezaController.leerTodosPiezas()));
+                        ver.setEnabled(false);
+                        editar.setEnabled(false);
+                        eliminar.setEnabled(false);
                         JOptionPane.showMessageDialog(null, "Se ha dado de alta la pieza " + Main.currentPieza.getNombre() + ".", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                     } else {
                         JOptionPane.showMessageDialog(null, "No se ha podido dar de alta la pieza " + Main.currentPieza.getNombre() + ".", "ERROR", JOptionPane.ERROR_MESSAGE);

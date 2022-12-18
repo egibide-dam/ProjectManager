@@ -2,6 +2,7 @@ package com.proyecto.views;
 
 import com.proyecto.Main;
 import com.proyecto.ProyectosEntity;
+import com.proyecto.TableModels.ProyectosTableModel;
 import com.proyecto.controller.PiezaController;
 import com.proyecto.controller.ProyectoController;
 
@@ -18,7 +19,7 @@ public class BajaProyecto extends JFrame{
 
 
 
-    public BajaProyecto(){
+    public BajaProyecto(JTable tabla, JButton ver, JButton editar, JButton eliminar){
 
         setContentPane(bajaProyecto);
 
@@ -49,12 +50,20 @@ public class BajaProyecto extends JFrame{
 
                 if (Main.currentProyecto.getAlta() == 1){
                     if (ProyectoController.bajaProyecto(Main.currentProyecto.getIdproyecto())){
+                        tabla.setModel(new ProyectosTableModel(ProyectoController.leerTodosProyectos()));
+                        ver.setEnabled(false);
+                        editar.setEnabled(false);
+                        eliminar.setEnabled(false);
                         JOptionPane.showMessageDialog(null, "Se ha dado de baja el proyecto " + Main.currentProyecto.getNombre() + ".", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                     } else {
                         JOptionPane.showMessageDialog(null, "No se ha podido dar de baja el proyecto " + Main.currentProyecto.getNombre() + ".", "ERROR", JOptionPane.ERROR_MESSAGE);
                     }
                 } else {
                     if (ProyectoController.altaProyecto(Main.currentProyecto.getIdproyecto())){
+                        tabla.setModel(new ProyectosTableModel(ProyectoController.leerTodosProyectos()));
+                        ver.setEnabled(false);
+                        editar.setEnabled(false);
+                        eliminar.setEnabled(false);
                         JOptionPane.showMessageDialog(null, "Se ha dado de alta el proyecto " + Main.currentProyecto.getNombre() + ".", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                     } else {
                         JOptionPane.showMessageDialog(null, "No se ha podido dar de alta el proyecto " + Main.currentProyecto.getNombre() + ".", "ERROR", JOptionPane.ERROR_MESSAGE);

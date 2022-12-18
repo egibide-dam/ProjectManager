@@ -1,6 +1,8 @@
 package com.proyecto.views;
 
 import com.proyecto.Main;
+import com.proyecto.PedidosEntity;
+import com.proyecto.TableModels.PedidosTableModel;
 import com.proyecto.controller.PedidosController;
 import com.proyecto.controller.ProyectoController;
 
@@ -18,7 +20,7 @@ public class CancelarPedido extends JFrame{
 
 
 
-    public CancelarPedido(){
+    public CancelarPedido(JTable tabla, JButton ver, JButton cancelar){
 
         setContentPane(cancelarPedido);
 
@@ -41,6 +43,9 @@ public class CancelarPedido extends JFrame{
                 guardarEliminarPedido.setEnabled(false);
 
                 if (PedidosController.bajaPedido(Main.currentPedido.getIdpedido())){
+                    tabla.setModel(new PedidosTableModel(PedidosController.leerTodosPedidos()));
+                    ver.setEnabled(false);
+                    cancelar.setEnabled(false);
                     JOptionPane.showMessageDialog(null, "Se ha cancelado el pedido " + Main.currentPedido.getIdpedido() + ".", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(null, "No se ha podido cancelar el pedido " + Main.currentPedido.getIdpedido() + ".", "ERROR", JOptionPane.ERROR_MESSAGE);

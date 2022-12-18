@@ -2,6 +2,7 @@ package com.proyecto.views;
 
 import com.proyecto.Main;
 import com.proyecto.ProveedoresEntity;
+import com.proyecto.TableModels.PiezasTableModel;
 import com.proyecto.controller.PiezaController;
 import com.proyecto.controller.ProveedorController;
 
@@ -85,7 +86,7 @@ public class EditarPieza extends JFrame {
     }
 
 
-    public EditarPieza() throws IOException, ClassNotFoundException {
+    public EditarPieza(JTable tabla, JButton ver, JButton editar, JButton eliminar) throws IOException, ClassNotFoundException {
 
         setContentPane(editarPieza);
         listaProveedores(editProveedorPieza);
@@ -221,6 +222,10 @@ public class EditarPieza extends JFrame {
                             fillForm();
                         } catch (IOException | ClassNotFoundException ex) {
                         }
+                        tabla.setModel(new PiezasTableModel(PiezaController.leerTodosPiezas()));
+                        ver.setEnabled(false);
+                        editar.setEnabled(false);
+                        eliminar.setEnabled(false);
                         JOptionPane.showMessageDialog(null, "Pieza " + name + " actualizada.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                         dispose();
                     } else {

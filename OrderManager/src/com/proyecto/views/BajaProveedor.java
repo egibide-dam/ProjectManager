@@ -1,6 +1,7 @@
 package com.proyecto.views;
 
 import com.proyecto.Main;
+import com.proyecto.TableModels.ProveedoresTableModel;
 import com.proyecto.controller.PiezaController;
 import com.proyecto.controller.ProveedorController;
 
@@ -17,7 +18,7 @@ public class BajaProveedor extends JFrame{
 
 
 
-    public BajaProveedor(){
+    public BajaProveedor(JTable tabla, JButton ver, JButton editar, JButton eliminar){
 
         setContentPane(bajaProveedor);
 
@@ -48,12 +49,20 @@ public class BajaProveedor extends JFrame{
 
                 if (Main.currentProveedor.getAlta() == 1){
                     if (ProveedorController.bajaProveedor(Main.currentProveedor.getIdproveedor())){
+                        tabla.setModel(new ProveedoresTableModel(ProveedorController.leerTodosProveedores()));
+                        ver.setEnabled(false);
+                        editar.setEnabled(false);
+                        eliminar.setEnabled(false);
                         JOptionPane.showMessageDialog(null, "Se ha dado de baja el proveedor " + Main.currentProveedor.getNombre() + " " + Main.currentProveedor.getApellidos() + ".", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                     } else {
                         JOptionPane.showMessageDialog(null, "No se ha podido dar de baja el proveedor " + Main.currentProveedor.getNombre() + " " + Main.currentProveedor.getApellidos() + ".", "ERROR", JOptionPane.ERROR_MESSAGE);
                     }
                 } else {
                     if (ProveedorController.altaProveedor(Main.currentProveedor.getIdproveedor())){
+                        tabla.setModel(new ProveedoresTableModel(ProveedorController.leerTodosProveedores()));
+                        ver.setEnabled(false);
+                        editar.setEnabled(false);
+                        eliminar.setEnabled(false);
                         JOptionPane.showMessageDialog(null, "Se ha dado de alta el proveedor " + Main.currentProveedor.getNombre() + " " + Main.currentProveedor.getApellidos() + ".", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                     } else {
                         JOptionPane.showMessageDialog(null, "No se ha podido dar de alta el proveedor " + Main.currentProveedor.getNombre() + " " + Main.currentProveedor.getApellidos() + ".", "ERROR", JOptionPane.ERROR_MESSAGE);

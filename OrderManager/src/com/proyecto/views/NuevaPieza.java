@@ -3,6 +3,7 @@ package com.proyecto.views;
 import com.proyecto.Ciudades;
 import com.proyecto.Main;
 import com.proyecto.ProveedoresEntity;
+import com.proyecto.TableModels.PiezasTableModel;
 import com.proyecto.controller.PiezaController;
 import com.proyecto.controller.ProveedorController;
 import com.proyecto.controller.ProyectoController;
@@ -73,7 +74,7 @@ public class NuevaPieza extends JFrame{
     }
 
 
-    public NuevaPieza(){
+    public NuevaPieza(JTable tabla, JButton ver, JButton editar, JButton eliminar){
 
         setContentPane(nuevaPieza);
 
@@ -220,6 +221,10 @@ public class NuevaPieza extends JFrame{
                     int proveedor = ((ProveedoresEntity) newProveedorPieza.getSelectedItem()).getIdproveedor();
                     if (PiezaController.nuevaPieza(name, precio, descrip, proveedor)){
                         clearForm();
+                        tabla.setModel(new PiezasTableModel(PiezaController.leerTodosPiezas()));
+                        ver.setEnabled(false);
+                        editar.setEnabled(false);
+                        eliminar.setEnabled(false);
                         JOptionPane.showMessageDialog(null, "Pieza " + name + " guardada.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                         dispose();
                     } else {

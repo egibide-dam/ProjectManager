@@ -3,6 +3,7 @@ package com.proyecto.views;
 import com.proyecto.Ciudades;
 import com.proyecto.Main;
 import com.proyecto.ProyectosEntity;
+import com.proyecto.TableModels.ProyectosTableModel;
 import com.proyecto.controller.ProyectoController;
 
 import javax.swing.*;
@@ -42,7 +43,7 @@ public class NuevoProyecto extends JFrame {
     }
 
 
-    public NuevoProyecto() {
+    public NuevoProyecto(JTable tabla, JButton ver, JButton editar, JButton eliminar) {
 
         setContentPane(nuevoProyecto);
 
@@ -124,6 +125,10 @@ public class NuevoProyecto extends JFrame {
                     Ciudades ciudad = (Ciudades) newCiudadProyecto.getSelectedItem();
                     if (ProyectoController.nuevoProyecto(name, ciudad.toString())){
                         clearForm();
+                        tabla.setModel(new ProyectosTableModel(ProyectoController.leerTodosProyectos()));
+                        ver.setEnabled(false);
+                        editar.setEnabled(false);
+                        eliminar.setEnabled(false);
                         JOptionPane.showMessageDialog(null, "Proyecto " + name + " guardado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                         dispose();
 

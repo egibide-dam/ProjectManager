@@ -1,6 +1,7 @@
 package com.proyecto.views;
 
 import com.proyecto.Main;
+import com.proyecto.TableModels.ProveedoresTableModel;
 import com.proyecto.controller.ProveedorController;
 
 import javax.swing.*;
@@ -46,7 +47,7 @@ public class EditarProveedor extends JFrame{
 
 
 
-    public EditarProveedor(){
+    public EditarProveedor(JTable tabla, JButton ver, JButton editar, JButton eliminar){
 
         setContentPane(editarProveedor);
 
@@ -199,6 +200,10 @@ public class EditarProveedor extends JFrame{
                     if (ProveedorController.editarProveedor(id, name, apellidos, direccion)){
                         Main.currentProveedor = ProveedorController.leerProveedor(id);
                         fillForm();
+                        tabla.setModel(new ProveedoresTableModel(ProveedorController.leerTodosProveedores()));
+                        ver.setEnabled(false);
+                        editar.setEnabled(false);
+                        eliminar.setEnabled(false);
                         JOptionPane.showMessageDialog(null, "Proveedor " + name + " " + apellidos + " actualizado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                         dispose();
 

@@ -2,6 +2,7 @@ package com.proyecto.views;
 
 import com.proyecto.Ciudades;
 import com.proyecto.Main;
+import com.proyecto.TableModels.ProveedoresTableModel;
 import com.proyecto.controller.ProveedorController;
 import com.proyecto.controller.ProyectoController;
 
@@ -46,7 +47,7 @@ public class NuevoProveedor extends JFrame{
     }
 
 
-    public NuevoProveedor(){
+    public NuevoProveedor(JTable tabla, JButton ver, JButton editar, JButton eliminar){
 
         setContentPane(nuevoProveedor);
 
@@ -198,6 +199,10 @@ public class NuevoProveedor extends JFrame{
                     String direccion = newDireccionProveedor.getText();
                     if (ProveedorController.nuevoProveedor(name, apellidos, direccion)){
                         clearForm();
+                        tabla.setModel(new ProveedoresTableModel(ProveedorController.leerTodosProveedores()));
+                        ver.setEnabled(false);
+                        editar.setEnabled(false);
+                        eliminar.setEnabled(false);
                         JOptionPane.showMessageDialog(null, "Proveedor " + name + " " + apellidos + " guardado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                         dispose();
 

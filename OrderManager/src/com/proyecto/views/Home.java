@@ -489,7 +489,7 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //ABRIR VENTANA!!!
-                JFrame frame = new CancelarPedido();
+                JFrame frame = new CancelarPedido(tablaPedidos, detallePedido, eliminarPedido);
                 frame.setName("Cancelar Pedido");
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
@@ -599,7 +599,7 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //ABRIR VENTANA!!!
-                JFrame frame = new NuevoProyecto();
+                JFrame frame = new NuevoProyecto(tablaProyectos,detallesProyecto,editarProyecto,altaProyecto);
                 frame.setName("Nuevo Proyecto");
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
@@ -624,7 +624,7 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //ABRIR VENTANA!!!
-                JFrame frame = new EditarProyecto();
+                JFrame frame = new EditarProyecto(tablaProyectos,detallesProyecto,editarProyecto,altaProyecto);
                 frame.setName("Editar Proyecto");
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
@@ -636,7 +636,7 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //ABRIR VENTANA!!!
-                JFrame frame = new BajaProyecto();
+                JFrame frame = new BajaProyecto(tablaProyectos,detallesProyecto,editarProyecto,altaProyecto);
                 frame.setName("Estado Proyecto");
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
@@ -689,7 +689,7 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //ABRIR VENTANA!!!
-                JFrame frame = new NuevoProveedor();
+                JFrame frame = new NuevoProveedor(tablaproveedores, detallesProveedor, editarProveedor, altasProveedor);
                 frame.setName("Nuevo Proveedor");
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
@@ -714,7 +714,7 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //ABRIR VENTANA!!!
-                JFrame frame = new EditarProveedor();
+                JFrame frame = new EditarProveedor(tablaproveedores, detallesProveedor, editarProveedor, altasProveedor);
                 frame.setName("Editar Proveedor");
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
@@ -726,7 +726,7 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //ABRIR VENTANA!!!
-                JFrame frame = new BajaProveedor();
+                JFrame frame = new BajaProveedor(tablaproveedores, detallesProveedor, editarProveedor, altasProveedor);
                 frame.setName("Estado Proveedor");
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
@@ -778,7 +778,7 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //ABRIR VENTANA!!!
-                JFrame frame = new NuevaPieza();
+                JFrame frame = new NuevaPieza(tablaPiezas, detallesPieza, editarPieza, altasPieza);
                 frame.setName("Nueva Pieza");
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
@@ -811,7 +811,7 @@ public class Home {
                 try {
                     //ABRIR VENTANA!!!
                     JFrame frame = null;
-                    frame = new EditarPieza();
+                    frame = new EditarPieza(tablaPiezas, detallesPieza, editarPieza, altasPieza);
                     frame.setName("Editar Pieza");
                     frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                     frame.pack();
@@ -827,7 +827,7 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //ABRIR VENTANA!!!
-                JFrame frame = new BajaPieza();
+                JFrame frame = new BajaPieza(tablaPiezas, detallesPieza, editarPieza, altasPieza);
                 frame.setName("Estado Pieza");
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();

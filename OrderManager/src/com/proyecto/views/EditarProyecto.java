@@ -3,6 +3,7 @@ package com.proyecto.views;
 import com.proyecto.Ciudades;
 import com.proyecto.Main;
 import com.proyecto.ProveedoresEntity;
+import com.proyecto.TableModels.ProyectosTableModel;
 import com.proyecto.controller.ProveedorController;
 import com.proyecto.controller.ProyectoController;
 
@@ -44,7 +45,7 @@ public class EditarProyecto extends JFrame{
         cancelarEditarProyecto.setEnabled(false);
     }
 
-    public EditarProyecto(){
+    public EditarProyecto(JTable tabla, JButton ver, JButton editar, JButton eliminar){
 
         setContentPane(editProyecto);
 
@@ -128,6 +129,10 @@ public class EditarProyecto extends JFrame{
                     if (ProyectoController.editarProyecto(id, name, ciudad.toString())){
                         Main.currentProyecto = ProyectoController.leerProyecto(id);
                         fillForm();
+                        tabla.setModel(new ProyectosTableModel(ProyectoController.leerTodosProyectos()));
+                        ver.setEnabled(false);
+                        editar.setEnabled(false);
+                        eliminar.setEnabled(false);
                         JOptionPane.showMessageDialog(null, "Proyecto " + name + " actualizado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                         dispose();
 
