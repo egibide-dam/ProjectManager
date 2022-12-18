@@ -1,6 +1,9 @@
 package com.proyecto.TableModels;
 
 import com.proyecto.PedidosEntity;
+import com.proyecto.controller.PiezaController;
+import com.proyecto.controller.ProveedorController;
+import com.proyecto.controller.ProyectoController;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.List;
@@ -38,11 +41,11 @@ public class PedidosTableModel extends AbstractTableModel {
             case 0:
                 return "PED-" + p.getIdpedido();
             case 1:
-                return p.getProyectosByIdproyecto().toString();
+                return ProyectoController.leerProyecto(p.getProyectosByIdproyecto().getIdproyecto());
             case 2:
-                return p.getProveedoresByIdproveedor().toString();
+                return ProveedorController.leerProveedor(p.getProveedoresByIdproveedor().getIdproveedor());
             case 3:
-                return p.getPiezasByIdpieza();
+                return PiezaController.leerPieza(p.getPiezasByIdpieza().getIdpieza());
             case 4:
                 return p.getCantidad();
             case 5:

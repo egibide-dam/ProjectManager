@@ -58,7 +58,7 @@ public class PedidosEntity {
     @JoinColumn(name = "idproveedor", referencedColumnName = "idproveedor", nullable = false)
 
     public ProveedoresEntity getProveedoresByIdproveedor() {
-        return ProveedorController.leerProveedor(PedidosController.idProveedorPedido(this.idpedido));
+        return proveedoresByIdproveedor;
     }
 
     public void setProveedoresByIdproveedor(ProveedoresEntity proveedoresByIdproveedor) {
@@ -69,7 +69,7 @@ public class PedidosEntity {
     @JoinColumn(name = "idpieza", referencedColumnName = "idpieza", nullable = false)
 
     public PiezasEntity getPiezasByIdpieza() {
-        return PiezaController.leerPieza(PedidosController.idPiezaPedido(this.idpedido));
+        return piezasByIdpieza;
     }
 
     public void setPiezasByIdpieza(PiezasEntity piezasByIdpieza) {
@@ -80,7 +80,7 @@ public class PedidosEntity {
     @JoinColumn(name = "idproyecto", referencedColumnName = "idproyecto", nullable = false)
 
     public ProyectosEntity getProyectosByIdproyecto() {
-        return ProyectoController.leerProyecto(PedidosController.idProyectoPedido(this.idpedido));
+        return proyectosByIdproyecto;
     }
 
     public void setProyectosByIdproyecto(ProyectosEntity proyectosByIdproyecto) {
