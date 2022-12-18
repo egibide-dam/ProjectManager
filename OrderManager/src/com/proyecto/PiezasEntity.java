@@ -86,7 +86,8 @@ public class PiezasEntity {
     @JoinColumn(name = "idproveedor", referencedColumnName = "idproveedor", nullable = false)
 
     public ProveedoresEntity getProveedoresByIdproveedor() {
-        return ProveedorController.leerProveedor(PiezaController.idProveedorPieza(this.idpieza));
+        return proveedoresByIdproveedor;
+        //ProveedorController.leerProveedor(PiezaController.idProveedorPieza(this.idpieza));
     }
 
     public void setProveedoresByIdproveedor(ProveedoresEntity proveedoresByIdproveedor) {
@@ -98,4 +99,6 @@ public class PiezasEntity {
     public String toString() {
         return "PIEZ-" + idpieza + " : " + nombre;
     }
+
+
 }

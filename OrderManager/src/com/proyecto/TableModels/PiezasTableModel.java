@@ -3,6 +3,7 @@ package com.proyecto.TableModels;
 import com.proyecto.PedidosEntity;
 import com.proyecto.PiezasEntity;
 import com.proyecto.ProyectosEntity;
+import com.proyecto.controller.ProveedorController;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.List;
@@ -46,7 +47,7 @@ public class PiezasTableModel extends AbstractTableModel {
             case 3:
                 return p.getPrecio();
             case 4:
-                return p.getProveedoresByIdproveedor();
+                return ProveedorController.leerProveedor(p.getProveedoresByIdproveedor().getIdproveedor());
             case 5:
                 return estadotext(p);
         }
