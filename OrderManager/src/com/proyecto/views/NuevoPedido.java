@@ -33,7 +33,7 @@ public class NuevoPedido extends JFrame{
     public void clearForm() {
         newProyectoPedido.setEnabled(true);
         newProveedorPedido.setEnabled(true);
-        newPiezaPedido.setEnabled(true);
+        newPiezaPedido.setEnabled(false);
         newCantidadPedido.setEnabled(true);
         newProyectoPedido.setSelectedIndex(-1);
         newProyectoPedido.setBackground(Main.white);
@@ -133,7 +133,6 @@ public class NuevoPedido extends JFrame{
         setContentPane(nuevoPedido);
 
         listaProveedores(newProveedorPedido);
-        listaPiezas(-1);
         listaProyectos(newProyectoPedido);
         SpinnerNumberModel spinnermodel = new SpinnerNumberModel(0,0,1000,1);
         newCantidadPedido.setModel(spinnermodel);
@@ -154,6 +153,7 @@ public class NuevoPedido extends JFrame{
                 newProveedorPedido.setBackground(Main.white);
                 listaPiezas(newProveedorPedido.getSelectedIndex());
                 newPiezaPedido.setSelectedIndex(-1);
+                newPiezaPedido.setEnabled(true);
             }
         });
 
