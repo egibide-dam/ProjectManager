@@ -63,7 +63,7 @@ public class NuevaPieza extends JFrame{
 
         proveedoresListModel.removeAllElements();
 
-        List<ProveedoresEntity> proves = ProveedorController.leerTodosProveedores();
+        List<ProveedoresEntity> proves = ProveedorController.filtrarProveedores(1);
 
         for (ProveedoresEntity p : proves) {
             proveedoresListModel.addElement(p);
