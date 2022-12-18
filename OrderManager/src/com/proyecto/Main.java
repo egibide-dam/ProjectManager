@@ -26,6 +26,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println("\nIniciando la aplicación OrderManager, por favor, espere.");
+
         //Quita los logs de hibernate de la consola
         LogManager.getLogManager().reset();
         Logger globalLogger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);

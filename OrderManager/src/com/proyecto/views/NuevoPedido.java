@@ -34,7 +34,7 @@ public class NuevoPedido extends JFrame{
         newProyectoPedido.setEnabled(true);
         newProveedorPedido.setEnabled(true);
         newPiezaPedido.setEnabled(false);
-        newCantidadPedido.setEnabled(true);
+        newCantidadPedido.setEnabled(false);
         newProyectoPedido.setSelectedIndex(-1);
         newProyectoPedido.setBackground(Main.white);
         newProveedorPedido.setSelectedIndex(-1);
@@ -162,6 +162,9 @@ public class NuevoPedido extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 guardarNuevoPedido.setEnabled(true);
                 newPiezaPedido.setBackground(Main.white);
+                if (newPiezaPedido.getSelectedIndex() != -1){
+                    newCantidadPedido.setEnabled(true);
+                }
             }
         });
 
