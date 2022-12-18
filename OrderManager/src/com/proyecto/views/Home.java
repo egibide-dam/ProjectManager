@@ -473,14 +473,18 @@ public class Home {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                int row = tablaPedidos.getSelectedRow();
-                PedidosEntity ped = currentPedidosList.get(row);
-                Main.currentPedido = ped;
-                detallePedido.setEnabled(true);
-                if (ped.getAlta()==1){
-                    eliminarPedido.setEnabled(true);
-                } else {
-                    eliminarPedido.setEnabled(false);
+                try {
+                    int row = tablaPedidos.getSelectedRow();
+                    PedidosEntity ped = currentPedidosList.get(row);
+                    Main.currentPedido = PedidosController.leerPedido(ped.getIdpedido());
+                    detallePedido.setEnabled(true);
+                    if (ped.getAlta()==1){
+                        eliminarPedido.setEnabled(true);
+                    } else {
+                        eliminarPedido.setEnabled(false);
+                    }
+                } catch (Exception ex) {
+                    clearPedidos();
                 }
             }
         });
@@ -611,12 +615,16 @@ public class Home {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                int row = tablaProyectos.getSelectedRow();
-                ProyectosEntity proy = currentProyectosList.get(row);
-                Main.currentProyecto = proy;
-                detallesProyecto.setEnabled(true);
-                editarProyecto.setEnabled(true);
-                altaProyecto.setEnabled(true);
+                try {
+                    int row = tablaProyectos.getSelectedRow();
+                    ProyectosEntity proy = currentProyectosList.get(row);
+                    Main.currentProyecto = ProyectoController.leerProyecto(proy.getIdproyecto());
+                    detallesProyecto.setEnabled(true);
+                    editarProyecto.setEnabled(true);
+                    altaProyecto.setEnabled(true);
+                } catch (Exception ex) {
+                    clearProyectos();
+                }
             }
         });
 
@@ -701,12 +709,16 @@ public class Home {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                int row = tablaproveedores.getSelectedRow();
-                ProveedoresEntity prov = currentProveedoresList.get(row);
-                Main.currentProveedor = prov;
-                detallesProveedor.setEnabled(true);
-                editarProveedor.setEnabled(true);
-                altasProveedor.setEnabled(true);
+                try {
+                    int row = tablaproveedores.getSelectedRow();
+                    ProveedoresEntity prov = currentProveedoresList.get(row);
+                    Main.currentProveedor = ProveedorController.leerProveedor(prov.getIdproveedor());
+                    detallesProveedor.setEnabled(true);
+                    editarProveedor.setEnabled(true);
+                    altasProveedor.setEnabled(true);
+                } catch (Exception ex) {
+                    clearProveedores();
+                }
             }
         });
 
@@ -790,16 +802,20 @@ public class Home {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                int row = tablaPiezas.getSelectedRow();
-                PiezasEntity piez = currentPiezasList.get(row);
-                Main.currentPieza = piez;
-                detallesPieza.setEnabled(true);
-                editarPieza.setEnabled(true);
-                ProveedoresEntity prov = ProveedorController.leerProveedor(piez.getProveedoresByIdproveedor().getIdproveedor());
-                if (prov.getAlta() == 1){
-                    altasPieza.setEnabled(true);
-                } else {
-                    altasPieza.setEnabled(false);
+                try {
+                    int row = tablaPiezas.getSelectedRow();
+                    PiezasEntity piez = currentPiezasList.get(row);
+                    Main.currentPieza = PiezaController.leerPieza(piez.getIdpieza());
+                    detallesPieza.setEnabled(true);
+                    editarPieza.setEnabled(true);
+                    ProveedoresEntity prov = ProveedorController.leerProveedor(piez.getProveedoresByIdproveedor().getIdproveedor());
+                    if (prov.getAlta() == 1){
+                        altasPieza.setEnabled(true);
+                    } else {
+                        altasPieza.setEnabled(false);
+                    }
+                } catch (Exception ex) {
+                    clearPiezas();
                 }
             }
         });

@@ -1,6 +1,12 @@
 package com.proyecto.views;
 
 import com.proyecto.Main;
+import com.proyecto.PiezasEntity;
+import com.proyecto.ProveedoresEntity;
+import com.proyecto.ProyectosEntity;
+import com.proyecto.controller.PiezaController;
+import com.proyecto.controller.ProveedorController;
+import com.proyecto.controller.ProyectoController;
 
 import javax.swing.*;
 
@@ -28,15 +34,18 @@ public class DetallePedido extends JFrame{
         } else {
             estadoDetallePedido.setText("CANCELADO");
         }
-        proyectoidDetallePedido.setText("PROY-" + Main.currentPedido.getProyectosByIdproyecto().getIdproyecto());
-        proyectonombreDetallePedido.setText(Main.currentPedido.getProyectosByIdproyecto().getNombre());
-        proveedoridDetallePedido.setText("PROV-" + Main.currentPedido.getProveedoresByIdproveedor().getIdproveedor());
-        proveedornombreDetallePedido.setText(Main.currentPedido.getProveedoresByIdproveedor().getNombre() + " " + Main.currentPedido.getProveedoresByIdproveedor().getApellidos());
-        piezaidDetallePEdido.setText("PIEZ-" + Main.currentPedido.getPiezasByIdpieza().getIdpieza());
-        piezanombreDetallePedida.setText(Main.currentPedido.getPiezasByIdpieza().getNombre());
+        ProyectosEntity proy = ProyectoController.leerProyecto(Main.currentPedido.getProyectosByIdproyecto().getIdproyecto());
+        proyectoidDetallePedido.setText("PROY-" + proy.getIdproyecto());
+        proyectonombreDetallePedido.setText(proy.getNombre());
+        ProveedoresEntity p = ProveedorController.leerProveedor(Main.currentPedido.getProyectosByIdproyecto().getIdproyecto());
+        proveedoridDetallePedido.setText("PROV-" + p.getIdproveedor());
+        proveedornombreDetallePedido.setText(p.getNombre() + " " + p.getApellidos());
+        PiezasEntity pie = PiezaController.leerPieza(Main.currentPedido.getPiezasByIdpieza().getIdpieza());
+        piezaidDetallePEdido.setText("PIEZ-" + pie.getIdpieza());
+        piezanombreDetallePedida.setText(pie.getNombre());
         int unidades = (int) Main.currentPedido.getCantidad();
         piezaunidadesDetallePedido.setText(unidades + " uds.");
-        double total = (Main.currentPedido.getPiezasByIdpieza().getPrecio()) * (Main.currentPedido.getCantidad());
+        double total = (pie.getPrecio()) * (Main.currentPedido.getCantidad());
         precioTotalText.setText("PRECIO TOTAL : " + total + " €");
 
     }
