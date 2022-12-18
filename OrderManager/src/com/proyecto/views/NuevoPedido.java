@@ -4,6 +4,7 @@ import com.proyecto.Main;
 import com.proyecto.PiezasEntity;
 import com.proyecto.ProveedoresEntity;
 import com.proyecto.ProyectosEntity;
+import com.proyecto.TableModels.PedidosTableModel;
 import com.proyecto.controller.PedidosController;
 import com.proyecto.controller.PiezaController;
 import com.proyecto.controller.ProveedorController;
@@ -14,6 +15,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 public class NuevoPedido extends JFrame{
@@ -59,7 +61,7 @@ public class NuevoPedido extends JFrame{
 
         proyectosListModel.removeAllElements();
 
-        List<ProyectosEntity> proves = ProyectoController.leerTodosProyectos();
+        List<ProyectosEntity> proves = ProyectoController.filtrarProyectos(1);
 
         for (ProyectosEntity p : proves) {
             proyectosListModel.addElement(p);
@@ -74,7 +76,7 @@ public class NuevoPedido extends JFrame{
 
         proveedoresListModel.removeAllElements();
 
-        List<ProveedoresEntity> proves = ProveedorController.leerTodosProveedores();
+        List<ProveedoresEntity> proves = ProveedorController.filtrarProveedores(1);
 
         for (ProveedoresEntity p : proves) {
             proveedoresListModel.addElement(p);
@@ -84,28 +86,54 @@ public class NuevoPedido extends JFrame{
 
     }
 
-    public void listaPiezas(JComboBox<PiezasEntity> select) {
+    public void listaPiezas(int index) {
         DefaultComboBoxModel<PiezasEntity> piezasListModel = new DefaultComboBoxModel<>();
 
         piezasListModel.removeAllElements();
 
-        List<PiezasEntity> proves = PiezaController.leerTodosPiezas();
+        List<PiezasEntity> piezas;
 
-        for (PiezasEntity p : proves) {
+        if (index == -1){
+            piezas = PiezaController.leerTodosPiezas();
+        } else {
+            int idprov = ((ProveedoresEntity)(newProveedorPedido.getSelectedItem())).getIdproveedor();
+            List<PiezasEntity> altas = PiezaController.filtrarPiezas(1);
+            List<PiezasEntity> delprov = PiezaController.piezasPorProveedor(idprov);
+            piezas = intersenct(altas, delprov);
+        }
+
+        for (PiezasEntity p : piezas) {
             piezasListModel.addElement(p);
         }
 
-        select.setModel(piezasListModel);
+        newPiezaPedido.setModel(piezasListModel);
+
+    }
+
+    public static List<PiezasEntity> intersenct(List<PiezasEntity> lista1, List<PiezasEntity> lista2) {
+
+        List<PiezasEntity> intersectedList = new ArrayList<>();
+
+        for (PiezasEntity p1 : lista1) {
+            for (PiezasEntity p2 : lista2) {
+                if (p1.getIdpieza() == p2.getIdpieza()) {
+                    intersectedList.add(p1);
+                }
+            }
+        }
+
+        return intersectedList;
 
     }
 
 
-    public NuevoPedido(){
+
+    public NuevoPedido(JTable tabla, JButton ver, JButton cancelar){
 
         setContentPane(nuevoPedido);
 
         listaProveedores(newProveedorPedido);
-        listaPiezas(newPiezaPedido);
+        listaPiezas(-1);
         listaProyectos(newProyectoPedido);
         SpinnerNumberModel spinnermodel = new SpinnerNumberModel(0,0,1000,1);
         newCantidadPedido.setModel(spinnermodel);
@@ -124,6 +152,8 @@ public class NuevoPedido extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 guardarNuevoPedido.setEnabled(true);
                 newProveedorPedido.setBackground(Main.white);
+                listaPiezas(newProveedorPedido.getSelectedIndex());
+                newPiezaPedido.setSelectedIndex(-1);
             }
         });
 
@@ -190,6 +220,9 @@ public class NuevoPedido extends JFrame{
                     int cantidad = (int) newCantidadPedido.getValue();
                     if (PedidosController.nuevoPedido(cantidad, proveedor.getIdproveedor(), pieza.getIdpieza(), proyecto.getIdproyecto())){
                         clearForm();
+                        tabla.setModel(new PedidosTableModel(PedidosController.leerTodosPedidos()));
+                        ver.setEnabled(false);
+                        cancelar.setEnabled(false);
                         JOptionPane.showMessageDialog(null, "Nuevo pedido guardado.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                         dispose();
 

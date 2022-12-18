@@ -56,33 +56,6 @@ public class PedidosController {
     }
 
 
-    public static List<PedidosEntity> buscarPedidos(String busqueda){
-
-        busqueda = busqueda.trim();
-        String sentencia = "";
-        if (!busqueda.equals("")){
-
-            try {
-
-                int busid = Integer.parseInt(busqueda);
-                sentencia = "WHERE idpedido=" + busid;
-
-            } catch (NumberFormatException e){
-
-                sentencia = "WHERE idproveedor = (select idproveedor from " + ProveedoresEntity.class.getName() + " where UPPER(nombre) LIKE '%" + busqueda.toUpperCase() + "%') OR idpieza = (select idpieza from " + PiezasEntity.class.getName() + " where UPPER(nombre) LIKE '%" + busqueda.toUpperCase() + "%') or idproyecto = (select idproyecto from " + ProyectosEntity.class.getName() + " where UPPER(nombre) LIKE '%" + busqueda.toUpperCase() + "%')";
-
-            }
-
-        }
-        List<Object> objetos = HibernateUtil.filtrar(PedidosEntity.class, sentencia);
-        List<PedidosEntity> pedidos = new ArrayList<>();
-        for (Object o : objetos) {
-            pedidos.add((PedidosEntity) o);
-        }
-        return pedidos;
-
-    }
-
 
     public static List<PedidosEntity> filtrarPedidos(Integer proveedor, Integer pieza, Integer proyecto, Integer alta) {
 

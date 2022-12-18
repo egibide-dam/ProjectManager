@@ -461,7 +461,7 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //ABRIR VENTANA!!!
-                JFrame frame = new NuevoPedido();
+                JFrame frame = new NuevoPedido(tablaPedidos, detallePedido, eliminarPedido);
                 frame.setName("Nuevo Pedido");
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.pack();
