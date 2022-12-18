@@ -5,6 +5,9 @@ import com.proyecto.views.Home;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 
 public class Main {
@@ -22,6 +25,11 @@ public class Main {
 
 
     public static void main(String[] args) {
+
+        //Quita los logs de hibernate de la consola
+        LogManager.getLogManager().reset();
+        Logger globalLogger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+        globalLogger.setLevel(Level.OFF);
 
         //ABRIR VENTANA!!!
         JFrame frame = new JFrame("Order Manager");
