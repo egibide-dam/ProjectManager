@@ -208,7 +208,7 @@ public class EditarPieza extends JFrame {
 
                     disableForm();
                     int id = Main.currentPieza.getIdpieza();
-                    String name = editNamePieza.getText();
+                    String name = editNamePieza.getText().toUpperCase();
                     String descrip;
                     if (editDescripcionPieza.getText().length() == 0) {
                         descrip = "-";

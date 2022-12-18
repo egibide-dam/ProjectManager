@@ -121,7 +121,7 @@ public class NuevoProyecto extends JFrame {
 
                 } else {
                     disableForm();
-                    String name = newNameProyecto.getText();
+                    String name = newNameProyecto.getText().toUpperCase();
                     Ciudades ciudad = (Ciudades) newCiudadProyecto.getSelectedItem();
                     if (ProyectoController.nuevoProyecto(name, ciudad.toString())){
                         clearForm();

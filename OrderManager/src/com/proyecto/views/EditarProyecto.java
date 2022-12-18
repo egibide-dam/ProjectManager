@@ -124,7 +124,7 @@ public class EditarProyecto extends JFrame{
                 } else {
                     disableForm();
                     int id = Main.currentProyecto.getIdproyecto();
-                    String name = editNameProyecto.getText();
+                    String name = editNameProyecto.getText().toUpperCase();
                     Ciudades ciudad = (Ciudades) editCiudadProyecto.getSelectedItem();
                     if (ProyectoController.editarProyecto(id, name, ciudad.toString())){
                         Main.currentProyecto = ProyectoController.leerProyecto(id);

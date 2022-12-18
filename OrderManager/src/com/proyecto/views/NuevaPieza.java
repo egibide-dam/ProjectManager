@@ -210,7 +210,7 @@ public class NuevaPieza extends JFrame{
                 } else {
 
                     disableForm();
-                    String name = newNamePieza.getText();
+                    String name = newNamePieza.getText().toUpperCase();
                     String descrip;
                     if (newDescripcionPieza.getText().length() == 0){
                         descrip = "-";
