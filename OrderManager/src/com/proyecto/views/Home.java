@@ -795,7 +795,7 @@ public class Home {
                 Main.currentPieza = piez;
                 detallesPieza.setEnabled(true);
                 editarPieza.setEnabled(true);
-                ProveedoresEntity prov = piez.getProveedoresByIdproveedor();
+                ProveedoresEntity prov = ProveedorController.leerProveedor(piez.getProveedoresByIdproveedor().getIdproveedor());
                 if (prov.getAlta() == 1){
                     altasPieza.setEnabled(true);
                 } else {
