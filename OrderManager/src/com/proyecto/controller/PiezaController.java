@@ -1,7 +1,6 @@
 package com.proyecto.controller;
 
 import com.proyecto.PiezasEntity;
-import com.proyecto.ProveedoresEntity;
 import com.proyecto.utils.HibernateUtil;
 
 import java.util.ArrayList;

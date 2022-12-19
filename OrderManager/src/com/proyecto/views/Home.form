@@ -226,7 +226,11 @@
                   <grid id="22c88" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
-                      <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="32"/>
+                        <preferred-size width="-1" height="32"/>
+                        <maximum-size width="-1" height="32"/>
+                      </grid>
                     </constraints>
                     <properties>
                       <background color="-1"/>
@@ -235,11 +239,15 @@
                     <children>
                       <component id="255fb" class="javax.swing.JLabel" binding="topPieza1nombre">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="220" height="-1"/>
+                            <preferred-size width="220" height="-1"/>
+                            <maximum-size width="220" height="-1"/>
+                          </grid>
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="0"/>
-                          <text value="1- Pieza 1"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="eda90" class="javax.swing.JLabel" binding="topPieza1uds">
@@ -248,7 +256,7 @@
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="1"/>
-                          <text value="unidades"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <hspacer id="cc499">
@@ -261,7 +269,11 @@
                   <grid id="b7ead" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
-                      <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="32"/>
+                        <preferred-size width="-1" height="32"/>
+                        <maximum-size width="-1" height="32"/>
+                      </grid>
                     </constraints>
                     <properties>
                       <background color="-1"/>
@@ -270,11 +282,15 @@
                     <children>
                       <component id="3bc12" class="javax.swing.JLabel" binding="topPieza2nombre">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="220" height="-1"/>
+                            <preferred-size width="220" height="-1"/>
+                            <maximum-size width="220" height="-1"/>
+                          </grid>
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="0"/>
-                          <text value="2- Pieza 2"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="edb16" class="javax.swing.JLabel" binding="topPieza2uds">
@@ -283,7 +299,7 @@
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="1"/>
-                          <text value="unidades"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <hspacer id="8ade8">
@@ -296,7 +312,11 @@
                   <grid id="6fc2f" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
-                      <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="32"/>
+                        <preferred-size width="-1" height="32"/>
+                        <maximum-size width="-1" height="32"/>
+                      </grid>
                     </constraints>
                     <properties>
                       <background color="-1"/>
@@ -305,11 +325,15 @@
                     <children>
                       <component id="a7d02" class="javax.swing.JLabel" binding="topPieza3nombre">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="220" height="-1"/>
+                            <preferred-size width="220" height="-1"/>
+                            <maximum-size width="220" height="-1"/>
+                          </grid>
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="0"/>
-                          <text value="3- Pieza 3"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="a4e3d" class="javax.swing.JLabel" binding="topPieza3uds">
@@ -318,7 +342,7 @@
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="1"/>
-                          <text value="unidades"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <hspacer id="e1858">
@@ -331,7 +355,11 @@
                   <grid id="76a23" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
-                      <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="32"/>
+                        <preferred-size width="-1" height="32"/>
+                        <maximum-size width="-1" height="32"/>
+                      </grid>
                     </constraints>
                     <properties>
                       <background color="-1"/>
@@ -340,11 +368,15 @@
                     <children>
                       <component id="c5edf" class="javax.swing.JLabel" binding="topPieza4nombre">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="220" height="-1"/>
+                            <preferred-size width="220" height="-1"/>
+                            <maximum-size width="220" height="-1"/>
+                          </grid>
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="0"/>
-                          <text value="4- Pieza 4"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="dddf2" class="javax.swing.JLabel" binding="topPieza4uds">
@@ -353,7 +385,7 @@
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="1"/>
-                          <text value="unidades"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <hspacer id="2c399">
@@ -366,7 +398,11 @@
                   <grid id="29f5f" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
-                      <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="32"/>
+                        <preferred-size width="-1" height="32"/>
+                        <maximum-size width="-1" height="32"/>
+                      </grid>
                     </constraints>
                     <properties>
                       <background color="-1"/>
@@ -375,11 +411,15 @@
                     <children>
                       <component id="54aac" class="javax.swing.JLabel" binding="topPieza5nombre">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="220" height="-1"/>
+                            <preferred-size width="220" height="-1"/>
+                            <maximum-size width="220" height="-1"/>
+                          </grid>
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="0"/>
-                          <text value="5- Pieza 5"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="df1ec" class="javax.swing.JLabel" binding="topPieza5uds">
@@ -388,7 +428,7 @@
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="1"/>
-                          <text value="unidades"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <hspacer id="336b3">
@@ -452,7 +492,11 @@
                   <grid id="76726" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
-                      <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="32"/>
+                        <preferred-size width="-1" height="32"/>
+                        <maximum-size width="-1" height="32"/>
+                      </grid>
                     </constraints>
                     <properties>
                       <background color="-1"/>
@@ -461,11 +505,15 @@
                     <children>
                       <component id="ce795" class="javax.swing.JLabel" binding="topProyect1nombre">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="220" height="-1"/>
+                            <preferred-size width="220" height="-1"/>
+                            <maximum-size width="220" height="-1"/>
+                          </grid>
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="0"/>
-                          <text value="1- Proyecto 1"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="101a" class="javax.swing.JLabel" binding="topProyect1uds">
@@ -474,7 +522,7 @@
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="1"/>
-                          <text value="unidades"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <hspacer id="c9c89">
@@ -487,7 +535,11 @@
                   <grid id="e9730" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
-                      <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="32"/>
+                        <preferred-size width="-1" height="32"/>
+                        <maximum-size width="-1" height="32"/>
+                      </grid>
                     </constraints>
                     <properties>
                       <background color="-1"/>
@@ -496,11 +548,15 @@
                     <children>
                       <component id="40f73" class="javax.swing.JLabel" binding="topProyect2nombre">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="220" height="-1"/>
+                            <preferred-size width="220" height="-1"/>
+                            <maximum-size width="220" height="-1"/>
+                          </grid>
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="0"/>
-                          <text value="2- Proyecto 2"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="ac7b5" class="javax.swing.JLabel" binding="topProyect2uds">
@@ -509,7 +565,7 @@
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="1"/>
-                          <text value="unidades"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <hspacer id="4975d">
@@ -522,7 +578,11 @@
                   <grid id="6c87b" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
-                      <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="32"/>
+                        <preferred-size width="-1" height="32"/>
+                        <maximum-size width="-1" height="32"/>
+                      </grid>
                     </constraints>
                     <properties>
                       <background color="-1"/>
@@ -531,11 +591,15 @@
                     <children>
                       <component id="f48fb" class="javax.swing.JLabel" binding="topProyect3nombre">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="220" height="-1"/>
+                            <preferred-size width="220" height="-1"/>
+                            <maximum-size width="220" height="-1"/>
+                          </grid>
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="0"/>
-                          <text value="3- Proyecto 3"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="d877a" class="javax.swing.JLabel" binding="topProyect3uds">
@@ -544,7 +608,7 @@
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="1"/>
-                          <text value="unidades"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <hspacer id="31b81">
@@ -557,7 +621,11 @@
                   <grid id="54970" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
-                      <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="32"/>
+                        <preferred-size width="-1" height="32"/>
+                        <maximum-size width="-1" height="32"/>
+                      </grid>
                     </constraints>
                     <properties>
                       <background color="-1"/>
@@ -566,11 +634,15 @@
                     <children>
                       <component id="70df0" class="javax.swing.JLabel" binding="topProyect4nombre">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="220" height="-1"/>
+                            <preferred-size width="220" height="-1"/>
+                            <maximum-size width="220" height="-1"/>
+                          </grid>
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="0"/>
-                          <text value="4- Proyecto 4"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="e50a" class="javax.swing.JLabel" binding="topProyect4uds">
@@ -579,7 +651,7 @@
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="1"/>
-                          <text value="unidades"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <hspacer id="5b332">
@@ -592,7 +664,11 @@
                   <grid id="dae36" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
-                      <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="32"/>
+                        <preferred-size width="-1" height="32"/>
+                        <maximum-size width="-1" height="32"/>
+                      </grid>
                     </constraints>
                     <properties>
                       <background color="-1"/>
@@ -601,11 +677,15 @@
                     <children>
                       <component id="ff9f6" class="javax.swing.JLabel" binding="topProyect5nombre">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="220" height="-1"/>
+                            <preferred-size width="220" height="-1"/>
+                            <maximum-size width="220" height="-1"/>
+                          </grid>
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="0"/>
-                          <text value="5- Proyecto 5"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="bdf78" class="javax.swing.JLabel" binding="topProyect5uds">
@@ -614,7 +694,7 @@
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="1"/>
-                          <text value="unidades"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <hspacer id="33a23">
@@ -678,7 +758,11 @@
                   <grid id="88a21" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
-                      <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="32"/>
+                        <preferred-size width="-1" height="32"/>
+                        <maximum-size width="-1" height="32"/>
+                      </grid>
                     </constraints>
                     <properties>
                       <background color="-1"/>
@@ -687,11 +771,15 @@
                     <children>
                       <component id="415f7" class="javax.swing.JLabel" binding="topProveedor1nombre">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="220" height="-1"/>
+                            <preferred-size width="220" height="-1"/>
+                            <maximum-size width="220" height="-1"/>
+                          </grid>
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="0"/>
-                          <text value="1- Proveedor 1"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="89f6" class="javax.swing.JLabel" binding="topProveedor1uds">
@@ -700,7 +788,7 @@
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="1"/>
-                          <text value="unidades"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <hspacer id="14765">
@@ -713,7 +801,11 @@
                   <grid id="8b844" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
-                      <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="32"/>
+                        <preferred-size width="-1" height="32"/>
+                        <maximum-size width="-1" height="32"/>
+                      </grid>
                     </constraints>
                     <properties>
                       <background color="-1"/>
@@ -722,11 +814,15 @@
                     <children>
                       <component id="99a07" class="javax.swing.JLabel" binding="topProveedor2nombre">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="220" height="-1"/>
+                            <preferred-size width="220" height="-1"/>
+                            <maximum-size width="220" height="-1"/>
+                          </grid>
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="0"/>
-                          <text value="2- Proveedor 2"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="80be" class="javax.swing.JLabel" binding="topProveedor2uds">
@@ -735,7 +831,7 @@
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="1"/>
-                          <text value="unidades"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <hspacer id="a06ca">
@@ -748,7 +844,11 @@
                   <grid id="7001c" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
-                      <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="32"/>
+                        <preferred-size width="-1" height="32"/>
+                        <maximum-size width="-1" height="32"/>
+                      </grid>
                     </constraints>
                     <properties>
                       <background color="-1"/>
@@ -757,11 +857,15 @@
                     <children>
                       <component id="e1b04" class="javax.swing.JLabel" binding="topProveedor3nombre">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="220" height="-1"/>
+                            <preferred-size width="220" height="-1"/>
+                            <maximum-size width="220" height="-1"/>
+                          </grid>
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="0"/>
-                          <text value="3- Proveedor 3"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="4ff41" class="javax.swing.JLabel" binding="topProveedor3uds">
@@ -770,7 +874,7 @@
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="1"/>
-                          <text value="unidades"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <hspacer id="cd54d">
@@ -783,7 +887,11 @@
                   <grid id="b0791" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
-                      <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="32"/>
+                        <preferred-size width="-1" height="32"/>
+                        <maximum-size width="-1" height="32"/>
+                      </grid>
                     </constraints>
                     <properties>
                       <background color="-1"/>
@@ -792,11 +900,15 @@
                     <children>
                       <component id="8b7b4" class="javax.swing.JLabel" binding="topProveedor4nombre">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="220" height="-1"/>
+                            <preferred-size width="220" height="-1"/>
+                            <maximum-size width="220" height="-1"/>
+                          </grid>
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="0"/>
-                          <text value="4- Proveedor 4"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="b185c" class="javax.swing.JLabel" binding="topProveedor4uds">
@@ -805,7 +917,7 @@
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="1"/>
-                          <text value="unidades"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <hspacer id="18695">
@@ -818,7 +930,11 @@
                   <grid id="e24a0" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
-                      <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="32"/>
+                        <preferred-size width="-1" height="32"/>
+                        <maximum-size width="-1" height="32"/>
+                      </grid>
                     </constraints>
                     <properties>
                       <background color="-1"/>
@@ -827,11 +943,15 @@
                     <children>
                       <component id="82647" class="javax.swing.JLabel" binding="topProveedor5nombre">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="220" height="-1"/>
+                            <preferred-size width="220" height="-1"/>
+                            <maximum-size width="220" height="-1"/>
+                          </grid>
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="0"/>
-                          <text value="5- Proveedor 5"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="24feb" class="javax.swing.JLabel" binding="topProveedor5uds">
@@ -840,7 +960,7 @@
                         </constraints>
                         <properties>
                           <font name="Arial" size="16" style="1"/>
-                          <text value="unidades"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <hspacer id="14f0a">
