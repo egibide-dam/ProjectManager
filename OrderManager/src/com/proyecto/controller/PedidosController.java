@@ -117,7 +117,6 @@ public class PedidosController {
                 }
             }
         }
-        System.out.println(sentencia);
 
         List<Object> objetos = HibernateUtil.filtrar(PedidosEntity.class, sentencia);
         List<PedidosEntity> pedidos = new ArrayList<>();

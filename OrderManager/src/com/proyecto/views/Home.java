@@ -576,7 +576,7 @@ public class Home {
                     pieza = ((PiezasEntity)piezaFiltroPedido.getSelectedItem()).getIdpieza();
                 }
                 Integer estado = estadoFiltroPedido.getSelectedIndex();
-                tablaPedidos.setModel(new PedidosTableModel(PedidosController.filtrarPedidos(proyecto, pieza, proyecto, estado)));
+                tablaPedidos.setModel(new PedidosTableModel(PedidosController.filtrarPedidos(proveedor, pieza, proyecto, estado)));
                 currentPedidosList = PedidosController.filtrarPedidos(proveedor, pieza, proyecto, estado);
             }
         });
@@ -677,6 +677,7 @@ public class Home {
             public void actionPerformed(ActionEvent e) {
                 if (estadoFiltroProyectos.getSelectedIndex() != 0){
                     tablaProyectos.setModel(new ProyectosTableModel(ProyectoController.filtrarProyectos(estadoFiltroProyectos.getSelectedIndex())));
+                    currentProyectosList = ProyectoController.filtrarProyectos(estadoFiltroProyectos.getSelectedIndex());
                 } else {
                     clearProyectos();
                 }
@@ -770,6 +771,7 @@ public class Home {
             public void actionPerformed(ActionEvent e) {
                 if (estadoFiltroProveedor.getSelectedIndex() != 0){
                     tablaproveedores.setModel(new ProveedoresTableModel(ProveedorController.filtrarProveedores(estadoFiltroProveedor.getSelectedIndex())));
+                    currentProveedoresList = ProveedorController.filtrarProveedores(estadoFiltroProveedor.getSelectedIndex());
                 } else {
                     clearProveedores();
                 }
@@ -875,6 +877,7 @@ public class Home {
             public void actionPerformed(ActionEvent e) {
                 if (estadoFiltroPieza.getSelectedIndex() != 0){
                     tablaPiezas.setModel(new PiezasTableModel(PiezaController.filtrarPiezas(estadoFiltroPieza.getSelectedIndex())));
+                    currentPiezasList = PiezaController.filtrarPiezas(estadoFiltroPieza.getSelectedIndex());
                 } else {
                     clearPiezas();
                 }
