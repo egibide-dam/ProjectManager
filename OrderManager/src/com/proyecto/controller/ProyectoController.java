@@ -1,6 +1,5 @@
 package com.proyecto.controller;
 
-import com.proyecto.ProveedoresEntity;
 import com.proyecto.ProyectosEntity;
 import com.proyecto.utils.HibernateUtil;
 
